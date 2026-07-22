@@ -48,7 +48,7 @@ Konten diambil dari *Credentials Pitch Deck* & *Company Profile 2026* resmi Thru
 | Tentang (`#tentang`) | Business challenges → respons Thru360 |
 | Layanan (`#layanan`) | Growth & Marketing, Finance & Advisory, Digital Solutions, Legal & Compliance |
 | Proses (`#proses`) | Discover → Strategize → Execute → Optimize → Scale |
-| Portofolio (`#portofolio`) | **Venture: Citrust, Briga, Tilde, FundHub** (deskripsi masing-masing masih TODO) + industri yang dilayani |
+| Portofolio (`#portofolio`) | **Venture: Citrust** (konsultan F&B), **Briga** (konsultan bisnis berkelanjutan), **Tilde** (software house), **FundHub** (konsultasi keuangan & funding) + industri yang dilayani |
 | Studi Kasus (`#studi-kasus`) | Skinmade, Resoult.co, PowerBuilding Gym, TPR Metallurgy |
 | Kolaborasi | Daftar brand & institusi partner |
 | Testimoni | Kutipan dari Gary Miller (PowerBuilding) & Adrian Allo (Jenggala Semesta) |
