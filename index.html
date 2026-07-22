@@ -4,16 +4,6 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <script>
-    (function () {
-      try {
-        var saved = localStorage.getItem('theme');
-        var theme = saved || (window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
-        document.documentElement.setAttribute('data-theme', theme);
-      } catch (e) {}
-    })();
-  </script>
-
   <title>Thru360 — Let Your Dreams Come Thru</title>
   <meta name="description" content="Thru360 adalah mitra bisnis tepercaya yang membantu perusahaan meraih pertumbuhan berkelanjutan melalui solusi terintegrasi: marketing, eksekusi digital, operasional bisnis, keuangan, dan legal — dalam satu ekosistem 360°." />
   <meta name="robots" content="index, follow" />
@@ -30,8 +20,7 @@
   <meta name="twitter:description" content="Mitra bisnis 360°: marketing, digital, finance, legal & venture building." />
   <meta name="twitter:image" content="logo.svg" />
 
-  <meta name="theme-color" content="#0A0A0C" media="(prefers-color-scheme: dark)" />
-  <meta name="theme-color" content="#FAFAFA" media="(prefers-color-scheme: light)" />
+  <meta name="theme-color" content="#0A0A0C" />
 
   <link rel="icon" href="logo.svg" type="image/svg+xml" />
 
@@ -65,25 +54,10 @@
       --txt:         #F5F5F7;
       --txt-2:       #A3A3AD;
       --txt-3:       #59595F;
-      --border:      rgba(255, 255, 255, 0.08)
-;
+      --border:      rgba(255, 255, 255, 0.08);
       --radius:      14px;
       --font:        'Plus Jakarta Sans', system-ui, sans-serif;
       color-scheme: dark;
-    }
-
-    :root[data-theme="light"] {
-      --bg:          #FAFAFA;
-      --bg-surface:  #FFFFFF;
-      --bg-card:     #FFFFFF;
-      --accent:      #E4372A;
-      --accent-lt:   #C42E22;
-      --accent-glow: rgba(228, 55, 42, 0.14);
-      --txt:         #0F0F12;
-      --txt-2:       #55555E;
-      --txt-3:       #97979F;
-      --border:      rgba(15, 15, 18, 0.1);
-      color-scheme: light;
     }
 
     html  { scroll-behavior: smooth; }
@@ -121,7 +95,6 @@
       backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
       border-bottom: 1px solid var(--border);
     }
-    :root[data-theme="light"] nav { background: rgba(250, 250, 250, 0.82); }
 
     .nav-logo { height: 26px; width: auto; }
 
@@ -148,15 +121,6 @@
       transform: translateY(-1px);
       box-shadow: 0 6px 24px var(--accent-glow);
     }
-
-    .theme-toggle {
-      display: inline-flex; align-items: center; justify-content: center;
-      width: 38px; height: 38px; border-radius: 10px;
-      border: 1px solid var(--border); background: transparent;
-      color: var(--txt-2); font-size: 1rem; line-height: 1; cursor: pointer;
-      transition: color .2s, border-color .2s;
-    }
-    .theme-toggle:hover { color: var(--txt); border-color: rgba(255,255,255,.2); }
 
     .nav-toggle {
       display: none; width: 38px; height: 38px; border-radius: 10px;
@@ -201,7 +165,6 @@
       filter: blur(30px);
       opacity: .8;
     }
-    :root[data-theme="light"] .hero-curtain { opacity: .35; }
 
     .hero-grid {
       position: relative; z-index: 2;
@@ -454,7 +417,6 @@
     </ul>
 
     <div class="nav-right">
-      <button type="button" class="theme-toggle" id="themeToggle" aria-label="Ganti tampilan gelap/terang">🌙</button>
       <a href="#kontak" class="nav-cta">Hubungi Kami →</a>
       <button type="button" class="nav-toggle" id="navToggle" aria-label="Buka menu navigasi" aria-expanded="false" aria-controls="mobileMenu">
         <span></span><span></span><span></span>
@@ -916,17 +878,6 @@
       });
     }, { threshold: 0.15 });
     document.querySelectorAll('.reveal').forEach(el => io.observe(el));
-
-    const themeToggle = document.getElementById('themeToggle');
-    function currentTheme() { return document.documentElement.getAttribute('data-theme') === 'light' ? 'light' : 'dark'; }
-    function syncToggleIcon() { themeToggle.textContent = currentTheme() === 'light' ? '☀️' : '🌙'; }
-    syncToggleIcon();
-    themeToggle.addEventListener('click', () => {
-      const next = currentTheme() === 'light' ? 'dark' : 'light';
-      document.documentElement.setAttribute('data-theme', next);
-      try { localStorage.setItem('theme', next); } catch (e) {}
-      syncToggleIcon();
-    });
 
     const navToggle = document.getElementById('navToggle');
     const mobileMenu = document.getElementById('mobileMenu');
