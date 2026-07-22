@@ -250,6 +250,17 @@
     .card-list li { font-size: .85rem; color: var(--txt-2); line-height: 1.5; padding-left: 1.1rem; position: relative; }
     .card-list li::before { content: '—'; position: absolute; left: 0; color: var(--accent-lt); }
 
+    /* ── LEAD BANNER (Business Check-Up / Freelancer signup) ── */
+    .lead-banner {
+      background: var(--bg-card); border: 1px solid var(--border); border-left: 4px solid var(--accent);
+      border-radius: var(--radius); padding: 2.5rem;
+      display: flex; flex-wrap: wrap; gap: 2rem; align-items: flex-start; justify-content: space-between;
+    }
+    .lead-banner-copy { flex: 1 1 420px; }
+    .lead-banner-copy .s-sub { margin-bottom: 1.5rem; }
+    .lead-banner-copy .card-list { margin-bottom: 2rem; max-width: 480px; }
+    .lead-banner-copy .s-title { margin-bottom: .9rem; }
+
     /* ── APPROACH (challenge -> response) ── */
     .approach-grid { display: grid; grid-template-columns: 1fr auto 1fr; gap: 1.5rem; align-items: center; }
     .approach-arrow { font-size: 1.8rem; color: var(--accent-lt); font-weight: 800; }
@@ -492,6 +503,26 @@
               <li>Transformasi digital</li>
               <li>Layanan pendukung bisnis end-to-end</li>
             </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== BUSINESS CHECK-UP ==================== -->
+    <section class="section" id="business-checkup" style="padding-top: 0;">
+      <div class="section-inner">
+        <div class="lead-banner reveal">
+          <div class="lead-banner-copy">
+            <p class="eyebrow">Business Check-Up — Gratis</p>
+            <h2 class="s-title">Cek Kesehatan Bisnis Anda Sebelum Kita Kolaborasi</h2>
+            <p class="s-sub">Ceritakan goals, gambaran bisnis, kompetitor, hingga kendala yang sedang dihadapi — tim Thru360 akan memakainya untuk menyusun rekomendasi yang tepat sasaran untuk bisnis Anda.</p>
+            <ul class="card-list">
+              <li>Goals bisnis dalam 5 tahun ke depan</li>
+              <li>Gambaran bisnis &amp; top produk/layanan Anda</li>
+              <li>7 kompetitor terbesar &amp; rata-rata penjualan 3 bulan terakhir</li>
+              <li>Prioritas &amp; kendala yang sedang dihadapi (marketing, SDM, operasional, keuangan)</li>
+            </ul>
+            <a href="https://forms.gle/h8iyE8i1Rfok6zgL6" class="btn-p" target="_blank" rel="noopener noreferrer">Isi Business Check-Up →</a>
           </div>
         </div>
       </div>
@@ -775,6 +806,26 @@
       </div>
     </section>
 
+    <!-- ==================== FREELANCER SIGNUP ==================== -->
+    <section class="section" id="freelancer" style="padding-top: 0;">
+      <div class="section-inner">
+        <div class="lead-banner reveal">
+          <div class="lead-banner-copy">
+            <p class="eyebrow">Gabung Bersama Kami</p>
+            <h2 class="s-title">Jadi Mitra Freelancer THRU (THRUpers)</h2>
+            <p class="s-sub">Punya skill di marketing, finance, legal, desain, atau bidang lain? Daftarkan diri sebagai freelancer mitra Thru360 dan ikut mengerjakan proyek bersama klien kami.</p>
+            <ul class="card-list">
+              <li>Nama &amp; kontak aktif (WhatsApp/Telegram)</li>
+              <li>Domisili &amp; lama pengalaman freelance</li>
+              <li>Skill set yang kamu kuasai</li>
+              <li>Link portofolio yang bisa diakses</li>
+            </ul>
+            <a href="https://forms.gle/3J47KSpPW7SNLSPs6" class="btn-p" target="_blank" rel="noopener noreferrer">Daftar sebagai Freelancer →</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- ==================== TESTIMONIALS ==================== -->
     <section class="section" style="padding-top: 0;">
       <div class="section-inner">
@@ -859,6 +910,8 @@
       <img src="logo.svg" alt="Logo Thru360" class="footer-logo" width="88" height="22" />
       <p class="footer-copy">© <span id="year"></span> Thru360. All rights reserved.</p>
       <div class="footer-links">
+        <a href="#business-checkup">Business Check-Up</a>
+        <a href="#freelancer">Gabung Freelancer</a>
         <a href="#">Kebijakan Privasi</a>
         <a href="#">Syarat &amp; Ketentuan</a>
         <a href="mailto:partnership@thrucorp.com">Kontak</a>
