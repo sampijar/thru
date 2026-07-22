@@ -49,18 +49,21 @@ Konten diambil dari *Credentials Pitch Deck* & *Company Profile 2026* resmi Thru
 | Layanan (`#layanan`) | Growth & Marketing, Finance & Advisory, Digital Solutions, Legal & Compliance |
 | Proses (`#proses`) | Discover → Strategize → Execute → Optimize → Scale |
 | Portofolio (`#portofolio`) | **Venture: Citrust** (konsultan F&B), **Briga** (konsultan bisnis berkelanjutan), **Tilde** (software house), **FundHub** (konsultasi keuangan & funding) + industri yang dilayani |
+| Business Check-Up (`#business-checkup`) | CTA ke Google Form Business Check-Up (gratis) |
 | Studi Kasus (`#studi-kasus`) | Skinmade, Resoult.co, PowerBuilding Gym, TPR Metallurgy |
 | Kolaborasi | Daftar brand & institusi partner |
+| Freelancer (`#freelancer`) | CTA ke Google Form pendaftaran Mitra Freelancer THRU (THRUpers) |
 | Testimoni | Kutipan dari Gary Miller (PowerBuilding) & Adrian Allo (Jenggala Semesta) |
 | FAQ (`#faq`) | Pertanyaan umum seputar Thru360 |
 | Kontak (`#kontak`) | Varian Ferandanes De Lima · +(62) 811 944 0998 · partnership@thrucorp.com |
 
 ## ✨ Fitur
 
-- **Mode gelap/terang** — tombol 🌙/☀️ di navbar, tersimpan di browser pengguna.
+- **Dark mode permanen** — dinilai lebih kuat untuk brand Thru360.
 - **Menu mobile (hamburger)** — navigasi tetap bisa diakses penuh di layar kecil.
+- **Business Check-Up & Daftar Freelancer** — dua CTA yang membuka Google Form terkait (`forms.gle`) di tab baru. Kalau link form-nya berubah, cari `forms.gle/` di `index.html` dan ganti hrefnya.
 - **SEO & social preview** — meta description, Open Graph, Twitter Card, canonical URL, dan JSON-LD Organization.
-- **Aksesibilitas** — skip link, `aria-*` pada menu, kontras warna terjaga di kedua tema, serta menghormati preferensi *reduced motion*.
+- **Aksesibilitas** — skip link, `aria-*` pada menu, serta menghormati preferensi *reduced motion*.
 - **Tombol kembali ke atas** dan tahun copyright yang otomatis diperbarui.
 - **CTA langsung ke WhatsApp** & email tim partnership.
 
