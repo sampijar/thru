@@ -254,12 +254,33 @@
     .lead-banner {
       background: var(--bg-card); border: 1px solid var(--border); border-left: 4px solid var(--accent);
       border-radius: var(--radius); padding: 2.5rem;
-      display: flex; flex-wrap: wrap; gap: 2rem; align-items: flex-start; justify-content: space-between;
     }
-    .lead-banner-copy { flex: 1 1 420px; }
-    .lead-banner-copy .s-sub { margin-bottom: 1.5rem; }
-    .lead-banner-copy .card-list { margin-bottom: 2rem; max-width: 480px; }
+    .lead-banner-copy { max-width: 640px; margin-bottom: 2rem; }
+    .lead-banner-copy .s-sub { margin-bottom: 0; }
     .lead-banner-copy .s-title { margin-bottom: .9rem; }
+
+    /* ── LEAD FORM ── */
+    .lead-form { display: flex; flex-direction: column; gap: 1.15rem; max-width: 640px; }
+    .form-row { display: flex; flex-direction: column; gap: .4rem; }
+    .form-row label { font-size: .85rem; font-weight: 700; color: var(--txt); }
+    .form-row label span { color: var(--accent-lt); margin-left: .15rem; }
+    .form-row input,
+    .form-row textarea {
+      background: var(--bg-surface); border: 1px solid var(--border); border-radius: 10px;
+      padding: .7rem .9rem; font-family: var(--font); font-size: .9rem; color: var(--txt);
+      resize: vertical;
+    }
+    .form-row input:focus, .form-row textarea:focus { border-color: var(--accent); }
+    .form-checkbox label {
+      display: flex; align-items: flex-start; gap: .6rem;
+      font-weight: 500; font-size: .85rem; color: var(--txt-2); line-height: 1.5;
+    }
+    .form-checkbox input { margin-top: .25rem; accent-color: var(--accent); flex-shrink: 0; width: auto; }
+    .lead-form button[type="submit"] { align-self: flex-start; cursor: pointer; border: none; }
+    .lead-form button[disabled] { opacity: .6; cursor: not-allowed; }
+    .form-status { font-size: .85rem; font-weight: 700; min-height: 1.2em; }
+    .form-status.success { color: #22C55E; }
+    .form-status.error { color: var(--accent-lt); }
 
     /* ── APPROACH (challenge -> response) ── */
     .approach-grid { display: grid; grid-template-columns: 1fr auto 1fr; gap: 1.5rem; align-items: center; }
@@ -515,15 +536,61 @@
           <div class="lead-banner-copy">
             <p class="eyebrow">Business Check-Up — Gratis</p>
             <h2 class="s-title">Cek Kesehatan Bisnis Anda Sebelum Kita Kolaborasi</h2>
-            <p class="s-sub">Ceritakan goals, gambaran bisnis, kompetitor, hingga kendala yang sedang dihadapi — tim Thru360 akan memakainya untuk menyusun rekomendasi yang tepat sasaran untuk bisnis Anda.</p>
-            <ul class="card-list">
-              <li>Goals bisnis dalam 5 tahun ke depan</li>
-              <li>Gambaran bisnis &amp; top produk/layanan Anda</li>
-              <li>7 kompetitor terbesar &amp; rata-rata penjualan 3 bulan terakhir</li>
-              <li>Prioritas &amp; kendala yang sedang dihadapi (marketing, SDM, operasional, keuangan)</li>
-            </ul>
-            <a href="https://forms.gle/h8iyE8i1Rfok6zgL6" class="btn-p" target="_blank" rel="noopener noreferrer">Isi Business Check-Up →</a>
+            <p class="s-sub">Isi form singkat ini — tim Thru360 akan memakainya untuk menyusun rekomendasi yang tepat sasaran untuk bisnis Anda.</p>
           </div>
+
+          <form class="lead-form" id="checkupForm">
+            <div class="form-row">
+              <label for="cu-nama">Nama<span aria-hidden="true">*</span></label>
+              <input type="text" id="cu-nama" name="nama" autocomplete="name" required />
+            </div>
+            <div class="form-row">
+              <label for="cu-email">Email<span aria-hidden="true">*</span></label>
+              <input type="email" id="cu-email" name="email" autocomplete="email" required />
+            </div>
+            <div class="form-row">
+              <label for="cu-telp">Nomor Telepon<span aria-hidden="true">*</span></label>
+              <input type="tel" id="cu-telp" name="nomor_telepon" autocomplete="tel" required />
+            </div>
+            <div class="form-row">
+              <label for="cu-bisnis">Nama Bisnis<span aria-hidden="true">*</span></label>
+              <input type="text" id="cu-bisnis" name="nama_bisnis" required />
+            </div>
+            <div class="form-row">
+              <label for="cu-goals">Apa goals bisnis Anda dalam 5 tahun kedepan?</label>
+              <textarea id="cu-goals" name="goals_5_tahun" rows="2"></textarea>
+            </div>
+            <div class="form-row">
+              <label for="cu-gambaran">Ceritakan gambaran bisnis Anda, seperti bercerita ke teman</label>
+              <textarea id="cu-gambaran" name="gambaran_bisnis" rows="3"></textarea>
+            </div>
+            <div class="form-row">
+              <label for="cu-kompetitor">Siapa saja 7 kompetitor terbesar Anda?</label>
+              <textarea id="cu-kompetitor" name="kompetitor" rows="2"></textarea>
+            </div>
+            <div class="form-row">
+              <label for="cu-produk">Apa saja 3 top product/service perusahaan Anda? (jabarkan berikut jumlah satuan terjual dalam 1 bulan terakhir)</label>
+              <textarea id="cu-produk" name="top_produk" rows="2"></textarea>
+            </div>
+            <div class="form-row">
+              <label for="cu-penjualan">Berapa rata-rata penjualan Anda dalam 3 bulan terakhir?</label>
+              <input type="text" id="cu-penjualan" name="rata_rata_penjualan" />
+            </div>
+            <div class="form-row">
+              <label for="cu-ekspektasi">Apa saja yang ingin Anda capai setelah bekerja sama dengan agency/pihak luar? (jabarkan dengan detail)</label>
+              <textarea id="cu-ekspektasi" name="ekspektasi_kerjasama" rows="2"></textarea>
+            </div>
+            <div class="form-row">
+              <label for="cu-prioritas">Dari hal-hal di atas, urutkan berdasarkan prioritas yang paling ingin segera diselesaikan/dicapai</label>
+              <textarea id="cu-prioritas" name="prioritas" rows="2"></textarea>
+            </div>
+            <div class="form-row">
+              <label for="cu-kendala">Belakangan ini, kendala apa saja yang terjadi? (marketing, SDM, operasional, maupun keuangan)</label>
+              <textarea id="cu-kendala" name="kendala" rows="2"></textarea>
+            </div>
+            <button type="submit" class="btn-p">Kirim Business Check-Up →</button>
+            <p class="form-status" role="status" aria-live="polite"></p>
+          </form>
         </div>
       </div>
     </section>
@@ -814,14 +881,42 @@
             <p class="eyebrow">Gabung Bersama Kami</p>
             <h2 class="s-title">Jadi Mitra Freelancer THRU (THRUpers)</h2>
             <p class="s-sub">Punya skill di marketing, finance, legal, desain, atau bidang lain? Daftarkan diri sebagai freelancer mitra Thru360 dan ikut mengerjakan proyek bersama klien kami.</p>
-            <ul class="card-list">
-              <li>Nama &amp; kontak aktif (WhatsApp/Telegram)</li>
-              <li>Domisili &amp; lama pengalaman freelance</li>
-              <li>Skill set yang kamu kuasai</li>
-              <li>Link portofolio yang bisa diakses</li>
-            </ul>
-            <a href="https://forms.gle/3J47KSpPW7SNLSPs6" class="btn-p" target="_blank" rel="noopener noreferrer">Daftar sebagai Freelancer →</a>
           </div>
+
+          <form class="lead-form" id="freelancerForm">
+            <div class="form-row">
+              <label for="fl-nama">Nama<span aria-hidden="true">*</span></label>
+              <input type="text" id="fl-nama" name="nama" autocomplete="name" required />
+            </div>
+            <div class="form-row">
+              <label for="fl-telp">Nomor Telepon (ada WhatsApp &amp; Telegram)<span aria-hidden="true">*</span></label>
+              <input type="tel" id="fl-telp" name="nomor_telepon" autocomplete="tel" required />
+            </div>
+            <div class="form-row">
+              <label for="fl-alamat">Alamat Tempat Tinggal</label>
+              <input type="text" id="fl-alamat" name="alamat" autocomplete="address-level2" />
+            </div>
+            <div class="form-row">
+              <label for="fl-lama">Berapa Tahun Melakukan Freelance?</label>
+              <input type="text" id="fl-lama" name="lama_freelance" />
+            </div>
+            <div class="form-row">
+              <label for="fl-skill">Skill Set THRUpers<span aria-hidden="true">*</span></label>
+              <textarea id="fl-skill" name="skill_set" rows="2" required></textarea>
+            </div>
+            <div class="form-row">
+              <label for="fl-portfolio">Link Portfolio (mohon bisa diakses MinTHRU)<span aria-hidden="true">*</span></label>
+              <input type="url" id="fl-portfolio" name="portfolio_url" placeholder="https://..." required />
+            </div>
+            <div class="form-row form-checkbox">
+              <label for="fl-setuju">
+                <input type="checkbox" id="fl-setuju" name="setuju_privasi" required />
+                Saya menyetujui bahwa semua informasi yang diminta oleh THRU tidak akan disebarluaskan dan hanya disimpan untuk data internal dengan tujuan keperluan kerjasama.
+              </label>
+            </div>
+            <button type="submit" class="btn-p">Kirim Pendaftaran →</button>
+            <p class="form-status" role="status" aria-live="polite"></p>
+          </form>
         </div>
       </div>
     </section>
@@ -959,6 +1054,57 @@
     }, { passive: true });
 
     backToTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+
+    /* Supabase — Business Check-Up & Pendaftaran Freelancer */
+    const SUPABASE_URL = 'https://gbmglrpryusfwduzzhih.supabase.co';
+    const SUPABASE_PUBLISHABLE_KEY = 'sb_publishable_d_HTle6uNlFEura0yl_iRA_NORUFB7w';
+
+    async function submitToSupabase(table, payload, formEl) {
+      const statusEl = formEl.querySelector('.form-status');
+      const submitBtn = formEl.querySelector('button[type="submit"]');
+      const originalLabel = submitBtn.textContent;
+      statusEl.textContent = '';
+      statusEl.className = 'form-status';
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'Mengirim...';
+      try {
+        const res = await fetch(`${SUPABASE_URL}/rest/v1/${table}`, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'apikey': SUPABASE_PUBLISHABLE_KEY,
+            'Authorization': `Bearer ${SUPABASE_PUBLISHABLE_KEY}`,
+            'Prefer': 'return=minimal'
+          },
+          body: JSON.stringify(payload)
+        });
+        if (!res.ok) throw new Error(await res.text());
+        statusEl.textContent = 'Terima kasih! Data Anda sudah terkirim ke tim Thru360.';
+        statusEl.className = 'form-status success';
+        formEl.reset();
+      } catch (err) {
+        statusEl.textContent = 'Gagal mengirim. Coba lagi atau hubungi kami langsung lewat WhatsApp.';
+        statusEl.className = 'form-status error';
+      } finally {
+        submitBtn.disabled = false;
+        submitBtn.textContent = originalLabel;
+      }
+    }
+
+    const checkupForm = document.getElementById('checkupForm');
+    checkupForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const payload = Object.fromEntries(new FormData(checkupForm).entries());
+      submitToSupabase('business_checkups', payload, checkupForm);
+    });
+
+    const freelancerForm = document.getElementById('freelancerForm');
+    freelancerForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const payload = Object.fromEntries(new FormData(freelancerForm).entries());
+      payload.setuju_privasi = true;
+      submitToSupabase('freelancer_applications', payload, freelancerForm);
+    });
   </script>
 
 </body>
