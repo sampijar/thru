@@ -6,9 +6,11 @@ Landing page resmi **Thru360** — mitra bisnis 360° (marketing, digital, finan
 
 ```
 /
-├── index.html      ← Halaman utama (edit di sini)
-├── logo.svg        ← Logo brand Anda
-├── .nojekyll       ← Wajib ada agar GitHub Pages bekerja dengan benar
+├── index.html            ← Halaman utama (edit di sini)
+├── logo.svg              ← Logo brand Anda
+├── assets/logos/         ← Logo venture & brand kolaborasi (dipakai di section Portofolio & Kolaborasi)
+├── .nojekyll             ← Wajib ada agar GitHub Pages bekerja dengan benar
+├── supabase/schema.sql   ← Skema tabel + RLS untuk form Business Check-Up & Freelancer
 └── README.md
 ```
 
@@ -49,10 +51,10 @@ Konten diambil dari *Credentials Pitch Deck* & *Company Profile 2026* resmi Thru
 | Layanan (`#layanan`) | Growth & Marketing, Finance & Advisory, Digital Solutions, Legal & Compliance |
 | Proses (`#proses`) | Discover → Strategize → Execute → Optimize → Scale |
 | Portofolio (`#portofolio`) | **Venture: Citrust** (konsultan F&B), **Briga** (konsultan bisnis berkelanjutan), **Tilde** (software house), **FundHub** (konsultasi keuangan & funding) + industri yang dilayani |
-| Business Check-Up (`#business-checkup`) | CTA ke Google Form Business Check-Up (gratis) |
+| Business Check-Up (`#business-checkup`) | Form langsung di web (bukan redirect Google Form), submit ke Supabase |
 | Studi Kasus (`#studi-kasus`) | Skinmade, Resoult.co, PowerBuilding Gym, TPR Metallurgy |
 | Kolaborasi | Daftar brand & institusi partner |
-| Freelancer (`#freelancer`) | CTA ke Google Form pendaftaran Mitra Freelancer THRU (THRUpers) |
+| Freelancer (`#freelancer`) | Form pendaftaran Mitra Freelancer THRU (THRUpers) langsung di web, submit ke Supabase |
 | Testimoni | Kutipan dari Gary Miller (PowerBuilding) & Adrian Allo (Jenggala Semesta) |
 | FAQ (`#faq`) | Pertanyaan umum seputar Thru360 |
 | Kontak (`#kontak`) | Varian Ferandanes De Lima · +(62) 811 944 0998 · partnership@thrucorp.com |
@@ -61,11 +63,32 @@ Konten diambil dari *Credentials Pitch Deck* & *Company Profile 2026* resmi Thru
 
 - **Dark mode permanen** — dinilai lebih kuat untuk brand Thru360.
 - **Menu mobile (hamburger)** — navigasi tetap bisa diakses penuh di layar kecil.
-- **Business Check-Up & Daftar Freelancer** — dua CTA yang membuka Google Form terkait (`forms.gle`) di tab baru. Kalau link form-nya berubah, cari `forms.gle/` di `index.html` dan ganti hrefnya.
+- **Business Check-Up & Daftar Freelancer** — form asli langsung di web, submit ke Supabase (lihat bagian *Supabase* di bawah).
 - **SEO & social preview** — meta description, Open Graph, Twitter Card, canonical URL, dan JSON-LD Organization.
 - **Aksesibilitas** — skip link, `aria-*` pada menu, serta menghormati preferensi *reduced motion*.
 - **Tombol kembali ke atas** dan tahun copyright yang otomatis diperbarui.
 - **CTA langsung ke WhatsApp** & email tim partnership.
+
+---
+
+## 🗄️ Supabase (backend form)
+
+Form **Business Check-Up** dan **Daftar Freelancer** submit langsung ke Supabase lewat REST API (tanpa perlu server/backend tambahan).
+
+**Setup:**
+1. Buat project di [supabase.com](https://supabase.com) (atau pakai yang sudah ada).
+2. Buka **SQL Editor** → jalankan seluruh isi file [`supabase/schema.sql`](./supabase/schema.sql). Ini membuat 2 tabel (`business_checkups`, `freelancer_applications`) dan mengaktifkan **Row Level Security** dengan policy: publik hanya boleh **INSERT**, tidak bisa membaca data siapa pun (data pengunjung situs tetap privat).
+3. Buka **Settings → Data API**, salin **Project URL** dan **publishable key** (`sb_publishable_...`).
+4. Paste di `index.html`, cari baris:
+   ```js
+   const SUPABASE_URL = 'https://gbmglrpryusfwduzzhih.supabase.co';
+   const SUPABASE_PUBLISHABLE_KEY = 'sb_publishable_...';
+   ```
+   dan ganti sesuai project kamu.
+
+⚠️ **Jangan pernah** menaruh **secret key** (`sb_secret_...` / service role key) di `index.html` atau file apa pun di repo ini — repo & situs ini bersifat publik (bisa dibaca lewat "View Source"), dan secret key itu bisa bypass semua proteksi RLS di atas. Hanya **publishable key** yang aman ditaruh di frontend.
+
+**Lihat data yang masuk:** buka Supabase Dashboard → **Table Editor** → pilih tabel `business_checkups` atau `freelancer_applications`.
 
 ---
 
