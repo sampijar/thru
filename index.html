@@ -311,11 +311,11 @@
     }
     .venture-card:hover { border-color: var(--accent-glow); transform: translateY(-3px); }
     .venture-mark {
-      width: 56px; height: 56px; border-radius: 14px; margin: 0 auto 1.1rem;
+      height: 64px; width: auto; min-width: 64px; border-radius: 14px; margin: 0 auto 1.1rem;
       display: flex; align-items: center; justify-content: center;
-      background: linear-gradient(135deg, var(--accent), var(--accent-lt));
-      color: #fff; font-weight: 800; font-size: 1.2rem;
+      background: #F5F5F7; padding: .6rem 1rem;
     }
+    .venture-mark img { max-height: 100%; max-width: 150px; object-fit: contain; }
     .venture-name { font-size: 1.05rem; font-weight: 800; margin-bottom: .3rem; }
     .venture-tag { font-size: .78rem; color: var(--txt-3); font-weight: 600; letter-spacing: .02em; }
 
@@ -339,12 +339,13 @@
     .case-col.impact li::before { content: '↑ '; color: var(--accent-lt); }
 
     /* ── LOGO CLOUD ── */
-    .logo-cloud { display: flex; flex-wrap: wrap; gap: .6rem; }
+    .logo-cloud { display: flex; flex-wrap: wrap; gap: .75rem; align-items: center; }
     .logo-chip {
-      font-size: .82rem; font-weight: 600; color: var(--txt-2);
-      background: var(--bg-card); border: 1px solid var(--border);
-      border-radius: 8px; padding: .55rem 1rem;
+      display: inline-flex; align-items: center; justify-content: center;
+      height: 52px; background: #F5F5F7; border: 1px solid var(--border);
+      border-radius: 10px; padding: .6rem 1.1rem;
     }
+    .logo-chip img { max-height: 28px; max-width: 130px; object-fit: contain; display: block; }
 
     /* ── TESTIMONIALS ── */
     .testimonials { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.25rem; }
@@ -389,6 +390,16 @@
     .footer-links a { font-size: .8rem; color: var(--txt-3); text-decoration: none; transition: color .2s; }
     .footer-links a:hover { color: var(--txt-2); }
 
+    .social-links { display: flex; gap: .6rem; }
+    .social-links a {
+      display: inline-flex; align-items: center; justify-content: center;
+      width: 36px; height: 36px; border-radius: 50%;
+      border: 1px solid var(--border); color: var(--txt-2);
+      transition: color .2s, border-color .2s;
+    }
+    .social-links a:hover { color: var(--txt); border-color: rgba(255,255,255,.25); }
+    .social-links svg { width: 17px; height: 17px; fill: currentColor; }
+
     /* ── BACK TO TOP ── */
     .back-to-top {
       position: fixed; right: 1.5rem; bottom: 1.5rem; width: 44px; height: 44px; border-radius: 50%;
@@ -414,7 +425,7 @@
       .hero { padding-top: 7rem; }
       .stats { gap: 1.5rem; }
       footer { flex-direction: column; text-align: center; }
-      .footer-links { justify-content: center; }
+      .footer-links, .social-links { justify-content: center; }
     }
 
     /* ── SCROLL REVEAL ── */
@@ -702,22 +713,22 @@
 
         <div class="ventures reveal">
           <div class="venture-card">
-            <div class="venture-mark" aria-hidden="true">Ci</div>
+            <div class="venture-mark"><img src="assets/logos/citrust.png" alt="Logo Citrust" loading="lazy" /></div>
             <div class="venture-name">Citrust</div>
             <div class="venture-tag">Konsultan F&amp;B</div>
           </div>
           <div class="venture-card">
-            <div class="venture-mark" aria-hidden="true">Br</div>
+            <div class="venture-mark"><img src="assets/logos/briga.png" alt="Logo Briga Sustainability Center" loading="lazy" /></div>
             <div class="venture-name">Briga</div>
             <div class="venture-tag">Konsultan Bisnis Berkelanjutan</div>
           </div>
           <div class="venture-card">
-            <div class="venture-mark" aria-hidden="true">Ti</div>
+            <div class="venture-mark"><img src="assets/logos/tilde.png" alt="Logo Tilde" loading="lazy" /></div>
             <div class="venture-name">Tilde</div>
             <div class="venture-tag">Software House</div>
           </div>
           <div class="venture-card">
-            <div class="venture-mark" aria-hidden="true">Fh</div>
+            <div class="venture-mark"><img src="assets/logos/fundhub.png" alt="Logo FundHub" loading="lazy" /></div>
             <div class="venture-name">FundHub</div>
             <div class="venture-tag">Konsultasi Keuangan &amp; Funding</div>
           </div>
@@ -842,33 +853,33 @@
           <h2 class="s-title">Brand &amp; Institusi yang Pernah Berkolaborasi</h2>
         </div>
         <div class="logo-cloud reveal">
-          <span class="logo-chip">ERHA Store</span>
-          <span class="logo-chip">J&amp;Glow</span>
-          <span class="logo-chip">EasyCash</span>
-          <span class="logo-chip">Citrust</span>
-          <span class="logo-chip">Resoult.co</span>
-          <span class="logo-chip">Skinmade</span>
-          <span class="logo-chip">Hash</span>
-          <span class="logo-chip">sea-chain</span>
-          <span class="logo-chip">HIPMI Berlari</span>
-          <span class="logo-chip">BI/Runners</span>
-          <span class="logo-chip">JCI Bogor City</span>
-          <span class="logo-chip">Xaha Project</span>
-          <span class="logo-chip">Jenggala Semesta Consulting</span>
-          <span class="logo-chip">KRI</span>
-          <span class="logo-chip">LemariKita</span>
-          <span class="logo-chip">PT Agro Nala Nusantara</span>
-          <span class="logo-chip">Akademi Sepatu Nusantara</span>
-          <span class="logo-chip">Alpha Labs</span>
-          <span class="logo-chip">Sushi Tei</span>
-          <span class="logo-chip">Tebu Hotel Bandung</span>
-          <span class="logo-chip">Jack</span>
-          <span class="logo-chip">TPR</span>
-          <span class="logo-chip">Oakwood</span>
-          <span class="logo-chip">Ordo</span>
-          <span class="logo-chip">Encoteki</span>
-          <span class="logo-chip">Auto Audit</span>
-          <span class="logo-chip">Maleo AI</span>
+          <span class="logo-chip"><img src="assets/logos/erha_store.png" alt="Logo ERHA Store" loading="lazy" /></span>
+          <span class="logo-chip"><img src="assets/logos/jglow.png" alt="Logo J&amp;Glow" loading="lazy" /></span>
+          <span class="logo-chip"><img src="assets/logos/easycash.png" alt="Logo EasyCash" loading="lazy" /></span>
+          <span class="logo-chip"><img src="assets/logos/citrust.png" alt="Logo Citrust" loading="lazy" /></span>
+          <span class="logo-chip"><img src="assets/logos/resoult.png" alt="Logo Resoult.co" loading="lazy" /></span>
+          <span class="logo-chip"><img src="assets/logos/skinmade.png" alt="Logo Skinmade" loading="lazy" /></span>
+          <span class="logo-chip"><img src="assets/logos/hash.png" alt="Logo Hash" loading="lazy" /></span>
+          <span class="logo-chip"><img src="assets/logos/sea_chain.png" alt="Logo sea-chain" loading="lazy" /></span>
+          <span class="logo-chip"><img src="assets/logos/hipmi_berlari.png" alt="Logo HIPMI Berlari" loading="lazy" /></span>
+          <span class="logo-chip"><img src="assets/logos/bi_runners.png" alt="Logo BI/Runners" loading="lazy" /></span>
+          <span class="logo-chip"><img src="assets/logos/jci_bogor.png" alt="Logo JCI Bogor City" loading="lazy" /></span>
+          <span class="logo-chip"><img src="assets/logos/xaha_project.png" alt="Logo Xaha Project" loading="lazy" /></span>
+          <span class="logo-chip"><img src="assets/logos/jenggala_1.png" alt="Logo Jenggala Semesta Consulting" loading="lazy" /></span>
+          <span class="logo-chip"><img src="assets/logos/kri.png" alt="Logo KRI" loading="lazy" /></span>
+          <span class="logo-chip"><img src="assets/logos/lemarikita.png" alt="Logo LemariKita" loading="lazy" /></span>
+          <span class="logo-chip"><img src="assets/logos/pt_agro_nala.png" alt="Logo PT Agro Nala Nusantara" loading="lazy" /></span>
+          <span class="logo-chip"><img src="assets/logos/akademi_sepatu.png" alt="Logo Akademi Sepatu Nusantara" loading="lazy" /></span>
+          <span class="logo-chip"><img src="assets/logos/alpha_labs.png" alt="Logo Alpha Labs" loading="lazy" /></span>
+          <span class="logo-chip"><img src="assets/logos/sushi_tei.png" alt="Logo Sushi Tei" loading="lazy" /></span>
+          <span class="logo-chip"><img src="assets/logos/tebu_hotel.png" alt="Logo Tebu Hotel Bandung" loading="lazy" /></span>
+          <span class="logo-chip"><img src="assets/logos/jack.png" alt="Logo Jack" loading="lazy" /></span>
+          <span class="logo-chip"><img src="assets/logos/tpr.png" alt="Logo TPR" loading="lazy" /></span>
+          <span class="logo-chip"><img src="assets/logos/oakwood.png" alt="Logo Oakwood" loading="lazy" /></span>
+          <span class="logo-chip"><img src="assets/logos/ordo.png" alt="Logo Ordo" loading="lazy" /></span>
+          <span class="logo-chip"><img src="assets/logos/encoteki.png" alt="Logo Encoteki" loading="lazy" /></span>
+          <span class="logo-chip"><img src="assets/logos/auto_audit.png" alt="Logo Auto Audit" loading="lazy" /></span>
+          <span class="logo-chip"><img src="assets/logos/maleo_ai.png" alt="Logo Maleo AI" loading="lazy" /></span>
         </div>
       </div>
     </section>
@@ -1004,6 +1015,14 @@
     <footer>
       <img src="logo.svg" alt="Logo Thru360" class="footer-logo" width="88" height="22" />
       <p class="footer-copy">© <span id="year"></span> Thru360. All rights reserved.</p>
+      <div class="social-links">
+        <a href="https://www.instagram.com/thru.360/" target="_blank" rel="noopener noreferrer" aria-label="Instagram Thru360">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2c3.2 0 3.6 0 4.9.07 1.2.06 2.2.27 3 .58a6 6 0 0 1 2.2 1.4 6 6 0 0 1 1.4 2.2c.3.8.5 1.8.6 3 .1 1.3.1 1.7.1 4.9s0 3.6-.1 4.9c-.1 1.2-.3 2.2-.6 3a6 6 0 0 1-1.4 2.2 6 6 0 0 1-2.2 1.4c-.8.3-1.8.5-3 .6-1.3.1-1.7.1-4.9.1s-3.6 0-4.9-.1c-1.2-.1-2.2-.3-3-.6a6 6 0 0 1-2.2-1.4 6 6 0 0 1-1.4-2.2c-.3-.8-.5-1.8-.6-3-.1-1.3-.1-1.7-.1-4.9s0-3.6.1-4.9c.1-1.2.3-2.2.6-3a6 6 0 0 1 1.4-2.2A6 6 0 0 1 4.1 2.85c.8-.3 1.8-.5 3-.6 1.3-.1 1.7-.1 4.9-.1zM12 0C8.7 0 8.3 0 7 .1c-1.3.1-2.6.3-3.7.7A8.2 8.2 0 0 0 .8 3.3 8.2 8.2 0 0 0 .1 7C0 8.3 0 8.7 0 12s0 3.7.1 5c.1 1.3.3 2.6.7 3.7a8.2 8.2 0 0 0 2.5 2.5c1.1.4 2.4.6 3.7.7 1.3.1 1.7.1 5 .1s3.7 0 5-.1c1.3-.1 2.6-.3 3.7-.7a8.2 8.2 0 0 0 2.5-2.5c.4-1.1.6-2.4.7-3.7.1-1.3.1-1.7.1-5s0-3.7-.1-5c-.1-1.3-.3-2.6-.7-3.7A8.2 8.2 0 0 0 20.7.8c-1.1-.4-2.4-.6-3.7-.7C15.7 0 15.3 0 12 0z"/><path d="M12 5.8A6.2 6.2 0 1 0 18.2 12 6.2 6.2 0 0 0 12 5.8zm0 10.2A4 4 0 1 1 16 12a4 4 0 0 1-4 4zM19.9 5.6a1.44 1.44 0 1 1-1.44-1.44 1.44 1.44 0 0 1 1.44 1.44z"/></svg>
+        </a>
+        <a href="https://www.linkedin.com/company/thruid/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn Thru360">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.02-3.04-1.85-3.04-1.86 0-2.15 1.45-2.15 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45z"/></svg>
+        </a>
+      </div>
       <div class="footer-links">
         <a href="#business-checkup">Business Check-Up</a>
         <a href="#freelancer">Gabung Freelancer</a>
