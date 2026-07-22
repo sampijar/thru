@@ -3,37 +3,87 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <!-- TODO: Ganti "Nama Brand" dengan nama perusahaan/brand Anda -->
-  <title>Nama Brand</title>
-  <meta name="description" content="TODO: Isi deskripsi singkat perusahaan Anda di sini." />
 
-  <!-- Open Graph (untuk preview link di WA, sosmed, dll.) -->
-  <meta property="og:title" content="Nama Brand" />
-  <meta property="og:description" content="TODO: Deskripsi perusahaan Anda." />
+  <script>
+    (function () {
+      try {
+        var saved = localStorage.getItem('theme');
+        var theme = saved || (window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+        document.documentElement.setAttribute('data-theme', theme);
+      } catch (e) {}
+    })();
+  </script>
+
+  <title>Thru360 — Let Your Dreams Come Thru</title>
+  <meta name="description" content="Thru360 adalah mitra bisnis tepercaya yang membantu perusahaan meraih pertumbuhan berkelanjutan melalui solusi terintegrasi: marketing, eksekusi digital, operasional bisnis, keuangan, dan legal — dalam satu ekosistem 360°." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://thrucorp.com/" />
+
+  <meta property="og:title" content="Thru360 — Let Your Dreams Come Thru" />
+  <meta property="og:description" content="Mitra bisnis 360°: marketing, digital, finance, legal & venture building. Built to solve, designed to scale." />
   <meta property="og:type" content="website" />
   <meta property="og:image" content="logo.svg" />
+  <meta property="og:url" content="https://thrucorp.com/" />
+  <meta property="og:locale" content="id_ID" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Thru360 — Let Your Dreams Come Thru" />
+  <meta name="twitter:description" content="Mitra bisnis 360°: marketing, digital, finance, legal & venture building." />
+  <meta name="twitter:image" content="logo.svg" />
+
+  <meta name="theme-color" content="#0A0A0C" media="(prefers-color-scheme: dark)" />
+  <meta name="theme-color" content="#FAFAFA" media="(prefers-color-scheme: light)" />
+
+  <link rel="icon" href="logo.svg" type="image/svg+xml" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Thru360",
+    "alternateName": "Thru",
+    "url": "https://thrucorp.com/",
+    "logo": "https://thrucorp.com/logo.svg",
+    "email": "partnership@thrucorp.com",
+    "slogan": "Let Your Dreams Come Thru"
+  }
+  </script>
 
   <style>
-    /* ── RESET & ROOT ── */
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
-      --bg:          #07090F;
-      --bg-surface:  #0E1220;
-      --bg-card:     #111827;
-      --accent:      #5865F2;
-      --accent-lt:   #818CF8;
-      --accent-glow: rgba(88, 101, 242, 0.22);
-      --txt:         #EEF2FF;
-      --txt-2:       #8B96C0;
-      --txt-3:       #4A5180;
-      --border:      rgba(255, 255, 255, 0.07);
+      --bg:          #0A0A0C;
+      --bg-surface:  #111114;
+      --bg-card:     #17171B;
+      --accent:      #FF3B30;
+      --accent-lt:   #FF6B5D;
+      --accent-glow: rgba(255, 59, 48, 0.22);
+      --txt:         #F5F5F7;
+      --txt-2:       #A3A3AD;
+      --txt-3:       #59595F;
+      --border:      rgba(255, 255, 255, 0.08)
+;
       --radius:      14px;
       --font:        'Plus Jakarta Sans', system-ui, sans-serif;
+      color-scheme: dark;
+    }
+
+    :root[data-theme="light"] {
+      --bg:          #FAFAFA;
+      --bg-surface:  #FFFFFF;
+      --bg-card:     #FFFFFF;
+      --accent:      #E4372A;
+      --accent-lt:   #C42E22;
+      --accent-glow: rgba(228, 55, 42, 0.14);
+      --txt:         #0F0F12;
+      --txt-2:       #55555E;
+      --txt-3:       #97979F;
+      --border:      rgba(15, 15, 18, 0.1);
+      color-scheme: light;
     }
 
     html  { scroll-behavior: smooth; }
@@ -44,467 +94,867 @@
       font-size: 16px;
       line-height: 1.6;
       overflow-x: hidden;
+      transition: background .25s ease, color .25s ease;
     }
 
     img   { display: block; max-width: 100%; }
     a     { color: inherit; }
 
+    :focus-visible { outline: 2px solid var(--accent-lt); outline-offset: 2px; }
+
+    .skip-link {
+      position: absolute; top: -100%; left: 1rem;
+      background: var(--accent); color: #fff;
+      padding: .6rem 1rem; border-radius: 8px;
+      font-size: .85rem; font-weight: 600;
+      z-index: 1000; transition: top .2s ease;
+    }
+    .skip-link:focus { top: .75rem; }
+
     /* ── NAV ── */
     nav {
-      position: fixed; top: 0; inset-inline: 0;
-      z-index: 100;
-      height: 64px;
+      position: fixed; top: 0; inset-inline: 0; z-index: 100;
+      height: 68px;
       display: flex; align-items: center; justify-content: space-between;
       padding: 0 2rem;
-      background: rgba(7, 9, 15, 0.75);
-      backdrop-filter: blur(20px);
-      -webkit-backdrop-filter: blur(20px);
+      background: rgba(10, 10, 12, 0.75);
+      backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
       border-bottom: 1px solid var(--border);
     }
+    :root[data-theme="light"] nav { background: rgba(250, 250, 250, 0.82); }
 
-    .nav-logo { height: 30px; width: auto; }
+    .nav-logo { height: 26px; width: auto; }
 
-    .nav-links {
-      display: flex; gap: 2rem; list-style: none;
-    }
+    .nav-links { display: flex; gap: 1.9rem; list-style: none; }
     .nav-links a {
-      font-size: 0.875rem; font-weight: 500;
+      font-size: 0.875rem; font-weight: 600;
       color: var(--txt-2); text-decoration: none;
       transition: color .2s;
     }
     .nav-links a:hover { color: var(--txt); }
 
+    .nav-right { display: flex; align-items: center; gap: .75rem; }
+
     .nav-cta {
       background: var(--accent); color: #fff;
-      padding: .5rem 1.25rem; border-radius: 8px;
-      font-size: .875rem; font-weight: 600; text-decoration: none;
+      padding: .55rem 1.35rem; border-radius: 100px;
+      font-size: .85rem; font-weight: 700; text-decoration: none;
+      display: inline-flex; align-items: center; gap: .4rem;
       transition: background .2s, transform .2s, box-shadow .2s;
+      white-space: nowrap;
     }
     .nav-cta:hover {
       background: var(--accent-lt);
       transform: translateY(-1px);
-      box-shadow: 0 6px 24px rgba(88, 101, 242, .4);
+      box-shadow: 0 6px 24px var(--accent-glow);
     }
 
-    /* ── HERO ── */
+    .theme-toggle {
+      display: inline-flex; align-items: center; justify-content: center;
+      width: 38px; height: 38px; border-radius: 10px;
+      border: 1px solid var(--border); background: transparent;
+      color: var(--txt-2); font-size: 1rem; line-height: 1; cursor: pointer;
+      transition: color .2s, border-color .2s;
+    }
+    .theme-toggle:hover { color: var(--txt); border-color: rgba(255,255,255,.2); }
+
+    .nav-toggle {
+      display: none; width: 38px; height: 38px; border-radius: 10px;
+      border: 1px solid var(--border); background: transparent;
+      cursor: pointer; position: relative;
+    }
+    .nav-toggle span {
+      position: absolute; left: 9px; right: 9px; height: 2px; background: var(--txt);
+      transition: transform .25s ease, opacity .2s ease, top .25s ease;
+    }
+    .nav-toggle span:nth-child(1) { top: 13px; }
+    .nav-toggle span:nth-child(2) { top: 18px; }
+    .nav-toggle span:nth-child(3) { top: 23px; }
+    .nav-toggle.active span:nth-child(1) { top: 18px; transform: rotate(45deg); }
+    .nav-toggle.active span:nth-child(2) { opacity: 0; }
+    .nav-toggle.active span:nth-child(3) { top: 18px; transform: rotate(-45deg); }
+
+    .mobile-menu {
+      display: none; position: fixed; top: 68px; inset-inline: 0; z-index: 99;
+      background: var(--bg-surface); border-bottom: 1px solid var(--border);
+      padding: 1rem 2rem 1.5rem; flex-direction: column; gap: 1rem;
+    }
+    .mobile-menu.open { display: flex; }
+    .mobile-menu a { font-size: .95rem; font-weight: 600; color: var(--txt-2); text-decoration: none; }
+    .mobile-menu a:hover { color: var(--txt); }
+    .mobile-menu .nav-cta { align-self: flex-start; }
+
+    /* ── HERO (editorial, kolaborasi-style split layout) ── */
     .hero {
       min-height: 100vh;
-      display: flex; flex-direction: column;
-      align-items: center; justify-content: center;
-      text-align: center;
-      padding: 8rem 2rem 5rem;
+      display: flex; align-items: center;
+      padding: 9rem 2rem 4rem;
       position: relative; overflow: hidden;
     }
-
-    /* Subtle dot-grid */
-    .hero::before {
-      content: '';
-      position: absolute; inset: 0;
-      background-image:
-        radial-gradient(circle, rgba(255,255,255,.035) 1px, transparent 1px);
-      background-size: 40px 40px;
-      mask-image: radial-gradient(ellipse 80% 80% at 50% 40%, black 30%, transparent 100%);
-      pointer-events: none;
+    .hero-curtain {
+      position: absolute; inset: 0; z-index: 0; pointer-events: none;
+      background:
+        repeating-linear-gradient(100deg,
+          rgba(255, 59, 48, .16) 0px, rgba(255, 59, 48, .16) 40px,
+          transparent 40px, transparent 90px),
+        radial-gradient(ellipse 70% 60% at 15% 50%, rgba(255, 59, 48, .20) 0%, transparent 70%);
+      filter: blur(30px);
+      opacity: .8;
     }
+    :root[data-theme="light"] .hero-curtain { opacity: .35; }
 
-    /* Radial color glow */
-    .hero-glow {
-      position: absolute;
-      width: 900px; height: 600px;
-      top: 50%; left: 50%;
-      transform: translate(-50%, -54%);
-      background: radial-gradient(ellipse at center,
-        rgba(88, 101, 242, .14) 0%,
-        rgba(120, 80, 255, .06) 45%,
-        transparent 75%);
-      pointer-events: none;
-      animation: breathe 6s ease-in-out infinite;
-    }
-
-    @keyframes breathe {
-      0%, 100% { opacity: .7; transform: translate(-50%, -54%) scale(1);   }
-      50%       { opacity: 1;  transform: translate(-50%, -54%) scale(1.08); }
-    }
-
-    .hero-inner {
+    .hero-grid {
       position: relative; z-index: 2;
-      max-width: 760px; width: 100%;
+      max-width: 1280px; width: 100%; margin: 0 auto;
+      display: grid; grid-template-columns: 1.15fr 1fr;
+      gap: 3rem; align-items: end;
     }
-
-    .pill {
-      display: inline-flex; align-items: center; gap: .45rem;
-      background: rgba(88, 101, 242, .1);
-      border: 1px solid rgba(88, 101, 242, .28);
-      color: var(--accent-lt);
-      padding: .3rem .9rem;
-      border-radius: 100px;
-      font-size: .72rem; font-weight: 700;
-      letter-spacing: .08em; text-transform: uppercase;
-      margin-bottom: 2.5rem;
+    .hero-kicker {
+      display: inline-flex; align-items: center; gap: .5rem;
+      font-size: .78rem; font-weight: 700;
+      letter-spacing: .12em; text-transform: uppercase;
+      color: var(--accent-lt); margin-bottom: 1.5rem;
     }
-
-    /* Logo in hero with halo */
-    .logo-halo {
-      position: relative; display: inline-block;
-      margin-bottom: 2.5rem;
+    .hero-kicker::before {
+      content: ''; width: 7px; height: 7px; border-radius: 50%;
+      background: var(--accent);
     }
-    .logo-halo::after {
-      content: '';
-      position: absolute;
-      inset: -36px;
-      background: radial-gradient(ellipse at center, var(--accent-glow) 0%, transparent 72%);
-      animation: halo 4s ease-in-out infinite;
-    }
-    @keyframes halo {
-      0%, 100% { opacity: .6; }
-      50%       { opacity: 1;  }
-    }
-    .hero-logo {
-      height: 68px; width: auto;
-      position: relative; z-index: 1;
-      filter: drop-shadow(0 0 28px rgba(88, 101, 242, .28));
-    }
-
     .hero-h1 {
-      font-size: clamp(2rem, 5vw, 3.5rem);
-      font-weight: 800; line-height: 1.15; letter-spacing: -.03em;
-      margin-bottom: 1.25rem;
+      font-size: clamp(2.4rem, 6.4vw, 5rem);
+      font-weight: 800; line-height: 1.02; letter-spacing: -.02em;
+      text-transform: uppercase;
     }
     .hero-h1 em {
       font-style: normal;
-      background: linear-gradient(130deg, #818CF8 0%, #C4B5FD 100%);
-      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-      background-clip: text;
+      background: linear-gradient(130deg, var(--accent) 0%, var(--accent-lt) 100%);
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
     }
-
-    .hero-sub {
-      font-size: 1.1rem; color: var(--txt-2);
-      max-width: 500px; margin: 0 auto 2.5rem;
-      line-height: 1.75; font-weight: 400;
+    .hero-copy { display: flex; flex-direction: column; gap: 1.1rem; }
+    .hero-copy p { color: var(--txt-2); font-size: 1rem; line-height: 1.75; }
+    .hero-copy p strong { color: var(--txt); font-weight: 700; }
+    .hero-tagline {
+      font-style: italic; font-weight: 700; color: var(--txt);
+      font-size: 1.05rem; border-left: 3px solid var(--accent);
+      padding-left: 1rem;
     }
-
-    .hero-btns {
-      display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;
-    }
+    .hero-btns { display: flex; gap: 1rem; flex-wrap: wrap; margin-top: .5rem; }
 
     .btn-p {
       background: var(--accent); color: #fff;
-      padding: .85rem 2rem; border-radius: 10px;
-      font-size: .95rem; font-weight: 600; text-decoration: none;
+      padding: .85rem 1.75rem; border-radius: 10px;
+      font-size: .95rem; font-weight: 700; text-decoration: none;
       display: inline-flex; align-items: center; gap: .4rem;
       transition: all .2s;
     }
-    .btn-p:hover {
-      background: var(--accent-lt);
-      transform: translateY(-2px);
-      box-shadow: 0 10px 30px rgba(88, 101, 242, .38);
-    }
+    .btn-p:hover { background: var(--accent-lt); transform: translateY(-2px); box-shadow: 0 10px 30px var(--accent-glow); }
 
     .btn-s {
       background: transparent; color: var(--txt);
-      padding: .85rem 2rem; border-radius: 10px;
-      font-size: .95rem; font-weight: 600; text-decoration: none;
+      padding: .85rem 1.75rem; border-radius: 10px;
+      font-size: .95rem; font-weight: 700; text-decoration: none;
       border: 1px solid var(--border);
       transition: all .2s;
     }
-    .btn-s:hover {
-      border-color: rgba(255,255,255,.2);
-      background: rgba(255,255,255,.04);
-    }
+    .btn-s:hover { border-color: rgba(255,255,255,.25); background: rgba(255,255,255,.04); }
 
-    /* ── STATS BAR ── */
+    /* ── STATS ── */
     .stats {
-      display: flex; justify-content: center;
-      gap: 3.5rem; flex-wrap: wrap;
+      display: flex; justify-content: center; gap: 3rem; flex-wrap: wrap;
       padding: 2.25rem 2rem;
-      border-top: 1px solid var(--border);
-      border-bottom: 1px solid var(--border);
+      border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);
+      position: relative; z-index: 2;
     }
     .stat { text-align: center; }
-    .stat-n { font-size: 1.9rem; font-weight: 800; color: var(--txt); }
-    .stat-l { font-size: .78rem; color: var(--txt-3); font-weight: 500; margin-top: .2rem; letter-spacing: .04em; }
+    .stat-n { font-size: 2rem; font-weight: 800; color: var(--accent-lt); }
+    .stat-l { font-size: .76rem; color: var(--txt-3); font-weight: 600; margin-top: .2rem; letter-spacing: .03em; max-width: 140px; }
 
     /* ── SECTIONS ── */
     .section { padding: 6rem 2rem; }
-    .section-inner { max-width: 1080px; margin: 0 auto; }
+    .section-inner { max-width: 1120px; margin: 0 auto; }
 
-    .eyebrow {
-      font-size: .72rem; font-weight: 700;
-      letter-spacing: .12em; text-transform: uppercase;
-      color: var(--accent-lt); margin-bottom: .9rem;
-    }
-    .s-title {
-      font-size: clamp(1.65rem, 3vw, 2.4rem);
-      font-weight: 800; letter-spacing: -.025em;
-      margin-bottom: .9rem; max-width: 580px;
-    }
-    .s-sub {
-      color: var(--txt-2); font-size: 1rem;
-      max-width: 480px; margin-bottom: 3rem; line-height: 1.75;
-    }
+    .eyebrow { font-size: .72rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--accent-lt); margin-bottom: .9rem; }
+    .s-title { font-size: clamp(1.65rem, 3vw, 2.4rem); font-weight: 800; letter-spacing: -.02em; margin-bottom: .9rem; max-width: 620px; }
+    .s-title em { font-style: italic; color: var(--txt-2); font-weight: 600; }
+    .s-sub { color: var(--txt-2); font-size: 1rem; max-width: 540px; margin-bottom: 3rem; line-height: 1.75; }
 
     /* Cards grid */
-    .cards {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
-      gap: 1.25rem;
+    .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.25rem; }
+    .card { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.75rem; transition: border-color .2s, transform .2s, box-shadow .2s; }
+    .card:hover { border-color: var(--accent-glow); transform: translateY(-3px); box-shadow: 0 12px 40px rgba(0,0,0,.18); }
+    .card-icon { width: 46px; height: 46px; border-radius: 11px; background: var(--accent-glow); display: flex; align-items: center; justify-content: center; font-size: 1.3rem; margin-bottom: 1.25rem; }
+    .card-t { font-size: 1.02rem; font-weight: 800; margin-bottom: .6rem; }
+    .card-list { list-style: none; display: flex; flex-direction: column; gap: .45rem; }
+    .card-list li { font-size: .85rem; color: var(--txt-2); line-height: 1.5; padding-left: 1.1rem; position: relative; }
+    .card-list li::before { content: '—'; position: absolute; left: 0; color: var(--accent-lt); }
+
+    /* ── APPROACH (challenge -> response) ── */
+    .approach-grid { display: grid; grid-template-columns: 1fr auto 1fr; gap: 1.5rem; align-items: center; }
+    .approach-arrow { font-size: 1.8rem; color: var(--accent-lt); font-weight: 800; }
+    .approach-panel { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.75rem 2rem; }
+    .approach-panel h3 { font-size: 1rem; font-weight: 800; margin-bottom: 1rem; }
+    .approach-panel ul { list-style: none; display: flex; flex-direction: column; gap: .6rem; }
+    .approach-panel li { font-size: .9rem; color: var(--txt-2); padding-left: 1.2rem; position: relative; }
+    .approach-panel.challenge li::before { content: '✕'; position: absolute; left: 0; color: var(--txt-3); font-weight: 700; }
+    .approach-panel.response li::before { content: '✓'; position: absolute; left: 0; color: var(--accent-lt); font-weight: 700; }
+    @media (max-width: 760px) {
+      .approach-grid { grid-template-columns: 1fr; }
+      .approach-arrow { transform: rotate(90deg); justify-self: center; }
     }
-    .card {
-      background: var(--bg-card);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 1.75rem;
-      transition: border-color .2s, transform .2s, box-shadow .2s;
+
+    /* ── PROCESS steps ── */
+    .steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 1.25rem; }
+    .step { position: relative; padding: 1.6rem 1.4rem; border: 1px solid var(--border); border-radius: var(--radius); background: var(--bg-card); }
+    .step-num { display: inline-flex; align-items: center; justify-content: center; width: 34px; height: 34px; border-radius: 10px; background: var(--accent-glow); color: var(--accent-lt); font-weight: 800; font-size: .9rem; margin-bottom: 1rem; }
+    .step-t { font-size: .98rem; font-weight: 800; margin-bottom: .4rem; }
+    .step-d { font-size: .83rem; color: var(--txt-2); line-height: 1.6; }
+
+    /* ── PORTFOLIO / VENTURES ── */
+    .ventures { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 1.25rem; }
+    .venture-card {
+      background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius);
+      padding: 2rem 1.5rem; text-align: center; transition: border-color .2s, transform .2s;
     }
-    .card:hover {
-      border-color: rgba(88, 101, 242, .35);
-      transform: translateY(-3px);
-      box-shadow: 0 12px 40px rgba(0,0,0,.3);
-    }
-    .card-icon {
-      width: 46px; height: 46px;
-      border-radius: 11px;
-      background: rgba(88, 101, 242, .12);
+    .venture-card:hover { border-color: var(--accent-glow); transform: translateY(-3px); }
+    .venture-mark {
+      width: 56px; height: 56px; border-radius: 14px; margin: 0 auto 1.1rem;
       display: flex; align-items: center; justify-content: center;
-      font-size: 1.3rem; margin-bottom: 1.25rem;
+      background: linear-gradient(135deg, var(--accent), var(--accent-lt));
+      color: #fff; font-weight: 800; font-size: 1.2rem;
     }
-    .card-t { font-size: 1rem; font-weight: 700; margin-bottom: .5rem; }
-    .card-d { font-size: .875rem; color: var(--txt-2); line-height: 1.65; }
+    .venture-name { font-size: 1.05rem; font-weight: 800; margin-bottom: .3rem; }
+    .venture-tag { font-size: .78rem; color: var(--txt-3); font-weight: 600; letter-spacing: .02em; }
+
+    .industries { display: flex; flex-wrap: wrap; gap: .6rem; }
+    .industry-chip {
+      font-size: .82rem; font-weight: 600; color: var(--txt-2);
+      border: 1px solid var(--border); border-radius: 100px; padding: .5rem 1.1rem;
+    }
+
+    /* ── CASE STUDIES ── */
+    .case-list { display: flex; flex-direction: column; gap: 1.25rem; }
+    .case-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.9rem 2rem; }
+    .case-head { display: flex; align-items: baseline; justify-content: space-between; gap: 1rem; flex-wrap: wrap; margin-bottom: 1.25rem; }
+    .case-name { font-size: 1.2rem; font-weight: 800; }
+    .case-kind { font-size: .8rem; color: var(--accent-lt); font-weight: 700; }
+    .case-cols { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem; }
+    .case-col h4 { font-size: .75rem; text-transform: uppercase; letter-spacing: .08em; color: var(--txt-3); margin-bottom: .6rem; }
+    .case-col p, .case-col li { font-size: .88rem; color: var(--txt-2); line-height: 1.6; }
+    .case-col ul { list-style: none; display: flex; flex-direction: column; gap: .4rem; }
+    .case-col.impact li { color: var(--txt); font-weight: 700; }
+    .case-col.impact li::before { content: '↑ '; color: var(--accent-lt); }
+
+    /* ── LOGO CLOUD ── */
+    .logo-cloud { display: flex; flex-wrap: wrap; gap: .6rem; }
+    .logo-chip {
+      font-size: .82rem; font-weight: 600; color: var(--txt-2);
+      background: var(--bg-card); border: 1px solid var(--border);
+      border-radius: 8px; padding: .55rem 1rem;
+    }
+
+    /* ── TESTIMONIALS ── */
+    .testimonials { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.25rem; }
+    .testimonial { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.85rem; }
+    .testimonial-quote { font-size: .95rem; color: var(--txt-2); line-height: 1.8; margin-bottom: 1.5rem; font-style: italic; }
+    .testimonial-author { display: flex; align-items: center; gap: .75rem; }
+    .avatar { width: 40px; height: 40px; border-radius: 50%; background: linear-gradient(135deg, var(--accent), var(--accent-lt)); color: #fff; font-weight: 700; font-size: .9rem; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+    .author-name { font-size: .875rem; font-weight: 700; }
+    .author-role { font-size: .78rem; color: var(--txt-3); }
+
+    /* ── FAQ ── */
+    .faq-list { display: flex; flex-direction: column; gap: .75rem; max-width: 760px; }
+    .faq-item { border: 1px solid var(--border); border-radius: var(--radius); background: var(--bg-card); overflow: hidden; }
+    .faq-item summary { list-style: none; cursor: pointer; padding: 1.15rem 1.5rem; font-weight: 700; font-size: .95rem; display: flex; align-items: center; justify-content: space-between; gap: 1rem; }
+    .faq-item summary::-webkit-details-marker { display: none; }
+    .faq-item summary::after { content: '+'; font-size: 1.3rem; font-weight: 400; color: var(--accent-lt); transition: transform .2s ease; flex-shrink: 0; }
+    .faq-item[open] summary::after { transform: rotate(45deg); }
+    .faq-answer { padding: 0 1.5rem 1.25rem; color: var(--txt-2); font-size: .9rem; line-height: 1.7; }
 
     /* CTA Banner */
     .cta-banner {
-      background: var(--bg-card);
-      border: 1px solid var(--border);
-      border-radius: 20px;
-      padding: 3.5rem 2rem;
-      text-align: center;
-      position: relative; overflow: hidden;
+      background: var(--bg-card); border: 1px solid var(--border); border-radius: 20px;
+      padding: 3.5rem 2rem; text-align: center; position: relative; overflow: hidden;
       max-width: 1080px; margin: 0 auto;
     }
     .cta-banner::before {
-      content: '';
-      position: absolute; inset: 0;
-      background: radial-gradient(ellipse 60% 70% at 50% 0%,
-        rgba(88, 101, 242, .12) 0%, transparent 70%);
+      content: ''; position: absolute; inset: 0;
+      background: radial-gradient(ellipse 60% 70% at 50% 0%, var(--accent-glow) 0%, transparent 70%);
       pointer-events: none;
     }
-    .cta-banner h2 {
-      font-size: clamp(1.5rem, 3vw, 2.25rem);
-      font-weight: 800; letter-spacing: -.025em;
-      margin-bottom: .75rem; position: relative;
-    }
-    .cta-banner p {
-      color: var(--txt-2); margin-bottom: 2rem;
-      font-size: 1rem; position: relative;
-    }
+    .cta-banner h2 { font-size: clamp(1.5rem, 3vw, 2.4rem); font-weight: 800; letter-spacing: -.02em; margin-bottom: .75rem; position: relative; text-transform: uppercase; }
+    .cta-banner p { color: var(--txt-2); margin-bottom: 1rem; font-size: 1rem; position: relative; }
+    .cta-contact { position: relative; font-size: .85rem; color: var(--txt-3); margin-bottom: 2rem; }
+    .cta-contact strong { color: var(--txt-2); }
 
     /* ── FOOTER ── */
-    .footer-wrap {
-      border-top: 1px solid var(--border);
-      padding: 2.25rem 2rem;
-    }
-    footer {
-      max-width: 1080px; margin: 0 auto;
-      display: flex; align-items: center; justify-content: space-between;
-      flex-wrap: wrap; gap: 1rem;
-    }
-    .footer-logo { height: 26px; width: auto; }
+    .footer-wrap { border-top: 1px solid var(--border); padding: 2.25rem 2rem; }
+    footer { max-width: 1080px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem; }
+    .footer-logo { height: 22px; width: auto; }
     .footer-copy { font-size: .8rem; color: var(--txt-3); }
     .footer-links { display: flex; gap: 1.5rem; }
-    .footer-links a {
-      font-size: .8rem; color: var(--txt-3);
-      text-decoration: none; transition: color .2s;
-    }
+    .footer-links a { font-size: .8rem; color: var(--txt-3); text-decoration: none; transition: color .2s; }
     .footer-links a:hover { color: var(--txt-2); }
 
+    /* ── BACK TO TOP ── */
+    .back-to-top {
+      position: fixed; right: 1.5rem; bottom: 1.5rem; width: 44px; height: 44px; border-radius: 50%;
+      background: var(--accent); color: #fff; border: none; cursor: pointer; font-size: 1.1rem;
+      display: flex; align-items: center; justify-content: center;
+      opacity: 0; visibility: hidden; transform: translateY(8px);
+      transition: opacity .25s ease, transform .25s ease, visibility .25s;
+      box-shadow: 0 8px 24px rgba(0,0,0,.3); z-index: 90;
+    }
+    .back-to-top.visible { opacity: 1; visibility: visible; transform: translateY(0); }
+    .back-to-top:hover { background: var(--accent-lt); }
+
     /* ── RESPONSIVE ── */
-    @media (max-width: 640px) {
+    @media (max-width: 900px) {
+      .hero-grid { grid-template-columns: 1fr; align-items: start; gap: 2rem; }
+    }
+    @media (max-width: 768px) {
       .nav-links { display: none; }
-      .hero-logo  { height: 44px; }
-      .hero-h1    { font-size: 2rem; }
-      .stats      { gap: 1.75rem; }
-      footer      { flex-direction: column; text-align: center; }
+      .nav-cta { display: none; }
+      .nav-toggle { display: block; }
+    }
+    @media (max-width: 640px) {
+      .hero { padding-top: 7rem; }
+      .stats { gap: 1.5rem; }
+      footer { flex-direction: column; text-align: center; }
       .footer-links { justify-content: center; }
     }
 
     /* ── SCROLL REVEAL ── */
-    .reveal {
-      opacity: 0;
-      transform: translateY(24px);
-      transition: opacity .6s ease, transform .6s ease;
-    }
-    .reveal.visible {
-      opacity: 1;
-      transform: none;
+    .reveal { opacity: 0; transform: translateY(24px); transition: opacity .6s ease, transform .6s ease; }
+    .reveal.visible { opacity: 1; transform: none; }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      .reveal { opacity: 1; transform: none; transition: none; }
+      *, *::before, *::after { animation-duration: .001ms !important; transition-duration: .001ms !important; }
     }
   </style>
 </head>
 
 <body>
 
+  <a href="#konten" class="skip-link">Langsung ke konten</a>
+
   <!-- ==================== NAVBAR ==================== -->
   <nav>
-    <img src="logo.svg" alt="Logo" class="nav-logo" />
+    <a href="#beranda" aria-label="Thru360 — kembali ke atas">
+      <img src="logo.svg" alt="Logo Thru360" class="nav-logo" width="104" height="26" />
+    </a>
+
     <ul class="nav-links">
-      <!-- TODO: Sesuaikan menu navigasi -->
       <li><a href="#tentang">Tentang</a></li>
       <li><a href="#layanan">Layanan</a></li>
+      <li><a href="#proses">Proses</a></li>
+      <li><a href="#portofolio">Portofolio</a></li>
+      <li><a href="#studi-kasus">Studi Kasus</a></li>
       <li><a href="#kontak">Kontak</a></li>
     </ul>
-    <a href="#kontak" class="nav-cta">Hubungi Kami</a>
+
+    <div class="nav-right">
+      <button type="button" class="theme-toggle" id="themeToggle" aria-label="Ganti tampilan gelap/terang">🌙</button>
+      <a href="#kontak" class="nav-cta">Hubungi Kami →</a>
+      <button type="button" class="nav-toggle" id="navToggle" aria-label="Buka menu navigasi" aria-expanded="false" aria-controls="mobileMenu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
   </nav>
+
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#tentang">Tentang</a>
+    <a href="#layanan">Layanan</a>
+    <a href="#proses">Proses</a>
+    <a href="#portofolio">Portofolio</a>
+    <a href="#studi-kasus">Studi Kasus</a>
+    <a href="#kontak" class="nav-cta">Hubungi Kami →</a>
+  </div>
 
   <!-- ==================== HERO ==================== -->
   <section class="hero" id="beranda">
-    <div class="hero-glow"></div>
-    <div class="hero-inner">
-
-      <!-- TODO: Ganti teks badge -->
-      <span class="pill">✦ Selamat Datang</span>
-
-      <div class="logo-halo">
-        <img src="logo.svg" alt="Logo" class="hero-logo" />
+    <div class="hero-curtain" aria-hidden="true"></div>
+    <div class="hero-grid">
+      <div>
+        <p class="hero-kicker">Thru360 — Venture Builder &amp; Business Partner</p>
+        <h1 class="hero-h1">Kami Berada di Bisnis <em>Mewujudkan Mimpi</em></h1>
       </div>
-
-      <!-- TODO: Ganti judul utama -->
-      <h1 class="hero-h1">
-        Solusi Terbaik untuk<br />
-        <em>Bisnis Anda</em>
-      </h1>
-
-      <!-- TODO: Ganti subtitle -->
-      <p class="hero-sub">
-        Kami hadir untuk mendorong pertumbuhan bisnis Anda dengan layanan yang tepat, handal, dan inovatif.
-      </p>
-
-      <div class="hero-btns">
-        <a href="#layanan" class="btn-p">Lihat Layanan →</a>
-        <a href="#kontak"  class="btn-s">Hubungi Kami</a>
+      <div class="hero-copy">
+        <p><strong>Thru360</strong> adalah mitra bisnis tepercaya yang membantu perusahaan meraih pertumbuhan berkelanjutan lewat solusi terintegrasi di bidang <strong>marketing, eksekusi digital, operasional bisnis, keuangan, dan legal</strong> — dalam satu ekosistem 360°.</p>
+        <p>Kami tidak sekadar memberi saran lalu pergi. Kami masuk ke dalam bisnis Anda, membangun strategi, mengeksekusinya dengan disiplin, dan mengukur setiap hasilnya.</p>
+        <p class="hero-tagline">"Built to solve, designed to scale."</p>
+        <div class="hero-btns">
+          <a href="#layanan" class="btn-p">Lihat Layanan Kami →</a>
+          <a href="#portofolio" class="btn-s">Portofolio Kami</a>
+        </div>
       </div>
     </div>
   </section>
 
   <!-- ==================== STATS ==================== -->
   <div class="stats">
-    <!-- TODO: Ganti angka-angka di bawah dengan data nyata -->
-    <div class="stat">
-      <div class="stat-n">100+</div>
-      <div class="stat-l">Klien Aktif</div>
-    </div>
-    <div class="stat">
-      <div class="stat-n">5+</div>
-      <div class="stat-l">Tahun Pengalaman</div>
-    </div>
-    <div class="stat">
-      <div class="stat-n">99%</div>
-      <div class="stat-l">Kepuasan Klien</div>
-    </div>
-    <div class="stat">
-      <div class="stat-n">24/7</div>
-      <div class="stat-l">Support</div>
-    </div>
+    <div class="stat"><div class="stat-n">20x</div><div class="stat-l">ROAS Growth</div></div>
+    <div class="stat"><div class="stat-n">10x</div><div class="stat-l">ROI Improvement</div></div>
+    <div class="stat"><div class="stat-n">5M+</div><div class="stat-l">Monthly Impressions</div></div>
+    <div class="stat"><div class="stat-n">+30%</div><div class="stat-l">Processing Efficiency Gain</div></div>
+    <div class="stat"><div class="stat-n">+30%</div><div class="stat-l">Customer Retention</div></div>
   </div>
 
-  <!-- ==================== TENTANG ==================== -->
-  <section class="section" id="tentang">
-    <div class="section-inner reveal">
-      <p class="eyebrow">Tentang Kami</p>
-      <!-- TODO: Ganti konten bagian ini -->
-      <h2 class="s-title">Siapa Kami &amp; Apa yang Kami Lakukan</h2>
-      <p class="s-sub">
-        Ceritakan profil singkat perusahaan, visi-misi, atau keunggulan utama yang membedakan Anda dari kompetitor.
-      </p>
-    </div>
-  </section>
+  <main id="konten">
 
-  <!-- ==================== LAYANAN ==================== -->
-  <section class="section" id="layanan">
-    <div class="section-inner">
-      <div class="reveal">
-        <p class="eyebrow">Layanan</p>
-        <!-- TODO: Ganti judul & deskripsi layanan -->
-        <h2 class="s-title">Layanan yang Kami Tawarkan</h2>
+    <!-- ==================== TENTANG ==================== -->
+    <section class="section" id="tentang">
+      <div class="section-inner reveal">
+        <p class="eyebrow">Tentang Kami</p>
+        <h2 class="s-title">Bertumbuh Butuh Lebih dari <em>Sekadar Ide Bagus</em></h2>
         <p class="s-sub">
-          Rangkaian solusi lengkap yang dirancang untuk mendorong pertumbuhan dan efisiensi bisnis Anda.
+          Thru360 bekerja bersama bisnis untuk mengidentifikasi peluang, menyelesaikan tantangan operasional, dan mempercepat performa lewat eksekusi yang praktis dan terukur.
         </p>
+
+        <div class="approach-grid">
+          <div class="approach-panel challenge">
+            <h3>Tantangan Bisnis</h3>
+            <ul>
+              <li>Fungsi bisnis yang terfragmentasi</li>
+              <li>Alur kerja operasional yang tidak efisien</li>
+              <li>Kapabilitas digital yang terbatas</li>
+              <li>Sulit untuk scale secara berkelanjutan</li>
+            </ul>
+          </div>
+          <div class="approach-arrow" aria-hidden="true">→</div>
+          <div class="approach-panel response">
+            <h3>Respons Thru360</h3>
+            <ul>
+              <li>Akselerasi pertumbuhan (growth acceleration)</li>
+              <li>Optimalisasi operasional</li>
+              <li>Transformasi digital</li>
+              <li>Layanan pendukung bisnis end-to-end</li>
+            </ul>
+          </div>
+        </div>
       </div>
+    </section>
 
-      <div class="cards">
-        <!-- Card 1 – TODO: Ganti konten -->
-        <div class="card reveal">
-          <div class="card-icon">🚀</div>
-          <h3 class="card-t">Layanan Pertama</h3>
-          <p class="card-d">Deskripsikan layanan pertama Anda. Apa manfaatnya bagi klien? Tulis dengan singkat dan jelas.</p>
+    <!-- ==================== LAYANAN ==================== -->
+    <section class="section" id="layanan" style="padding-top: 0;">
+      <div class="section-inner">
+        <div class="reveal">
+          <p class="eyebrow">Layanan</p>
+          <h2 class="s-title">Layanan 360° Kami</h2>
+          <p class="s-sub">Satu mitra, banyak kemungkinan pertumbuhan — dari marketing hingga legal, semua dalam satu ekosistem.</p>
         </div>
 
-        <!-- Card 2 – TODO: Ganti konten -->
-        <div class="card reveal">
-          <div class="card-icon">🛡️</div>
-          <h3 class="card-t">Layanan Kedua</h3>
-          <p class="card-d">Deskripsikan layanan kedua Anda. Apa yang membuatnya unggul dan berbeda dari yang lain?</p>
-        </div>
+        <div class="cards">
+          <div class="card reveal">
+            <div class="card-icon" aria-hidden="true">📈</div>
+            <h3 class="card-t">Growth &amp; Marketing</h3>
+            <ul class="card-list">
+              <li>Ecommerce Operations</li>
+              <li>Performance Marketing (Ads Ops)</li>
+              <li>Content Production &amp; Branding</li>
+              <li>Social Media Management</li>
+              <li>KOL &amp; Campaign Activation</li>
+            </ul>
+          </div>
 
-        <!-- Card 3 – TODO: Ganti konten -->
-        <div class="card reveal">
-          <div class="card-icon">📊</div>
-          <h3 class="card-t">Layanan Ketiga</h3>
-          <p class="card-d">Deskripsikan layanan ketiga Anda. Masukkan angka atau hasil nyata bila ada untuk memperkuat.</p>
+          <div class="card reveal">
+            <div class="card-icon" aria-hidden="true">💼</div>
+            <h3 class="card-t">Finance &amp; Advisory</h3>
+            <ul class="card-list">
+              <li>Financial Reporting (bulanan &amp; tahunan)</li>
+              <li>Tax Services / Pelaporan Pajak</li>
+              <li>Business Advisory</li>
+            </ul>
+          </div>
+
+          <div class="card reveal">
+            <div class="card-icon" aria-hidden="true">💻</div>
+            <h3 class="card-t">Digital Solutions</h3>
+            <ul class="card-list">
+              <li>Website Development</li>
+              <li>Business Systems &amp; Process Automation</li>
+              <li>Reporting Dashboard</li>
+              <li>AI Enablement</li>
+            </ul>
+          </div>
+
+          <div class="card reveal">
+            <div class="card-icon" aria-hidden="true">⚖️</div>
+            <h3 class="card-t">Legal &amp; Compliance</h3>
+            <ul class="card-list">
+              <li>Legal Entity Registration (CV &amp; PT)</li>
+              <li>Legal Contract Drafting</li>
+              <li>ESG &amp; Compliance Services</li>
+              <li>Carbon Planning &amp; Forest Seedling Services</li>
+            </ul>
+          </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- ==================== CTA BANNER ==================== -->
-  <section class="section" id="kontak" style="padding-bottom: 5rem;">
-    <div class="cta-banner reveal">
-      <!-- TODO: Ganti teks ajakan -->
-      <h2>Siap Mulai Bersama Kami?</h2>
-      <p>Hubungi tim kami sekarang dan diskusikan kebutuhan bisnis Anda secara gratis.</p>
-      <!-- TODO: Ganti href dengan link WhatsApp, email, atau form kontak -->
-      <a href="mailto:hello@namabrand.com" class="btn-p" style="display: inline-flex;">
-        Mulai Sekarang →
-      </a>
-    </div>
-  </section>
+    <!-- ==================== PROSES ==================== -->
+    <section class="section" id="proses" style="padding-top: 0;">
+      <div class="section-inner">
+        <div class="reveal">
+          <p class="eyebrow">Cara Kerja</p>
+          <h2 class="s-title">Dari Framework, ke Impact</h2>
+          <p class="s-sub">Lima tahap kerja yang membawa bisnis Anda dari strategi hingga skala.</p>
+        </div>
+
+        <div class="steps">
+          <div class="step reveal">
+            <div class="step-num">1</div>
+            <h3 class="step-t">Discover</h3>
+            <p class="step-d">Memahami tantangan dan peluang bisnis Anda.</p>
+          </div>
+          <div class="step reveal">
+            <div class="step-num">2</div>
+            <h3 class="step-t">Strategize</h3>
+            <p class="step-d">Menyusun inisiatif pertumbuhan yang disesuaikan.</p>
+          </div>
+          <div class="step reveal">
+            <div class="step-num">3</div>
+            <h3 class="step-t">Execute</h3>
+            <p class="step-d">Mengeksekusi dengan kecepatan dan presisi.</p>
+          </div>
+          <div class="step reveal">
+            <div class="step-num">4</div>
+            <h3 class="step-t">Optimize</h3>
+            <p class="step-d">Peningkatan performa yang berkelanjutan.</p>
+          </div>
+          <div class="step reveal">
+            <div class="step-num">5</div>
+            <h3 class="step-t">Scale</h3>
+            <p class="step-d">Mendorong ekspansi bisnis jangka panjang.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== PORTOFOLIO / VENTURES ==================== -->
+    <section class="section" id="portofolio" style="padding-top: 0;">
+      <div class="section-inner">
+        <div class="reveal">
+          <p class="eyebrow">Venture Builder</p>
+          <h2 class="s-title">Portofolio Ventures Kami</h2>
+          <p class="s-sub">Thru360 kini juga membangun dan mendampingi venture sendiri sebagai mitra jangka panjang.</p>
+        </div>
+
+        <div class="ventures reveal">
+          <div class="venture-card">
+            <div class="venture-mark" aria-hidden="true">Ci</div>
+            <div class="venture-name">Citrust</div>
+            <div class="venture-tag">Konsultan F&amp;B</div>
+          </div>
+          <div class="venture-card">
+            <div class="venture-mark" aria-hidden="true">Br</div>
+            <div class="venture-name">Briga</div>
+            <div class="venture-tag">Konsultan Bisnis Berkelanjutan</div>
+          </div>
+          <div class="venture-card">
+            <div class="venture-mark" aria-hidden="true">Ti</div>
+            <div class="venture-name">Tilde</div>
+            <div class="venture-tag">Software House</div>
+          </div>
+          <div class="venture-card">
+            <div class="venture-mark" aria-hidden="true">Fh</div>
+            <div class="venture-name">FundHub</div>
+            <div class="venture-tag">Konsultasi Keuangan &amp; Funding</div>
+          </div>
+        </div>
+
+        <p class="eyebrow reveal" style="margin-top: 3.5rem;">Industri yang Kami Layani</p>
+        <div class="industries reveal">
+          <span class="industry-chip">Hospitality</span>
+          <span class="industry-chip">Food &amp; Beverage</span>
+          <span class="industry-chip">Beauty &amp; Consumer</span>
+          <span class="industry-chip">Fitness &amp; Lifestyle</span>
+          <span class="industry-chip">Manufacturing</span>
+          <span class="industry-chip">Government Agencies</span>
+          <span class="industry-chip">Professional Services</span>
+          <span class="industry-chip">Startups &amp; UMKM</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== STUDI KASUS ==================== -->
+    <section class="section" id="studi-kasus" style="padding-top: 0;">
+      <div class="section-inner">
+        <div class="reveal">
+          <p class="eyebrow">Studi Kasus</p>
+          <h2 class="s-title">Kami Mendorong Success Story Brand</h2>
+          <p class="s-sub">Sebagian hasil nyata dari kolaborasi kami bersama brand &amp; bisnis di berbagai industri.</p>
+        </div>
+
+        <div class="case-list reveal">
+          <div class="case-card">
+            <div class="case-head">
+              <span class="case-name">Skinmade</span>
+              <span class="case-kind">Performance Marketing &amp; Commerce</span>
+            </div>
+            <div class="case-cols">
+              <div class="case-col">
+                <h4>Tantangan</h4>
+                <p>Brand butuh pertumbuhan penjualan yang lebih kuat, akuisisi efisien, dan performa digital yang scalable.</p>
+              </div>
+              <div class="case-col">
+                <h4>Solusi</h4>
+                <ul><li>Performance Marketing</li><li>Ecommerce Operations</li><li>Funnel Optimization</li><li>Creative Execution &amp; Media Buying</li></ul>
+              </div>
+              <div class="case-col impact">
+                <h4>Impact</h4>
+                <ul><li>20× ROAS</li><li>1000% Reach Growth</li></ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="case-card">
+            <div class="case-head">
+              <span class="case-name">Resoult.co</span>
+              <span class="case-kind">Brand Growth &amp; Ecommerce Scaling</span>
+            </div>
+            <div class="case-cols">
+              <div class="case-col">
+                <h4>Tantangan</h4>
+                <p>Meningkatkan performa commerce sambil menjaga efisiensi.</p>
+              </div>
+              <div class="case-col">
+                <h4>Solusi</h4>
+                <ul><li>Ecommerce Operations</li><li>Ads Management</li><li>Data Optimization</li><li>Conversion Strategy</li></ul>
+              </div>
+              <div class="case-col impact">
+                <h4>Impact</h4>
+                <ul><li>10× ROI Growth</li><li>5M+ Monthly Impressions</li></ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="case-card">
+            <div class="case-head">
+              <span class="case-name">PowerBuilding Gym</span>
+              <span class="case-kind">Digital Transformation &amp; Operational Excellence</span>
+            </div>
+            <div class="case-cols">
+              <div class="case-col">
+                <h4>Tantangan</h4>
+                <p>Sistem booking usang, pembayaran manual, dan minimnya engagement member.</p>
+              </div>
+              <div class="case-col">
+                <h4>Solusi</h4>
+                <ul><li>Membership &amp; class management online</li><li>Sistem pembayaran otomatis</li><li>AI advisor untuk fitness &amp; nutrisi</li></ul>
+              </div>
+              <div class="case-col impact">
+                <h4>Impact</h4>
+                <ul><li>Booking &amp; billing tanpa hassle</li></ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="case-card">
+            <div class="case-head">
+              <span class="case-name">TPR Metallurgy</span>
+              <span class="case-kind">Digital Transformation &amp; Operational Excellence</span>
+            </div>
+            <div class="case-cols">
+              <div class="case-col">
+                <h4>Tantangan</h4>
+                <p>Pengelolaan procurement, order, dan inventory yang kompleks menyebabkan inefisiensi dan keterlambatan.</p>
+              </div>
+              <div class="case-col">
+                <h4>Solusi</h4>
+                <ul><li>Procurement system &amp; order tracking</li><li>Smart inventory management</li><li>Integrated reporting &amp; analytics</li></ul>
+              </div>
+              <div class="case-col impact">
+                <h4>Impact</h4>
+                <ul><li>Proses lebih efisien &amp; minim kesalahan</li></ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== BRAND COLLABORATIONS ==================== -->
+    <section class="section" style="padding-top: 0;">
+      <div class="section-inner">
+        <div class="reveal">
+          <p class="eyebrow">Kolaborasi</p>
+          <h2 class="s-title">Brand &amp; Institusi yang Pernah Berkolaborasi</h2>
+        </div>
+        <div class="logo-cloud reveal">
+          <span class="logo-chip">ERHA Store</span>
+          <span class="logo-chip">J&amp;Glow</span>
+          <span class="logo-chip">EasyCash</span>
+          <span class="logo-chip">Citrust</span>
+          <span class="logo-chip">Resoult.co</span>
+          <span class="logo-chip">Skinmade</span>
+          <span class="logo-chip">Hash</span>
+          <span class="logo-chip">sea-chain</span>
+          <span class="logo-chip">HIPMI Berlari</span>
+          <span class="logo-chip">BI/Runners</span>
+          <span class="logo-chip">JCI Bogor City</span>
+          <span class="logo-chip">Xaha Project</span>
+          <span class="logo-chip">Jenggala Semesta Consulting</span>
+          <span class="logo-chip">KRI</span>
+          <span class="logo-chip">LemariKita</span>
+          <span class="logo-chip">PT Agro Nala Nusantara</span>
+          <span class="logo-chip">Akademi Sepatu Nusantara</span>
+          <span class="logo-chip">Alpha Labs</span>
+          <span class="logo-chip">Sushi Tei</span>
+          <span class="logo-chip">Tebu Hotel Bandung</span>
+          <span class="logo-chip">Jack</span>
+          <span class="logo-chip">TPR</span>
+          <span class="logo-chip">Oakwood</span>
+          <span class="logo-chip">Ordo</span>
+          <span class="logo-chip">Encoteki</span>
+          <span class="logo-chip">Auto Audit</span>
+          <span class="logo-chip">Maleo AI</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== TESTIMONIALS ==================== -->
+    <section class="section" style="padding-top: 0;">
+      <div class="section-inner">
+        <div class="reveal">
+          <p class="eyebrow">Testimoni</p>
+          <h2 class="s-title">Apa Kata Klien Kami</h2>
+        </div>
+
+        <div class="testimonials reveal">
+          <div class="testimonial">
+            <p class="testimonial-quote">"Thru did an amazing job with my website! It looks fantastic, and I'm really impressed with the results. Their team's dedication and expertise truly stand out. I'm already considering more projects with them because of the great work they've done."</p>
+            <div class="testimonial-author">
+              <div class="avatar" aria-hidden="true">G</div>
+              <div>
+                <div class="author-name">Gary Miller</div>
+                <div class="author-role">Owner of PowerBuilding</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="testimonial">
+            <p class="testimonial-quote">"Jenggala sangat puas dengan pelayanan pembuatan website yang diberikan oleh tim Thru. Proses pengerjaan sangat profesional, dan hasilnya luar biasa! Desainnya modern, responsif, dan mudah diakses di berbagai perangkat."</p>
+            <div class="testimonial-author">
+              <div class="avatar" aria-hidden="true">A</div>
+              <div>
+                <div class="author-name">Adrian Allo, S.Hut.</div>
+                <div class="author-role">Sustainable Forest &amp; Carbon Project, Jenggala Semesta</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== FAQ ==================== -->
+    <section class="section" style="padding-top: 0;" id="faq">
+      <div class="section-inner">
+        <div class="reveal">
+          <p class="eyebrow">FAQ</p>
+          <h2 class="s-title">Pertanyaan Seputar Thru360</h2>
+        </div>
+
+        <div class="faq-list reveal">
+          <details class="faq-item">
+            <summary>Apa itu Thru360?</summary>
+            <p class="faq-answer">Thru360 adalah mitra bisnis yang menyediakan solusi terintegrasi di bidang marketing, digital, finance, dan legal untuk mendorong pertumbuhan bisnis Anda — sekaligus membangun venture sendiri sebagai portofolio jangka panjang.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Layanan apa saja yang tersedia?</summary>
+            <p class="faq-answer">Growth &amp; Marketing, Finance &amp; Advisory, Digital Solutions, dan Legal &amp; Compliance — semuanya bisa diakses dalam satu ekosistem 360°.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Bagaimana proses kerja samanya?</summary>
+            <p class="faq-answer">Kami mengikuti alur Discover → Strategize → Execute → Optimize → Scale, dimulai dari konsultasi kebutuhan bisnis Anda.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Apakah ada dukungan setelah proyek selesai?</summary>
+            <p class="faq-answer">Ya. Kami mendampingi optimisasi dan pelaporan performa secara berkelanjutan, bukan hanya sampai proyek selesai.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== CTA BANNER ==================== -->
+    <section class="section" id="kontak" style="padding-top: 0; padding-bottom: 5rem;">
+      <div class="cta-banner reveal">
+        <h2>Let Your Dreams Come Thru</h2>
+        <p>Request a Proposal Today — diskusikan kebutuhan bisnis Anda bersama tim kami.</p>
+        <p class="cta-contact">Contact Person: <strong>Varian Ferandanes De Lima</strong> · +(62) 811 944 0998 · partnership@thrucorp.com</p>
+        <div class="hero-btns" style="justify-content: center;">
+          <a href="https://wa.me/628119440998" class="btn-p" target="_blank" rel="noopener noreferrer">WhatsApp Kami →</a>
+          <a href="mailto:partnership@thrucorp.com" class="btn-s">Email Kami</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
 
   <!-- ==================== FOOTER ==================== -->
   <div class="footer-wrap">
     <footer>
-      <img src="logo.svg" alt="Logo" class="footer-logo" />
-      <!-- TODO: Ganti nama perusahaan & tahun -->
-      <p class="footer-copy">© 2025 Nama Brand. All rights reserved.</p>
+      <img src="logo.svg" alt="Logo Thru360" class="footer-logo" width="88" height="22" />
+      <p class="footer-copy">© <span id="year"></span> Thru360. All rights reserved.</p>
       <div class="footer-links">
-        <!-- TODO: Tambahkan / sesuaikan link -->
         <a href="#">Kebijakan Privasi</a>
         <a href="#">Syarat &amp; Ketentuan</a>
-        <a href="mailto:hello@namabrand.com">Kontak</a>
+        <a href="mailto:partnership@thrucorp.com">Kontak</a>
       </div>
     </footer>
   </div>
 
+  <button type="button" class="back-to-top" id="backToTop" aria-label="Kembali ke atas">↑</button>
+
   <!-- ==================== SCRIPTS ==================== -->
   <script>
-    /* Scroll reveal */
+    document.getElementById('year').textContent = new Date().getFullYear();
+
     const io = new IntersectionObserver((entries) => {
       entries.forEach(e => {
-        if (e.isIntersecting) {
-          e.target.classList.add('visible');
-          io.unobserve(e.target);
-        }
+        if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); }
       });
     }, { threshold: 0.15 });
-
     document.querySelectorAll('.reveal').forEach(el => io.observe(el));
 
-    /* Smooth nav hide on scroll down, show on scroll up */
+    const themeToggle = document.getElementById('themeToggle');
+    function currentTheme() { return document.documentElement.getAttribute('data-theme') === 'light' ? 'light' : 'dark'; }
+    function syncToggleIcon() { themeToggle.textContent = currentTheme() === 'light' ? '☀️' : '🌙'; }
+    syncToggleIcon();
+    themeToggle.addEventListener('click', () => {
+      const next = currentTheme() === 'light' ? 'dark' : 'light';
+      document.documentElement.setAttribute('data-theme', next);
+      try { localStorage.setItem('theme', next); } catch (e) {}
+      syncToggleIcon();
+    });
+
+    const navToggle = document.getElementById('navToggle');
+    const mobileMenu = document.getElementById('mobileMenu');
+    function closeMobileMenu() {
+      mobileMenu.classList.remove('open');
+      navToggle.classList.remove('active');
+      navToggle.setAttribute('aria-expanded', 'false');
+    }
+    navToggle.addEventListener('click', () => {
+      const isOpen = mobileMenu.classList.toggle('open');
+      navToggle.classList.toggle('active', isOpen);
+      navToggle.setAttribute('aria-expanded', String(isOpen));
+    });
+    mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMobileMenu));
+    document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeMobileMenu(); });
+
     let lastY = 0;
     const nav = document.querySelector('nav');
+    const backToTop = document.getElementById('backToTop');
     window.addEventListener('scroll', () => {
       const y = window.scrollY;
-      nav.style.transform = (y > lastY && y > 80) ? 'translateY(-100%)' : 'translateY(0)';
+      nav.style.transform = (y > lastY && y > 80 && !mobileMenu.classList.contains('open')) ? 'translateY(-100%)' : 'translateY(0)';
       nav.style.transition = 'transform .3s ease';
       lastY = y;
-    });
+      backToTop.classList.toggle('visible', y > 500);
+    }, { passive: true });
+
+    backToTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
   </script>
 
 </body>

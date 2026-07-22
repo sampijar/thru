@@ -1,6 +1,6 @@
-# Website — GitHub Pages
+# Thru360 — Website (GitHub Pages)
 
-Halaman landing page siap deploy ke GitHub Pages.
+Landing page resmi **Thru360** — mitra bisnis 360° (marketing, digital, finance, legal) sekaligus venture builder. Siap deploy ke GitHub Pages.
 
 ## 📁 Struktur File
 
@@ -38,20 +38,32 @@ Tunggu 1–2 menit, lalu akses:
 
 ---
 
-## ✏️ Cara Kustomisasi
+## ✏️ Struktur Konten
 
-Buka `index.html` dengan teks editor (Notepad, VS Code, dll.) dan cari semua komentar `<!-- TODO: -->`:
+Konten diambil dari *Credentials Pitch Deck* & *Company Profile 2026* resmi Thru360. Bagian yang masih perlu dikonfirmasi ditandai `<!-- TODO -->` di `index.html`:
 
-| Yang perlu diubah | Cari teks ini |
+| Section | Isi |
 |---|---|
-| Judul browser & tab | `<title>Nama Brand</title>` |
-| Tagline utama | `Solusi Terbaik untuk` |
-| Subtitle hero | `Kami hadir untuk mendorong...` |
-| Angka statistik | `100+`, `5+`, dll. |
-| Nama kartu layanan | `Layanan Pertama`, dst. |
-| Email kontak | `hello@namabrand.com` |
-| Copyright footer | `© 2025 Nama Brand` |
+| Hero | Tagline & positioning venture builder |
+| Tentang (`#tentang`) | Business challenges → respons Thru360 |
+| Layanan (`#layanan`) | Growth & Marketing, Finance & Advisory, Digital Solutions, Legal & Compliance |
+| Proses (`#proses`) | Discover → Strategize → Execute → Optimize → Scale |
+| Portofolio (`#portofolio`) | **Venture: Citrust** (konsultan F&B), **Briga** (konsultan bisnis berkelanjutan), **Tilde** (software house), **FundHub** (konsultasi keuangan & funding) + industri yang dilayani |
+| Studi Kasus (`#studi-kasus`) | Skinmade, Resoult.co, PowerBuilding Gym, TPR Metallurgy |
+| Kolaborasi | Daftar brand & institusi partner |
+| Testimoni | Kutipan dari Gary Miller (PowerBuilding) & Adrian Allo (Jenggala Semesta) |
+| FAQ (`#faq`) | Pertanyaan umum seputar Thru360 |
+| Kontak (`#kontak`) | Varian Ferandanes De Lima · +(62) 811 944 0998 · partnership@thrucorp.com |
+
+## ✨ Fitur
+
+- **Mode gelap/terang** — tombol 🌙/☀️ di navbar, tersimpan di browser pengguna.
+- **Menu mobile (hamburger)** — navigasi tetap bisa diakses penuh di layar kecil.
+- **SEO & social preview** — meta description, Open Graph, Twitter Card, canonical URL, dan JSON-LD Organization.
+- **Aksesibilitas** — skip link, `aria-*` pada menu, kontras warna terjaga di kedua tema, serta menghormati preferensi *reduced motion*.
+- **Tombol kembali ke atas** dan tahun copyright yang otomatis diperbarui.
+- **CTA langsung ke WhatsApp** & email tim partnership.
 
 ---
 
-Dibuat dengan ❤️ — siap deploy, tinggal isi konten.
+Dibuat dengan ❤️ — siap deploy, tinggal konfirmasi bagian bertanda TODO.
