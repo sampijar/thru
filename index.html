@@ -850,6 +850,7 @@
           <img id="ventureDetailLogo" src="" alt="" class="venture-detail-logo" />
           <p class="eyebrow" id="ventureDetailTag" style="margin-bottom: .4rem;"></p>
           <p class="venture-detail-desc" id="ventureDetailDesc"></p>
+          <div class="social-links" id="ventureDetailSocial" style="margin-bottom: 1.5rem;"></div>
           <a href="https://wa.me/628119440998" class="btn-p" target="_blank" rel="noopener noreferrer" id="ventureDetailCta">Diskusikan Kolaborasi →</a>
         </div>
       </div>
@@ -1069,9 +1070,9 @@
         <div class="lead-banner reveal">
           <div class="lead-banner-copy" style="margin-bottom: 0;">
             <p class="eyebrow">Gabung Bersama Kami</p>
-            <h2 class="s-title">Jadi Mitra Freelancer THRU (THRUpers)</h2>
-            <p class="s-sub" style="margin-bottom: 1.5rem;">Punya skill di marketing, finance, legal, desain, atau bidang lain? Daftarkan diri sebagai freelancer mitra Thru360 dan ikut mengerjakan proyek bersama klien kami.</p>
-            <button type="button" class="btn-p" data-open="freelancerDialog">Daftar sebagai Freelancer →</button>
+            <h2 class="s-title">Mau Penghasilan Tambahan dari Thru360?</h2>
+            <p class="s-sub" style="margin-bottom: 1.5rem;">Punya skill di marketing, finance, legal, desain, atau bidang lain? Daftar jadi THRUpers dan ikut mengerjakan proyek bareng klien kami — kerja fleksibel, dibayar per proyek.</p>
+            <button type="button" class="btn-p" data-open="freelancerDialog">Daftar Sekarang →</button>
           </div>
         </div>
       </div>
@@ -1079,7 +1080,7 @@
 
     <dialog class="form-dialog" id="freelancerDialog" aria-labelledby="freelancerDialogTitle">
       <div class="dialog-header">
-        <h3 id="freelancerDialogTitle">Daftar Mitra Freelancer THRU</h3>
+        <h3 id="freelancerDialogTitle">Daftar Jadi THRUpers</h3>
         <button type="button" class="dialog-close" data-close aria-label="Tutup">✕</button>
       </div>
       <div class="dialog-body">
@@ -1213,7 +1214,7 @@
       </div>
       <div class="footer-links">
         <a href="#business-checkup">Business Check-Up</a>
-        <a href="#freelancer">Gabung Freelancer</a>
+        <a href="#freelancer">Penghasilan Tambahan</a>
         <a href="#investor">Investor</a>
         <a href="#">Kebijakan Privasi</a>
         <a href="#">Syarat &amp; Ketentuan</a>
@@ -1289,19 +1290,25 @@
         name: 'Citrust',
         tag: 'Konsultan F&B',
         logo: 'assets/logos/citrust.png',
-        desc: 'Citrust adalah venture Thru360 yang fokus sebagai konsultan Food & Beverage — membantu bisnis F&B merancang strategi menu, operasional, dan branding agar lebih kompetitif di pasar.'
+        desc: 'Citrust adalah venture Thru360 yang fokus sebagai konsultan Food & Beverage — membantu bisnis F&B merancang strategi menu, operasional, dan branding agar lebih kompetitif di pasar.',
+        instagram: 'https://www.instagram.com/citrust_indonesia/',
+        linkedin: 'https://www.linkedin.com/company/citrust-indonesia/'
       },
       briga: {
         name: 'Briga',
         tag: 'Konsultan Bisnis Berkelanjutan',
         logo: 'assets/logos/briga.png',
-        desc: 'Briga (Briga Sustainability Center) adalah venture Thru360 yang berfokus pada konsultasi bisnis berkelanjutan, ESG, dan program lingkungan seperti carbon planning & forest seedling.'
+        desc: 'Briga (Briga Sustainability Center) adalah venture Thru360 yang berfokus pada konsultasi bisnis berkelanjutan, ESG, dan program lingkungan seperti carbon planning & forest seedling.',
+        instagram: 'https://www.instagram.com/briga.center/',
+        linkedin: 'https://www.linkedin.com/company/brigacenter/'
       },
       tilde: {
         name: 'Tilde',
         tag: 'Software House',
         logo: 'assets/logos/tilde.png',
-        desc: 'Tilde adalah software house di bawah portofolio Thru360, mengerjakan pengembangan website, sistem bisnis, dan produk digital untuk klien maupun venture internal.'
+        desc: 'Tilde adalah software house di bawah portofolio Thru360, mengerjakan pengembangan website, sistem bisnis, dan produk digital untuk klien maupun venture internal.',
+        instagram: 'https://www.instagram.com/tilde.id/',
+        linkedin: 'https://www.linkedin.com/company/tildeidn/'
       },
       fundhub: {
         name: 'FundHub',
@@ -1309,6 +1316,11 @@
         logo: 'assets/logos/fundhub.png',
         desc: 'FundHub adalah venture Thru360 yang membantu bisnis dengan konsultasi keuangan dan pendampingan pencarian pendanaan (funding).'
       }
+    };
+
+    const SOCIAL_ICON_SVG = {
+      instagram: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2c3.2 0 3.6 0 4.9.07 1.2.06 2.2.27 3 .58a6 6 0 0 1 2.2 1.4 6 6 0 0 1 1.4 2.2c.3.8.5 1.8.6 3 .1 1.3.1 1.7.1 4.9s0 3.6-.1 4.9c-.1 1.2-.3 2.2-.6 3a6 6 0 0 1-1.4 2.2 6 6 0 0 1-2.2 1.4c-.8.3-1.8.5-3 .6-1.3.1-1.7.1-4.9.1s-3.6 0-4.9-.1c-1.2-.1-2.2-.3-3-.6a6 6 0 0 1-2.2-1.4 6 6 0 0 1-1.4-2.2c-.3-.8-.5-1.8-.6-3-.1-1.3-.1-1.7-.1-4.9s0-3.6.1-4.9c.1-1.2.3-2.2.6-3a6 6 0 0 1 1.4-2.2A6 6 0 0 1 4.1 2.85c.8-.3 1.8-.5 3-.6 1.3-.1 1.7-.1 4.9-.1zM12 0C8.7 0 8.3 0 7 .1c-1.3.1-2.6.3-3.7.7A8.2 8.2 0 0 0 .8 3.3 8.2 8.2 0 0 0 .1 7C0 8.3 0 8.7 0 12s0 3.7.1 5c.1 1.3.3 2.6.7 3.7a8.2 8.2 0 0 0 2.5 2.5c1.1.4 2.4.6 3.7.7 1.3.1 1.7.1 5 .1s3.7 0 5-.1c1.3-.1 2.6-.3 3.7-.7a8.2 8.2 0 0 0 2.5-2.5c.4-1.1.6-2.4.7-3.7.1-1.3.1-1.7.1-5s0-3.7-.1-5c-.1-1.3-.3-2.6-.7-3.7A8.2 8.2 0 0 0 20.7.8c-1.1-.4-2.4-.6-3.7-.7C15.7 0 15.3 0 12 0z"/><path d="M12 5.8A6.2 6.2 0 1 0 18.2 12 6.2 6.2 0 0 0 12 5.8zm0 10.2A4 4 0 1 1 16 12a4 4 0 0 1-4 4zM19.9 5.6a1.44 1.44 0 1 1-1.44-1.44 1.44 1.44 0 0 1 1.44 1.44z"/></svg>',
+      linkedin: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.02-3.04-1.85-3.04-1.86 0-2.15 1.45-2.15 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45z"/></svg>'
     };
 
     const ventureDialog = document.getElementById('ventureDialog');
@@ -1322,6 +1334,14 @@
         const img = document.getElementById('ventureDetailLogo');
         img.src = info.logo;
         img.alt = `Logo ${info.name}`;
+        const socialEl = document.getElementById('ventureDetailSocial');
+        socialEl.innerHTML = '';
+        if (info.instagram) {
+          socialEl.innerHTML += `<a href="${info.instagram}" target="_blank" rel="noopener noreferrer" aria-label="Instagram ${info.name}">${SOCIAL_ICON_SVG.instagram}</a>`;
+        }
+        if (info.linkedin) {
+          socialEl.innerHTML += `<a href="${info.linkedin}" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn ${info.name}">${SOCIAL_ICON_SVG.linkedin}</a>`;
+        }
         ventureDialog.showModal();
       });
     });
