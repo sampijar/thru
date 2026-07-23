@@ -96,6 +96,22 @@
           "@type": "Answer",
           "text": "Ya. Thru360 mendampingi optimisasi dan pelaporan performa secara berkelanjutan, bukan hanya sampai proyek selesai."
         }
+      },
+      {
+        "@type": "Question",
+        "name": "Apakah formulir minat investasi Thru360 mengikat secara hukum?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Tidak. Formulir tersebut adalah sarana awal untuk menyampaikan ketertarikan, bukan penawaran efek maupun komitmen mengikat. Struktur kerja sama dan dokumen legal dibahas terpisah jika kedua pihak sepakat untuk melanjutkan."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Bisakah investasi di Thru360 difokuskan ke salah satu venture saja?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Bisa. Calon investor bisa memilih tertarik di level holding Thru360 atau salah satu venture spesifik seperti Citrust, Briga, Tilde, atau FundHub."
+        }
       }
     ]
   }
@@ -323,6 +339,23 @@
     .lead-banner-copy { max-width: 640px; margin-bottom: 2rem; }
     .lead-banner-copy .s-sub { margin-bottom: 0; }
     .lead-banner-copy .s-title { margin-bottom: .9rem; }
+
+    /* ── INVESTOR: thesis checklist, process, disclaimer ── */
+    .check-list { list-style: none; display: flex; flex-direction: column; gap: .7rem; margin: 1.5rem 0; max-width: 640px; }
+    .check-list li { font-size: .9rem; color: var(--txt-2); padding-left: 1.6rem; position: relative; line-height: 1.6; }
+    .check-list li::before {
+      content: '✓'; position: absolute; left: 0; top: -.05rem; color: var(--accent-lt); font-weight: 700;
+    }
+    .check-list li strong { color: var(--txt); }
+    .investor-process {
+      display: flex; flex-direction: column; gap: .65rem; margin: 0 0 1.75rem;
+      padding: 1.25rem 1.5rem; background: var(--bg-surface); border-radius: 10px;
+      border: 1px solid var(--border); max-width: 640px;
+    }
+    .investor-process-title { font-size: .78rem; font-weight: 700; color: var(--txt-3); text-transform: uppercase; letter-spacing: .06em; margin-bottom: .2rem; }
+    .investor-process-item { display: flex; gap: .75rem; align-items: baseline; font-size: .85rem; color: var(--txt-2); line-height: 1.5; }
+    .investor-process-num { color: var(--accent-lt); font-weight: 800; flex-shrink: 0; }
+    .investor-disclaimer { font-size: .78rem; color: var(--txt-3); margin-top: 1.5rem; max-width: 640px; line-height: 1.6; }
 
     /* ── LEAD FORM ── */
     .lead-form { display: flex; flex-direction: column; gap: 1.15rem; max-width: 640px; }
@@ -583,8 +616,8 @@
       .cta-banner { padding: 2.5rem 1.25rem; }
       .hero-btns { flex-wrap: nowrap; gap: .5rem; }
       .hero-btns .btn-p, .hero-btns .btn-s {
-        flex: 1 1 0; padding: .7rem .5rem; font-size: .78rem; white-space: nowrap;
-        justify-content: center;
+        flex: 1 1 0; padding: .7rem .5rem; font-size: .78rem;
+        justify-content: center; text-align: center;
       }
     }
     @media (max-width: 380px) {
@@ -1019,10 +1052,30 @@
           <div class="lead-banner-copy" style="margin-bottom: 0;">
             <p class="eyebrow">Untuk Calon Investor</p>
             <h2 class="s-title">Bertumbuh Bersama Thru360</h2>
-            <p class="s-sub" style="margin-bottom: 1.5rem;">
-              Thru360 tidak hanya melayani klien — kami juga membangun venture sendiri (Citrust, Briga, Tilde, FundHub) dengan rekam jejak eksekusi yang terukur: 20x ROAS growth, 10x ROI improvement, dan 5M+ monthly impressions dari berbagai kolaborasi brand. Kalau Anda tertarik menjadi mitra investor — baik di level holding maupun salah satu venture kami — sampaikan minat Anda dan tim kami akan menindaklanjuti secara personal.
+            <p class="s-sub" style="margin-bottom: 0;">
+              Thru360 tidak hanya melayani klien — kami juga membangun venture sendiri (Citrust, Briga, Tilde, FundHub) sebagai portofolio jangka panjang, dengan rekam jejak eksekusi yang terukur di setiap kolaborasi.
             </p>
-            <button type="button" class="btn-p" data-open="investorDialog">Saya Tertarik Jadi Investor →</button>
+
+            <ul class="check-list">
+              <li><strong>Model venture builder aktif</strong> — bukan sekadar konsultan, kami ikut membangun dan menjalankan 4 venture secara langsung.</li>
+              <li><strong>Rekam jejak terukur</strong> — 20x ROAS growth, 10x ROI improvement, 5M+ monthly impressions dari kolaborasi brand yang sudah berjalan (lihat Studi Kasus).</li>
+              <li><strong>Eksekusi end-to-end</strong> — satu tim yang mengeksekusi dari strategi, marketing, digital, hingga legal &amp; finance, bukan menyerahkan begitu saja ke pihak lain.</li>
+              <li><strong>Proses yang disiplin</strong> — setiap kolaborasi mengikuti alur Discover → Strategize → Execute → Optimize → Scale yang sama.</li>
+            </ul>
+
+            <div class="investor-process">
+              <p class="investor-process-title">Proses Setelah Anda Menyampaikan Minat</p>
+              <div class="investor-process-item"><span class="investor-process-num">1.</span> Tim kami menghubungi Anda untuk perkenalan awal.</div>
+              <div class="investor-process-item"><span class="investor-process-num">2.</span> Diskusi lebih lanjut mengenai profil bisnis, data pendukung, dan area kolaborasi yang relevan.</div>
+              <div class="investor-process-item"><span class="investor-process-num">3.</span> Jika kedua pihak sepakat untuk melanjutkan, struktur kerja sama &amp; dokumen legal dibahas terpisah sesuai kesepakatan bersama.</div>
+            </div>
+
+            <div class="hero-btns">
+              <button type="button" class="btn-p" data-open="investorDialog">Saya Tertarik Jadi Investor →</button>
+              <a href="assets/Thru360-Company-Profile.pdf" class="btn-s" target="_blank" rel="noopener noreferrer">Unduh Company Profile (PDF)</a>
+            </div>
+
+            <p class="investor-disclaimer">Formulir ini adalah sarana awal untuk menyampaikan ketertarikan Anda, bukan penawaran efek, ajakan investasi resmi, maupun komitmen mengikat dari salah satu pihak.</p>
           </div>
         </div>
       </div>
@@ -1339,6 +1392,14 @@
           <details class="faq-item">
             <summary>Apakah ada dukungan setelah proyek selesai?</summary>
             <p class="faq-answer">Ya. Kami mendampingi optimisasi dan pelaporan performa secara berkelanjutan, bukan hanya sampai proyek selesai.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Apakah formulir minat investasi mengikat secara hukum?</summary>
+            <p class="faq-answer">Tidak. Formulir tersebut adalah sarana awal untuk menyampaikan ketertarikan Anda, bukan penawaran efek maupun komitmen mengikat. Pembahasan struktur kerja sama dan dokumen legal dilakukan terpisah jika kedua pihak sepakat untuk melanjutkan.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Bisakah investasi difokuskan ke salah satu venture saja, bukan holding?</summary>
+            <p class="faq-answer">Bisa. Saat mengisi formulir minat investasi, Anda bisa memilih apakah tertarik di level holding Thru360 atau salah satu venture spesifik (Citrust, Briga, Tilde, atau FundHub).</p>
           </details>
         </div>
       </div>
