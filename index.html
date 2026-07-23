@@ -377,6 +377,38 @@
       .approach-arrow { transform: rotate(90deg); justify-self: center; }
     }
 
+    /* ── NILAI-NILAI (numbered accordion) ── */
+    .values-grid { display: grid; grid-template-columns: 1fr 1.35fr; gap: 3rem; align-items: start; }
+    .values-list { display: flex; flex-direction: column; }
+    .values-item { border-top: 1px solid var(--border); padding: 1.35rem 0; }
+    .values-item:last-child { border-bottom: 1px solid var(--border); }
+    .values-item summary {
+      list-style: none; cursor: pointer; display: flex; align-items: baseline; gap: 1rem;
+      font-weight: 800; font-size: 1.05rem;
+    }
+    .values-item summary::-webkit-details-marker { display: none; }
+    .values-num { color: var(--accent-lt); font-weight: 800; font-size: .9rem; flex-shrink: 0; }
+    .values-item summary::after {
+      content: '+'; margin-left: auto; color: var(--accent-lt); font-size: 1.3rem; font-weight: 400;
+      transition: transform .2s ease; flex-shrink: 0;
+    }
+    .values-item[open] summary::after { transform: rotate(45deg); }
+    .values-desc { color: var(--txt-2); font-size: .9rem; line-height: 1.7; margin-top: .85rem; padding-left: 2.05rem; }
+    @media (max-width: 760px) {
+      .values-grid { grid-template-columns: 1fr; gap: 1.5rem; }
+    }
+
+    /* ── DAMPAK (colored outcome bento) ── */
+    .outcome-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 1.25rem; }
+    .outcome-card {
+      background: var(--o-bg); border-radius: var(--radius); padding: 2.25rem 1.5rem;
+      text-align: center; color: #fff; transition: transform .2s ease;
+    }
+    .outcome-card:hover { transform: translateY(-4px); }
+    .outcome-icon { font-size: 1.8rem; margin-bottom: 1rem; }
+    .outcome-n { font-size: 1.8rem; font-weight: 800; margin-bottom: .3rem; }
+    .outcome-l { font-size: .85rem; font-weight: 600; opacity: .92; }
+
     /* ── PROCESS steps ── */
     .steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 1.25rem; }
     .step { position: relative; padding: 1.6rem 1.4rem; border: 1px solid var(--border); border-radius: var(--radius); background: var(--bg-card); }
@@ -631,6 +663,37 @@
       </div>
     </section>
 
+    <!-- ==================== NILAI-NILAI ==================== -->
+    <section class="section" id="nilai" style="padding-top: 0;">
+      <div class="section-inner">
+        <div class="values-grid reveal">
+          <div>
+            <p class="eyebrow">Nilai-Nilai Kami</p>
+            <h2 class="s-title">Yang Mendasari Cara Kami Bekerja</h2>
+            <p class="s-sub" style="margin-bottom: 0;">Pertumbuhan bisnis butuh lebih dari sekadar ide bagus — inilah prinsip yang kami pegang di setiap kolaborasi.</p>
+          </div>
+          <div class="values-list">
+            <details class="values-item" open>
+              <summary><span class="values-num">01</span> Integrated Approach</summary>
+              <p class="values-desc">Solusi bisnis end-to-end dalam satu ekosistem — marketing, digital, finance, dan legal berjalan saling terhubung, bukan terpisah-pisah.</p>
+            </details>
+            <details class="values-item">
+              <summary><span class="values-num">02</span> Data-Driven Decisions</summary>
+              <p class="values-desc">Setiap aksi didukung oleh insight performa yang terukur, bukan sekadar asumsi atau feeling.</p>
+            </details>
+            <details class="values-item">
+              <summary><span class="values-num">03</span> Execution Excellence</summary>
+              <p class="values-desc">Kami mengubah strategi menjadi hasil bisnis yang nyata — fokus pada eksekusi, bukan hanya rencana di atas kertas.</p>
+            </details>
+            <details class="values-item">
+              <summary><span class="values-num">04</span> Scalable Growth</summary>
+              <p class="values-desc">Solusi yang fleksibel, dirancang untuk setiap tahap bisnis — dari baru mulai hingga siap scale ke pasar yang lebih besar.</p>
+            </details>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- ==================== BUSINESS CHECK-UP ==================== -->
     <section class="section" id="business-checkup" style="padding-top: 0;">
       <div class="section-inner">
@@ -797,6 +860,44 @@
             <div class="step-num">5</div>
             <h3 class="step-t">Scale</h3>
             <p class="step-d">Mendorong ekspansi bisnis jangka panjang.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== DAMPAK ==================== -->
+    <section class="section" id="dampak" style="padding-top: 0;">
+      <div class="section-inner">
+        <div class="reveal">
+          <p class="eyebrow">Dampak Kerja Sama</p>
+          <h2 class="s-title">Hasil yang Kami Kejar Bersama Klien</h2>
+          <p class="s-sub">Kolaborasi ini dirancang untuk menghasilkan hasil yang terukur dan fondasi kuat untuk pertumbuhan bisnis Anda.</p>
+        </div>
+        <div class="outcome-grid reveal">
+          <div class="outcome-card" style="--o-bg: #DC2626;">
+            <div class="outcome-icon" aria-hidden="true">📈</div>
+            <div class="outcome-n">20x</div>
+            <div class="outcome-l">ROAS Growth</div>
+          </div>
+          <div class="outcome-card" style="--o-bg: #111827;">
+            <div class="outcome-icon" aria-hidden="true">💹</div>
+            <div class="outcome-n">10x</div>
+            <div class="outcome-l">ROI Improvement</div>
+          </div>
+          <div class="outcome-card" style="--o-bg: #0D9488;">
+            <div class="outcome-icon" aria-hidden="true">👁️</div>
+            <div class="outcome-n">5M+</div>
+            <div class="outcome-l">Monthly Impressions</div>
+          </div>
+          <div class="outcome-card" style="--o-bg: #CA8A04;">
+            <div class="outcome-icon" aria-hidden="true">⚙️</div>
+            <div class="outcome-n">+30%</div>
+            <div class="outcome-l">Processing Efficiency</div>
+          </div>
+          <div class="outcome-card" style="--o-bg: #16A34A;">
+            <div class="outcome-icon" aria-hidden="true">🤝</div>
+            <div class="outcome-n">+30%</div>
+            <div class="outcome-l">Customer Retention</div>
           </div>
         </div>
       </div>

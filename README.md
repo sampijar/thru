@@ -48,8 +48,10 @@ Konten diambil dari *Credentials Pitch Deck* & *Company Profile 2026* resmi Thru
 |---|---|
 | Hero | Tagline & positioning venture builder |
 | Tentang (`#tentang`) | Business challenges → respons Thru360 |
+| Nilai-Nilai (`#nilai`) | Integrated Approach, Data-Driven Decisions, Execution Excellence, Scalable Growth (accordion) |
 | Layanan (`#layanan`) | Growth & Marketing, Finance & Advisory, Digital Solutions, Legal & Compliance |
 | Proses (`#proses`) | Discover → Strategize → Execute → Optimize → Scale |
+| Dampak (`#dampak`) | Bento warna-warni: 20x ROAS, 10x ROI, 5M+ impressions, +30% efisiensi, +30% retensi |
 | Portofolio (`#portofolio`) | **Venture: Citrust** (konsultan F&B), **Briga** (konsultan bisnis berkelanjutan), **Tilde** (software house), **FundHub** (konsultasi keuangan & funding) + industri yang dilayani |
 | Business Check-Up (`#business-checkup`) | Form langsung di web (bukan redirect Google Form), submit ke Supabase |
 | Investor (`#investor`) | CTA & form minat investasi (holding atau per-venture), submit ke Supabase |
