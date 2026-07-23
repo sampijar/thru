@@ -7,10 +7,14 @@ Landing page resmi **Thru360** — mitra bisnis 360° (marketing, digital, finan
 ```
 /
 ├── index.html            ← Halaman utama (edit di sini)
+├── privacy.html          ← Kebijakan Privasi
+├── terms.html            ← Syarat & Ketentuan
 ├── logo.svg              ← Logo brand Anda
+├── apple-touch-icon.png / favicon-32.png / site.webmanifest  ← Ikon & PWA manifest
+├── assets/og-image.png   ← Gambar social preview (Open Graph/Twitter Card)
 ├── assets/logos/         ← Logo venture & brand kolaborasi (dipakai di section Portofolio & Kolaborasi)
 ├── .nojekyll             ← Wajib ada agar GitHub Pages bekerja dengan benar
-├── supabase/schema.sql   ← Skema tabel + RLS untuk form Business Check-Up & Freelancer
+├── supabase/schema.sql   ← Skema tabel + RLS untuk form Business Check-Up, Freelancer & Investor
 └── README.md
 ```
 
