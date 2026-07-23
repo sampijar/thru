@@ -106,7 +106,7 @@
       color-scheme: dark;
     }
 
-    html  { scroll-behavior: smooth; }
+    html  { scroll-behavior: smooth; overflow-x: hidden; }
     body  {
       background: var(--bg);
       color: var(--txt);
@@ -525,7 +525,7 @@
     footer { max-width: 1080px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem; }
     .footer-logo { height: 22px; width: auto; }
     .footer-copy { font-size: .8rem; color: var(--txt-3); }
-    .footer-links { display: flex; gap: 1.5rem; }
+    .footer-links { display: flex; gap: 1rem 1.5rem; flex-wrap: wrap; }
     .footer-links a { font-size: .8rem; color: var(--txt-3); text-decoration: none; transition: color .2s; }
     .footer-links a:hover { color: var(--txt-2); }
 
@@ -565,6 +565,15 @@
       .stats { gap: 1.5rem; }
       footer { flex-direction: column; text-align: center; }
       .footer-links, .social-links { justify-content: center; }
+      .cta-banner { padding: 2.5rem 1.25rem; }
+      .hero-btns { flex-wrap: nowrap; gap: .5rem; }
+      .hero-btns .btn-p, .hero-btns .btn-s {
+        flex: 1 1 0; padding: .7rem .5rem; font-size: .78rem; white-space: nowrap;
+        justify-content: center;
+      }
+    }
+    @media (max-width: 380px) {
+      .hero-btns .btn-p, .hero-btns .btn-s { font-size: .7rem; padding: .65rem .35rem; }
     }
 
     /* ── SCROLL REVEAL ── */
