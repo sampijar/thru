@@ -24,6 +24,7 @@ create table if not exists public.business_checkups (
 alter table public.business_checkups enable row level security;
 
 -- Publik (anon/publishable key) hanya boleh INSERT, tidak boleh membaca data orang lain.
+drop policy if exists "Allow public insert on business_checkups" on public.business_checkups;
 create policy "Allow public insert on business_checkups"
   on public.business_checkups
   for insert
@@ -45,6 +46,7 @@ create table if not exists public.freelancer_applications (
 
 alter table public.freelancer_applications enable row level security;
 
+drop policy if exists "Allow public insert on freelancer_applications" on public.freelancer_applications;
 create policy "Allow public insert on freelancer_applications"
   on public.freelancer_applications
   for insert
@@ -66,6 +68,7 @@ create table if not exists public.investor_interest (
 
 alter table public.investor_interest enable row level security;
 
+drop policy if exists "Allow public insert on investor_interest" on public.investor_interest;
 create policy "Allow public insert on investor_interest"
   on public.investor_interest
   for insert
