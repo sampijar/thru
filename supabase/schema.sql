@@ -1,4 +1,4 @@
--- Thru360 — skema Supabase untuk form Business Check-Up & Pendaftaran Freelancer
+-- Thru360 — skema Supabase untuk form Business Check-Up, Pendaftaran Freelancer & Minat Investor
 -- Jalankan seluruh file ini di Supabase Dashboard -> SQL Editor -> New query -> Run
 
 create extension if not exists pgcrypto;
@@ -47,6 +47,27 @@ alter table public.freelancer_applications enable row level security;
 
 create policy "Allow public insert on freelancer_applications"
   on public.freelancer_applications
+  for insert
+  to anon
+  with check (true);
+
+-- ==================== MINAT INVESTOR ====================
+create table if not exists public.investor_interest (
+  id uuid primary key default gen_random_uuid(),
+  created_at timestamptz not null default now(),
+  nama text not null,
+  email text not null,
+  nomor_telepon text not null,
+  institusi text,
+  tipe_investor text,
+  minat_venture text,
+  pesan text
+);
+
+alter table public.investor_interest enable row level security;
+
+create policy "Allow public insert on investor_interest"
+  on public.investor_interest
   for insert
   to anon
   with check (true);
