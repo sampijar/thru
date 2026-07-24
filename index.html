@@ -1135,6 +1135,125 @@
       </div>
     </dialog>
 
+    <!-- ==================== AJUKAN PENDANAAN (untuk founder/startup) ==================== -->
+    <section class="section" id="ajukan-pendanaan" style="padding-top: 0;">
+      <div class="section-inner">
+        <div class="lead-banner reveal">
+          <div class="lead-banner-copy" style="margin-bottom: 0;">
+            <p class="eyebrow">Untuk Founder &amp; Startup</p>
+            <h2 class="s-title">Punya Pitch Deck? Ajukan Pendanaan ke Thru360</h2>
+            <p class="s-sub" style="margin-bottom: 1.5rem;">
+              Selain membangun venture sendiri, Thru360 juga membuka peluang pendanaan untuk startup potensial di luar portofolio kami. Kalau bisnis Anda sudah punya pitch deck dan siap didiskusikan, sampaikan detailnya lewat form berikut — tim kami akan mereview dan menghubungi Anda.
+            </p>
+            <button type="button" class="btn-p" data-open="fundingDialog">Ajukan Pendanaan →</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <dialog class="form-dialog" id="fundingDialog" aria-labelledby="fundingDialogTitle">
+      <div class="dialog-header">
+        <h3 id="fundingDialogTitle">Ajukan Pendanaan ke Thru360</h3>
+        <button type="button" class="dialog-close" data-close aria-label="Tutup">✕</button>
+      </div>
+      <div class="dialog-body">
+        <form class="lead-form" id="fundingForm">
+          <div class="form-row">
+            <label for="fd-nama-perusahaan">Nama Perusahaan<span aria-hidden="true">*</span></label>
+            <input type="text" id="fd-nama-perusahaan" name="nama_perusahaan" autocomplete="organization" required />
+          </div>
+          <div class="form-row">
+            <label for="fd-badan-hukum">Badan Hukum</label>
+            <select id="fd-badan-hukum" name="badan_hukum">
+              <option value="PT">PT</option>
+              <option value="CV">CV</option>
+              <option value="Firma">Firma</option>
+              <option value="Belum Berbadan Hukum">Belum Berbadan Hukum</option>
+              <option value="Lainnya">Lainnya</option>
+            </select>
+          </div>
+          <div class="form-row">
+            <label for="fd-tahun">Sudah Berapa Tahun Beroperasi?</label>
+            <input type="text" id="fd-tahun" name="tahun_beroperasi" />
+          </div>
+          <div class="form-row">
+            <label for="fd-tahap">Tahap Bisnis Saat Ini</label>
+            <select id="fd-tahap" name="tahap_bisnis">
+              <option value="Ide / Pra-produk">Ide / Pra-produk</option>
+              <option value="MVP / Prototype">MVP / Prototype</option>
+              <option value="Early Traction">Early Traction</option>
+              <option value="Growth">Growth</option>
+              <option value="Scale-up">Scale-up</option>
+            </select>
+          </div>
+          <div class="form-row">
+            <label for="fd-lokasi">Lokasi Kantor Pusat (Kota/Provinsi)</label>
+            <input type="text" id="fd-lokasi" name="lokasi_hq" autocomplete="address-level2" />
+          </div>
+          <div class="form-row">
+            <label for="fd-karyawan">Jumlah Karyawan</label>
+            <input type="text" id="fd-karyawan" name="jumlah_karyawan" />
+          </div>
+          <div class="form-row">
+            <label for="fd-nama-jabatan">Nama &amp; Jabatan Anda<span aria-hidden="true">*</span></label>
+            <input type="text" id="fd-nama-jabatan" name="nama_jabatan" autocomplete="name" placeholder="Contoh: Budi Santoso, CEO" required />
+          </div>
+          <div class="form-row">
+            <label for="fd-email">Email<span aria-hidden="true">*</span></label>
+            <input type="email" id="fd-email" name="email" autocomplete="email" required />
+          </div>
+          <div class="form-row">
+            <label for="fd-telp">Nomor Telepon<span aria-hidden="true">*</span></label>
+            <input type="tel" id="fd-telp" name="nomor_telepon" autocomplete="tel" required />
+          </div>
+          <div class="form-row">
+            <label for="fd-web">Website atau Instagram</label>
+            <input type="text" id="fd-web" name="website_atau_ig" placeholder="https:// atau @username" />
+          </div>
+          <div class="form-row">
+            <label for="fd-sektor">Sektor / Industri</label>
+            <select id="fd-sektor" name="sektor">
+              <option value="Hospitality">Hospitality</option>
+              <option value="Food & Beverage">Food &amp; Beverage</option>
+              <option value="Beauty & Consumer">Beauty &amp; Consumer</option>
+              <option value="Fitness & Lifestyle">Fitness &amp; Lifestyle</option>
+              <option value="Manufacturing">Manufacturing</option>
+              <option value="Government Agencies">Government Agencies</option>
+              <option value="Professional Services">Professional Services</option>
+              <option value="Startups & UMKM">Startups &amp; UMKM</option>
+              <option value="Lainnya">Lainnya</option>
+            </select>
+          </div>
+          <div class="form-row">
+            <label for="fd-masalah">Masalah Inti yang Diselesaikan Bisnis Anda</label>
+            <textarea id="fd-masalah" name="masalah_inti" rows="2"></textarea>
+          </div>
+          <div class="form-row">
+            <label for="fd-solusi">Solusi &amp; Model Bisnis Anda</label>
+            <textarea id="fd-solusi" name="solusi_model_bisnis" rows="3"></textarea>
+          </div>
+          <div class="form-row">
+            <label for="fd-traksi">Traksi / Pencapaian Saat Ini</label>
+            <textarea id="fd-traksi" name="traksi" rows="2" placeholder="Contoh: revenue, jumlah pengguna, growth rate"></textarea>
+          </div>
+          <div class="form-row">
+            <label for="fd-kebutuhan">Kebutuhan Pendanaan (opsional)</label>
+            <input type="text" id="fd-kebutuhan" name="kebutuhan_pendanaan" placeholder="Contoh: Rp 500 juta - 1 miliar" />
+          </div>
+          <div class="form-row">
+            <label for="fd-deck">Link Pitch Deck<span aria-hidden="true">*</span></label>
+            <input type="url" id="fd-deck" name="link_pitch_deck" placeholder="https://... (Google Drive/Dropbox/dsb, pastikan bisa diakses)" required />
+          </div>
+          <div class="form-row">
+            <label for="fd-pesan">Pesan Tambahan</label>
+            <textarea id="fd-pesan" name="pesan" rows="2"></textarea>
+          </div>
+          <button type="submit" class="btn-p">Kirim Pengajuan →</button>
+          <p class="form-status" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+    </dialog>
+
     <!-- ==================== STUDI KASUS ==================== -->
     <section class="section" id="studi-kasus" style="padding-top: 0;">
       <div class="section-inner">
@@ -1437,6 +1556,7 @@
         <a href="#business-checkup">Business Check-Up</a>
         <a href="#freelancer">Penghasilan Tambahan</a>
         <a href="#investor">Investor</a>
+        <a href="#ajukan-pendanaan">Ajukan Pendanaan</a>
         <a href="privacy.html">Kebijakan Privasi</a>
         <a href="terms.html">Syarat &amp; Ketentuan</a>
         <a href="mailto:partnership@thrucorp.com">Kontak</a>
@@ -1503,6 +1623,7 @@
     wireDialog('checkupDialog');
     wireDialog('freelancerDialog');
     wireDialog('investorDialog');
+    wireDialog('fundingDialog');
     wireDialog('ventureDialog');
 
     /* Detail venture (klik card -> populate & buka dialog) */
@@ -1624,6 +1745,13 @@
       e.preventDefault();
       const payload = Object.fromEntries(new FormData(investorForm).entries());
       submitToSupabase('investor_interest', payload, investorForm);
+    });
+
+    const fundingForm = document.getElementById('fundingForm');
+    fundingForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const payload = Object.fromEntries(new FormData(fundingForm).entries());
+      submitToSupabase('funding_applications', payload, fundingForm);
     });
   </script>
 
