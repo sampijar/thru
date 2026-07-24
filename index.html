@@ -648,6 +648,9 @@
       *, *::before, *::after { animation-duration: .001ms !important; transition-duration: .001ms !important; }
     }
   </style>
+  <noscript>
+    <style>.reveal { opacity: 1 !important; transform: none !important; }</style>
+  </noscript>
 </head>
 
 <body>
@@ -1584,12 +1587,20 @@
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
 
-    const io = new IntersectionObserver((entries) => {
-      entries.forEach(e => {
-        if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); }
-      });
-    }, { threshold: 0.15 });
-    document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+    try {
+      const io = new IntersectionObserver((entries) => {
+        entries.forEach(e => {
+          if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); }
+        });
+      }, { threshold: 0.15 });
+      document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+    } catch (err) {
+      document.querySelectorAll('.reveal').forEach(el => el.classList.add('visible'));
+    }
+    // Safety net: if anything on the page throws before/after this point, don't leave content invisible.
+    window.addEventListener('error', () => {
+      document.querySelectorAll('.reveal:not(.visible)').forEach(el => el.classList.add('visible'));
+    });
 
     const navToggle = document.getElementById('navToggle');
     const mobileMenu = document.getElementById('mobileMenu');
