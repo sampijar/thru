@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Halaman Tidak Ditemukan — Thru360</title>
+<meta name="description" content="Halaman yang Anda cari tidak ditemukan. Kembali ke beranda Thru360." />
+<meta name="robots" content="noindex, follow" />
+<meta name="theme-color" content="#0A0A0C" />
+<link rel="icon" href="logo.svg" type="image/svg+xml" />
+<link rel="icon" href="favicon-32.png" type="image/png" sizes="32x32" />
+<link rel="apple-touch-icon" href="apple-touch-icon.png" />
+<style>
+  @font-face {
+    font-family: 'Plus Jakarta Sans';
+    font-style: normal;
+    font-weight: 400 800;
+    font-display: swap;
+    src: url('assets/fonts/PlusJakartaSans-normal.woff2') format('woff2');
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --bg: #0A0A0C; --bg-card: #17171B; --accent: #D33024; --accent-lt: #FF6B5D;
+    --txt: #F5F5F7; --txt-2: #A3A3AD; --txt-3: #82828A; --border: rgba(255,255,255,.08);
+    --font: 'Plus Jakarta Sans', system-ui, sans-serif;
+    color-scheme: dark;
+  }
+  html, body { height: 100%; }
+  body {
+    background: var(--bg); color: var(--txt); font-family: var(--font); line-height: 1.7;
+    display: flex; flex-direction: column;
+  }
+  a { color: var(--accent-lt); }
+  :focus-visible { outline: 2px solid var(--accent-lt); outline-offset: 2px; }
+  header { padding: 1.5rem 2rem; border-bottom: 1px solid var(--border); }
+  header a { display: inline-flex; }
+  header img { height: 26px; width: auto; }
+  main {
+    flex: 1; display: flex; flex-direction: column; align-items: flex-start; justify-content: center;
+    max-width: 640px; margin: 0 auto; padding: 4rem 2rem; text-align: left; width: 100%;
+  }
+  .code { font-size: .78rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--accent-lt); margin-bottom: 1rem; }
+  h1 { font-size: clamp(1.75rem, 5vw, 2.6rem); font-weight: 800; letter-spacing: -.02em; margin-bottom: .9rem; }
+  p { color: var(--txt-2); font-size: 1rem; margin-bottom: 2rem; max-width: 480px; }
+  .btns { display: flex; gap: 1rem; flex-wrap: wrap; }
+  .btn-p {
+    background: var(--accent); color: #fff; padding: .85rem 1.75rem; border-radius: 10px;
+    font-size: .95rem; font-weight: 700; text-decoration: none; display: inline-flex; align-items: center; gap: .4rem;
+    transition: background .2s, transform .2s;
+  }
+  .btn-p:hover { background: var(--accent-lt); transform: translateY(-2px); }
+  .btn-s {
+    background: transparent; color: var(--txt); padding: .85rem 1.75rem; border-radius: 10px;
+    font-size: .95rem; font-weight: 700; text-decoration: none; border: 1px solid var(--border);
+    transition: border-color .2s, background .2s;
+  }
+  .btn-s:hover { border-color: rgba(255,255,255,.25); background: rgba(255,255,255,.04); }
+  footer { border-top: 1px solid var(--border); padding: 2rem; text-align: center; }
+  footer p { color: var(--txt-3); font-size: .8rem; }
+</style>
+</head>
+<body>
+  <header>
+    <a href="index.html" aria-label="Thru360 — kembali ke beranda">
+      <img src="logo.svg" alt="Logo Thru360" width="104" height="26" />
+    </a>
+  </header>
+  <main>
+    <p class="code">404 — Halaman Tidak Ditemukan</p>
+    <h1>Sepertinya halaman ini belum "Come Thru"</h1>
+    <p>Halaman yang Anda cari mungkin sudah dipindahkan atau tidak pernah ada. Yuk kembali ke beranda, atau langsung hubungi tim kami kalau butuh bantuan.</p>
+    <div class="btns">
+      <a href="index.html" class="btn-p">Ke Beranda →</a>
+      <a href="https://wa.me/628119440998" class="btn-s" target="_blank" rel="noopener noreferrer">WhatsApp Kami</a>
+    </div>
+  </main>
+  <footer>
+    <p>© <span id="year"></span> Thru360. All rights reserved.</p>
+  </footer>
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>
