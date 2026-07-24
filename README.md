@@ -59,6 +59,7 @@ Konten diambil dari *Credentials Pitch Deck* & *Company Profile 2026* resmi Thru
 | Portofolio (`#portofolio`) | **Venture: Citrust** (konsultan F&B), **Briga** (konsultan bisnis berkelanjutan), **Tilde** (software house), **FundHub** (konsultasi keuangan & funding) + industri yang dilayani |
 | Business Check-Up (`#business-checkup`) | Form langsung di web (bukan redirect Google Form), submit ke Supabase |
 | Investor (`#investor`) | CTA & form minat investasi (holding atau per-venture), submit ke Supabase |
+| Ajukan Pendanaan (`#ajukan-pendanaan`) | Form untuk founder/startup mengajukan diri untuk didanai Thru360 (link pitch deck dll), submit ke Supabase |
 | Studi Kasus (`#studi-kasus`) | Skinmade, Resoult.co, PowerBuilding Gym, TPR Metallurgy |
 | Kolaborasi | Daftar brand & institusi partner |
 | Freelancer (`#freelancer`) | Form pendaftaran Mitra Freelancer THRU (THRUpers) langsung di web, submit ke Supabase |
@@ -70,7 +71,7 @@ Konten diambil dari *Credentials Pitch Deck* & *Company Profile 2026* resmi Thru
 
 - **Dark mode permanen** — dinilai lebih kuat untuk brand Thru360.
 - **Menu mobile (hamburger)** — navigasi tetap bisa diakses penuh di layar kecil.
-- **Business Check-Up, Daftar Freelancer & Minat Investor** — semuanya form asli langsung di web (modal, bukan redirect), submit ke Supabase (lihat bagian *Supabase* di bawah).
+- **Business Check-Up, Daftar Freelancer, Minat Investor & Ajukan Pendanaan** — semuanya form asli langsung di web (modal, bukan redirect), submit ke Supabase (lihat bagian *Supabase* di bawah).
 - **Klik venture untuk detail** — card di section Portofolio bisa diklik, membuka modal dengan deskripsi venture & CTA diskusi kolaborasi.
 - **SEO & social preview** — meta description, Open Graph, Twitter Card, canonical URL, dan JSON-LD Organization.
 - **Aksesibilitas** — skip link, `aria-*` pada menu, serta menghormati preferensi *reduced motion*.
@@ -85,7 +86,7 @@ Form **Business Check-Up**, **Daftar Freelancer**, dan **Minat Investor** submit
 
 **Setup:**
 1. Buat project di [supabase.com](https://supabase.com) (atau pakai yang sudah ada).
-2. Buka **SQL Editor** → jalankan seluruh isi file [`supabase/schema.sql`](./supabase/schema.sql). Ini membuat 3 tabel (`business_checkups`, `freelancer_applications`, `investor_interest`) dan mengaktifkan **Row Level Security** dengan policy: publik hanya boleh **INSERT**, tidak bisa membaca data siapa pun (data pengunjung situs tetap privat).
+2. Buka **SQL Editor** → jalankan seluruh isi file [`supabase/schema.sql`](./supabase/schema.sql). Ini membuat 4 tabel (`business_checkups`, `freelancer_applications`, `investor_interest`, `funding_applications`) dan mengaktifkan **Row Level Security** dengan policy: publik hanya boleh **INSERT**, tidak bisa membaca data siapa pun (data pengunjung situs tetap privat).
 3. Buka **Settings → Data API**, salin **Project URL** dan **publishable key** (`sb_publishable_...`).
 4. Paste di `index.html`, cari baris:
    ```js
@@ -96,7 +97,7 @@ Form **Business Check-Up**, **Daftar Freelancer**, dan **Minat Investor** submit
 
 ⚠️ **Jangan pernah** menaruh **secret key** (`sb_secret_...` / service role key) di `index.html` atau file apa pun di repo ini — repo & situs ini bersifat publik (bisa dibaca lewat "View Source"), dan secret key itu bisa bypass semua proteksi RLS di atas. Hanya **publishable key** yang aman ditaruh di frontend.
 
-**Lihat data yang masuk:** buka Supabase Dashboard → **Table Editor** → pilih tabel `business_checkups`, `freelancer_applications`, atau `investor_interest`.
+**Lihat data yang masuk:** buka Supabase Dashboard → **Table Editor** → pilih tabel `business_checkups`, `freelancer_applications`, `investor_interest`, atau `funding_applications`.
 
 ---
 
