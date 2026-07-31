@@ -7,6 +7,7 @@ Landing page resmi **Thru360** — mitra bisnis 360° (marketing, digital, finan
 ```
 /
 ├── index.html            ← Halaman utama (edit di sini)
+├── cari-talent.html      ← Halaman terpisah: Database CV Kandidat (cari/filter/bayar buka kontak)
 ├── privacy.html          ← Kebijakan Privasi
 ├── terms.html            ← Syarat & Ketentuan
 ├── logo.svg              ← Logo brand Anda
@@ -65,7 +66,7 @@ Konten diambil dari *Credentials Pitch Deck* & *Company Profile 2026* resmi Thru
 | Studi Kasus (`#studi-kasus`) | Skinmade, Resoult.co, PowerBuilding Gym, TPR Metallurgy |
 | Kolaborasi | Daftar brand & institusi partner |
 | Freelancer (`#freelancer`) | Form pendaftaran Mitra Freelancer THRU (THRUpers) langsung di web, submit ke Supabase |
-| Database CV (`#cv-database`) | Cari & filter kandidat magang/entry-level; nama tersensor, pengalaman & pendidikan gratis dilihat, kontak & sosial media terkunci sampai bayar Rp 25.000/CV lewat Xendit |
+| Database CV (`cari-talent.html`) | Halaman terpisah — cari & filter kandidat magang/entry-level; nama tersensor, pengalaman & pendidikan gratis dilihat, kontak & sosial media terkunci sampai bayar Rp 25.000/CV lewat Xendit |
 | Testimoni | Kutipan dari Gary Miller (PowerBuilding) & Adrian Allo (Jenggala Semesta) |
 | FAQ (`#faq`) | Pertanyaan umum seputar Thru360 |
 | Kontak (`#kontak`) | Varian Ferandanes De Lima · +(62) 811 944 0998 · partnership@thrucorp.com |
