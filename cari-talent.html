@@ -1,0 +1,1049 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Cari Talent — Database CV Kandidat | Thru360</title>
+  <meta name="description" content="Telusuri database CV kandidat magang/entry-level dari jaringan Thru360. Lihat pengalaman, pendidikan, dan skill gratis — buka kontak & sosial media kandidat mulai Rp 25.000." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://thrucorp.com/cari-talent.html" />
+
+  <meta property="og:title" content="Cari Talent — Database CV Kandidat | Thru360" />
+  <meta property="og:description" content="Telusuri database CV kandidat magang/entry-level dari jaringan Thru360. Nama disensor, buka kontak mulai Rp 25.000." />
+  <meta property="og:site_name" content="Thru360" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://thrucorp.com/assets/og-image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:url" content="https://thrucorp.com/cari-talent.html" />
+  <meta property="og:locale" content="id_ID" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Cari Talent — Database CV Kandidat | Thru360" />
+  <meta name="twitter:description" content="Telusuri database CV kandidat magang/entry-level dari jaringan Thru360." />
+  <meta name="twitter:image" content="https://thrucorp.com/assets/og-image.png" />
+
+  <meta name="theme-color" content="#0A0A0C" />
+
+  <link rel="icon" href="logo.svg" type="image/svg+xml" />
+  <link rel="icon" href="favicon-32.png" type="image/png" sizes="32x32" />
+  <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+  <link rel="manifest" href="site.webmanifest" />
+
+  <link rel="preconnect" href="https://gbmglrpryusfwduzzhih.supabase.co" />
+  <link rel="preload" href="assets/fonts/PlusJakartaSans-normal.woff2" as="font" type="font/woff2" crossorigin />
+  <style>
+    @font-face {
+      font-family: 'Plus Jakarta Sans';
+      font-style: normal;
+      font-weight: 400 800;
+      font-display: swap;
+      src: url('assets/fonts/PlusJakartaSans-normal.woff2') format('woff2');
+    }
+    @font-face {
+      font-family: 'Plus Jakarta Sans';
+      font-style: italic;
+      font-weight: 400 800;
+      font-display: swap;
+      src: url('assets/fonts/PlusJakartaSans-italic.woff2') format('woff2');
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:          #0A0A0C;
+      --bg-surface:  #111114;
+      --bg-card:     #17171B;
+      --accent:      #D33024;
+      --accent-lt:   #FF6B5D;
+      --accent-glow: rgba(211, 48, 36, 0.22);
+      --txt:         #F5F5F7;
+      --txt-2:       #A3A3AD;
+      --txt-3:       #82828A;
+      --border:      rgba(255, 255, 255, 0.08);
+      --radius:      14px;
+      --font:        'Plus Jakarta Sans', system-ui, sans-serif;
+      color-scheme: dark;
+    }
+
+    html  { scroll-behavior: smooth; overflow-x: hidden; }
+    body  {
+      background: var(--bg);
+      color: var(--txt);
+      font-family: var(--font);
+      font-size: 16px;
+      line-height: 1.6;
+      overflow-x: hidden;
+      transition: background .25s ease, color .25s ease;
+    }
+
+    img   { display: block; max-width: 100%; }
+    a     { color: inherit; }
+
+    :focus-visible { outline: 2px solid var(--accent-lt); outline-offset: 2px; }
+
+    .skip-link {
+      position: absolute; top: -100%; left: 1rem;
+      background: var(--accent); color: #fff;
+      padding: .6rem 1rem; border-radius: 8px;
+      font-size: .85rem; font-weight: 600;
+      z-index: 1000; transition: top .2s ease;
+    }
+    .skip-link:focus { top: .75rem; }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed; top: 0; inset-inline: 0; z-index: 100;
+      height: 68px;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 2rem;
+      background: rgba(10, 10, 12, 0.75);
+      backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .nav-logo { height: 26px; width: auto; }
+
+    .nav-links { display: flex; gap: 1.9rem; list-style: none; }
+    .nav-links a {
+      font-size: 0.875rem; font-weight: 600;
+      color: var(--txt-2); text-decoration: none;
+      transition: color .2s;
+    }
+    .nav-links a:hover { color: var(--txt); }
+
+    .nav-right { display: flex; align-items: center; gap: .75rem; }
+
+    .nav-cta {
+      background: var(--accent); color: #fff;
+      padding: .55rem 1.35rem; border-radius: 100px;
+      font-size: .85rem; font-weight: 700; text-decoration: none;
+      display: inline-flex; align-items: center; gap: .4rem;
+      transition: background .2s, transform .2s, box-shadow .2s;
+      white-space: nowrap;
+    }
+    .nav-cta:hover {
+      background: var(--accent-lt);
+      transform: translateY(-1px);
+      box-shadow: 0 6px 24px var(--accent-glow);
+    }
+
+    .nav-toggle {
+      display: none; width: 38px; height: 38px; border-radius: 10px;
+      border: 1px solid var(--border); background: transparent;
+      cursor: pointer; position: relative;
+    }
+    .nav-toggle span {
+      position: absolute; left: 9px; right: 9px; height: 2px; background: var(--txt);
+      transition: transform .25s ease, opacity .2s ease, top .25s ease;
+    }
+    .nav-toggle span:nth-child(1) { top: 13px; }
+    .nav-toggle span:nth-child(2) { top: 18px; }
+    .nav-toggle span:nth-child(3) { top: 23px; }
+    .nav-toggle.active span:nth-child(1) { top: 18px; transform: rotate(45deg); }
+    .nav-toggle.active span:nth-child(2) { opacity: 0; }
+    .nav-toggle.active span:nth-child(3) { top: 18px; transform: rotate(-45deg); }
+
+    .mobile-menu {
+      display: none; position: fixed; top: 68px; inset-inline: 0; z-index: 99;
+      background: var(--bg-surface); border-bottom: 1px solid var(--border);
+      padding: 1rem 2rem 1.5rem; flex-direction: column; gap: 1rem;
+      max-height: calc(100vh - 68px); overflow-y: auto;
+    }
+    .mobile-menu.open { display: flex; }
+    .mobile-menu a { font-size: .95rem; font-weight: 600; color: var(--txt-2); text-decoration: none; }
+    .mobile-menu a:hover { color: var(--txt); }
+    .mobile-menu .nav-cta { align-self: flex-start; }
+
+    /* ── HERO (editorial, kolaborasi-style split layout) ── */
+    .hero {
+      min-height: 100vh;
+      display: flex; align-items: center;
+      padding: 9rem 2rem 4rem;
+      position: relative; overflow: hidden;
+    }
+    .hero-curtain {
+      position: absolute; inset: 0; z-index: 0; pointer-events: none;
+      background:
+        repeating-linear-gradient(100deg,
+          rgba(211, 48, 36, .16) 0px, rgba(211, 48, 36, .16) 40px,
+          transparent 40px, transparent 90px),
+        radial-gradient(ellipse 70% 60% at 15% 50%, rgba(211, 48, 36, .20) 0%, transparent 70%);
+      filter: blur(30px);
+      opacity: .8;
+    }
+
+    .hero-grid {
+      position: relative; z-index: 2;
+      max-width: 1280px; width: 100%; margin: 0 auto;
+      display: grid; grid-template-columns: 1.15fr 1fr;
+      gap: 3rem; align-items: end;
+    }
+    .hero-kicker {
+      display: inline-flex; align-items: center; gap: .5rem;
+      font-size: .78rem; font-weight: 700;
+      letter-spacing: .12em; text-transform: uppercase;
+      color: var(--accent-lt); margin-bottom: 1.5rem;
+    }
+    .hero-kicker::before {
+      content: ''; width: 7px; height: 7px; border-radius: 50%;
+      background: var(--accent);
+    }
+    .hero-h1 {
+      font-size: clamp(2.4rem, 6.4vw, 5rem);
+      font-weight: 800; line-height: 1.02; letter-spacing: -.02em;
+      text-transform: uppercase;
+    }
+    .hero-h1 em {
+      font-style: normal;
+      background: linear-gradient(130deg, var(--accent) 0%, var(--accent-lt) 100%);
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+    }
+    .hero-copy { display: flex; flex-direction: column; gap: 1.1rem; }
+    .hero-copy p { color: var(--txt-2); font-size: 1rem; line-height: 1.75; }
+    .hero-copy p strong { color: var(--txt); font-weight: 700; }
+    .hero-tagline {
+      font-style: italic; font-weight: 700; color: var(--txt);
+      font-size: 1.05rem; border-left: 3px solid var(--accent);
+      padding-left: 1rem;
+    }
+    .hero-btns { display: flex; gap: 1rem; flex-wrap: wrap; margin-top: .5rem; }
+
+    .btn-p {
+      background: var(--accent); color: #fff;
+      padding: .85rem 1.75rem; border-radius: 10px;
+      font-size: .95rem; font-weight: 700; text-decoration: none;
+      display: inline-flex; align-items: center; gap: .4rem;
+      transition: all .2s;
+    }
+    .btn-p:hover { background: var(--accent-lt); transform: translateY(-2px); box-shadow: 0 10px 30px var(--accent-glow); }
+
+    .btn-s {
+      background: transparent; color: var(--txt);
+      padding: .85rem 1.75rem; border-radius: 10px;
+      font-size: .95rem; font-weight: 700; text-decoration: none;
+      border: 1px solid var(--border);
+      transition: all .2s;
+    }
+    .btn-s:hover { border-color: rgba(255,255,255,.25); background: rgba(255,255,255,.04); }
+
+    /* ── STATS ── */
+    .stats {
+      display: flex; justify-content: center; gap: 3rem; flex-wrap: wrap;
+      padding: 2.25rem 2rem;
+      border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);
+      position: relative; z-index: 2;
+    }
+    .stat { text-align: center; }
+    .stat-n { font-size: 2rem; font-weight: 800; color: var(--accent-lt); }
+    .stat-l { font-size: .76rem; color: var(--txt-3); font-weight: 600; margin-top: .2rem; letter-spacing: .03em; max-width: 140px; }
+
+    /* ── SECTIONS ── */
+    .section { padding: 6rem 2rem; }
+    .section-inner { max-width: 1120px; margin: 0 auto; }
+
+    .eyebrow { font-size: .72rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--accent-lt); margin-bottom: .9rem; }
+    .s-title { font-size: clamp(1.65rem, 3vw, 2.4rem); font-weight: 800; letter-spacing: -.02em; margin-bottom: .9rem; max-width: 620px; }
+    .s-title em { font-style: italic; color: var(--txt-2); font-weight: 600; }
+    .s-sub { color: var(--txt-2); font-size: 1rem; max-width: 540px; margin-bottom: 3rem; line-height: 1.75; }
+
+    /* Cards grid */
+    .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.25rem; }
+    .card { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.75rem; transition: border-color .2s, transform .2s, box-shadow .2s; }
+    .card:hover { border-color: var(--accent-glow); transform: translateY(-3px); box-shadow: 0 12px 40px rgba(0,0,0,.18); }
+    .card-icon { width: 44px; height: 44px; border-radius: 10px; background: var(--accent-glow); color: var(--accent-lt); display: flex; align-items: center; justify-content: center; margin-bottom: 1.25rem; }
+    .card-icon svg { width: 20px; height: 20px; }
+    .card-icon--gold { background: rgba(234, 179, 8, .14); color: #EAB308; }
+    .card-icon--teal { background: rgba(45, 212, 191, .14); color: #2DD4BF; }
+    .card-icon--green { background: rgba(34, 197, 94, .14); color: #22C55E; }
+    .card-t { font-size: 1.02rem; font-weight: 800; margin-bottom: .6rem; }
+    .card-list { list-style: none; display: flex; flex-direction: column; gap: .45rem; }
+    .card-list li { font-size: .85rem; color: var(--txt-2); line-height: 1.5; padding-left: 1.1rem; position: relative; }
+    .card-list li::before { content: '—'; position: absolute; left: 0; color: var(--accent-lt); }
+
+    /* ── LEAD BANNER (Business Check-Up / Freelancer signup) ── */
+    .lead-banner {
+      background: var(--bg-card); border: 1px solid var(--border); border-left: 4px solid var(--accent);
+      border-radius: var(--radius); padding: 2.5rem;
+    }
+    .lead-banner-copy { max-width: 640px; margin-bottom: 2rem; }
+    .lead-banner-copy .s-sub { margin-bottom: 0; }
+    .lead-banner-copy .s-title { margin-bottom: .9rem; }
+
+    /* ── INVESTOR: thesis checklist, process, disclaimer ── */
+    .check-list { list-style: none; display: flex; flex-direction: column; gap: .7rem; margin: 1.5rem 0; max-width: 640px; }
+    .check-list li { font-size: .9rem; color: var(--txt-2); padding-left: 1.6rem; position: relative; line-height: 1.6; }
+    .check-list li::before {
+      content: '✓'; position: absolute; left: 0; top: -.05rem; color: var(--accent-lt); font-weight: 700;
+    }
+    .check-list li strong { color: var(--txt); }
+    .investor-process {
+      display: flex; flex-direction: column; gap: .65rem; margin: 0 0 1.75rem;
+      padding: 1.25rem 1.5rem; background: var(--bg-surface); border-radius: 10px;
+      border: 1px solid var(--border); max-width: 640px;
+    }
+    .investor-process-title { font-size: .78rem; font-weight: 700; color: var(--txt-3); text-transform: uppercase; letter-spacing: .06em; margin-bottom: .2rem; }
+    .investor-process-item { display: flex; gap: .75rem; align-items: baseline; font-size: .85rem; color: var(--txt-2); line-height: 1.5; }
+    .investor-process-num { color: var(--accent-lt); font-weight: 800; flex-shrink: 0; }
+    .investor-disclaimer { font-size: .78rem; color: var(--txt-3); margin-top: 1.5rem; max-width: 640px; line-height: 1.6; }
+
+    /* ── CV DATABASE ── */
+    .cv-toolbar { display: flex; gap: .9rem; flex-wrap: wrap; margin-bottom: 2rem; }
+    .cv-search { position: relative; flex: 1 1 260px; }
+    .cv-search svg {
+      position: absolute; left: .9rem; top: 50%; transform: translateY(-50%);
+      width: 17px; height: 17px; color: var(--txt-3); pointer-events: none;
+    }
+    .cv-search input {
+      width: 100%; background: var(--bg-surface); border: 1px solid var(--border); border-radius: 10px;
+      padding: .75rem .9rem .75rem 2.5rem; font-family: var(--font); font-size: .9rem; color: var(--txt);
+    }
+    .cv-search input:focus { border-color: var(--accent); }
+    .cv-filters { display: flex; gap: .6rem; flex-wrap: wrap; }
+    .cv-filters select {
+      background: var(--bg-surface); border: 1px solid var(--border); border-radius: 10px;
+      padding: .75rem .9rem; font-family: var(--font); font-size: .85rem; color: var(--txt);
+      cursor: pointer; appearance: none;
+    }
+    .cv-meta-row { display: flex; align-items: center; justify-content: space-between; margin-bottom: 1.25rem; }
+    .cv-count { font-size: .85rem; color: var(--txt-3); }
+    .cv-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1.25rem; }
+    .cv-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.6rem; display: flex; flex-direction: column; }
+    .cv-card-head { display: flex; align-items: center; justify-content: space-between; gap: .75rem; margin-bottom: .9rem; }
+    .cv-role-badge {
+      font-size: .72rem; font-weight: 700; color: var(--accent-lt); background: var(--accent-glow);
+      padding: .3rem .7rem; border-radius: 100px; text-transform: uppercase; letter-spacing: .03em;
+    }
+    .cv-price { font-size: .82rem; font-weight: 800; color: var(--txt); }
+    .cv-name { font-size: 1.1rem; font-weight: 800; margin-bottom: .35rem; }
+    .cv-headline { font-size: .85rem; color: var(--txt-2); line-height: 1.5; margin-bottom: 1rem; }
+    .cv-edu { font-size: .82rem; color: var(--txt-2); margin-bottom: 1rem; line-height: 1.5; }
+    .cv-edu strong { color: var(--txt); display: block; margin-bottom: .15rem; }
+    .cv-exp h4, .cv-skills h4 { font-size: .72rem; text-transform: uppercase; letter-spacing: .06em; color: var(--txt-3); margin-bottom: .5rem; }
+    .cv-exp ul { list-style: none; display: flex; flex-direction: column; gap: .5rem; margin-bottom: 1rem; }
+    .cv-exp li { font-size: .82rem; color: var(--txt-2); line-height: 1.55; padding-left: 1rem; position: relative; }
+    .cv-exp li::before { content: '—'; position: absolute; left: 0; color: var(--accent-lt); }
+    .cv-exp li strong { color: var(--txt); }
+    .cv-skills { display: flex; flex-wrap: wrap; gap: .4rem; margin-bottom: 1.25rem; }
+    .skill-chip { font-size: .72rem; font-weight: 600; color: var(--txt-2); border: 1px solid var(--border); border-radius: 100px; padding: .3rem .7rem; }
+    .cv-locked {
+      margin-top: auto; padding-top: 1.1rem; border-top: 1px solid var(--border);
+      display: flex; flex-direction: column; align-items: flex-start; gap: .75rem;
+    }
+    .cv-locked-label { display: flex; align-items: center; gap: .4rem; font-size: .8rem; color: var(--txt-3); font-weight: 600; }
+    .cv-locked-label svg { width: 14px; height: 14px; }
+    .cv-unlock-btn { width: 100%; justify-content: center; cursor: pointer; border: none; }
+    .cv-unlocked-panel {
+      margin-top: auto; padding-top: 1.1rem; border-top: 1px solid var(--border);
+      display: flex; flex-direction: column; gap: .5rem;
+    }
+    .cv-unlocked-label { font-size: .72rem; text-transform: uppercase; letter-spacing: .06em; color: #22C55E; font-weight: 700; }
+    .cv-unlocked-panel a, .cv-unlocked-panel span { font-size: .85rem; color: var(--txt); }
+    .cv-empty, .cv-loading { color: var(--txt-3); font-size: .9rem; text-align: center; padding: 3rem 0; }
+    [hidden] { display: none !important; }
+
+    /* ── LEAD FORM ── */
+    .lead-form { display: flex; flex-direction: column; gap: 1.15rem; max-width: 640px; }
+    .form-row { display: flex; flex-direction: column; gap: .4rem; }
+    .form-row label { font-size: .85rem; font-weight: 700; color: var(--txt); }
+    .form-row label span { color: var(--accent-lt); margin-left: .15rem; }
+    .form-row input,
+    .form-row textarea,
+    .form-row select {
+      background: var(--bg-surface); border: 1px solid var(--border); border-radius: 10px;
+      padding: .7rem .9rem; font-family: var(--font); font-size: .9rem; color: var(--txt);
+      resize: vertical;
+    }
+    .form-row select { appearance: none; cursor: pointer; }
+    .form-row input:focus, .form-row textarea:focus, .form-row select:focus { border-color: var(--accent); }
+    .form-checkbox label {
+      display: flex; align-items: flex-start; gap: .6rem;
+      font-weight: 500; font-size: .85rem; color: var(--txt-2); line-height: 1.5;
+    }
+    .form-checkbox input { margin-top: .25rem; accent-color: var(--accent); flex-shrink: 0; width: auto; }
+    .lead-form button[type="submit"] { align-self: flex-start; cursor: pointer; border: none; }
+    .lead-form button[disabled] { opacity: .6; cursor: not-allowed; }
+    .form-status { font-size: .85rem; font-weight: 700; min-height: 1.2em; }
+    .form-status.success { color: #22C55E; }
+    .form-status.error { color: var(--accent-lt); }
+
+    /* ── FORM DIALOG (modal) ── */
+    .form-dialog {
+      border: none; border-radius: var(--radius); background: var(--bg-card); color: var(--txt);
+      padding: 0; max-width: 640px; width: calc(100% - 2rem); max-height: 85vh;
+      overflow: hidden; position: fixed; top: 50%; left: 50%; margin: 0; transform: translate(-50%, -50%);
+    }
+    .form-dialog[open] { display: flex; flex-direction: column; }
+    .form-dialog::backdrop { background: rgba(0,0,0,.65); backdrop-filter: blur(3px); }
+    .dialog-header {
+      flex: 0 0 auto; display: flex; align-items: center; justify-content: space-between;
+      gap: 1rem; padding: 1.5rem 1.75rem; border-bottom: 1px solid var(--border);
+    }
+    .dialog-header h3 { font-size: 1.1rem; font-weight: 800; }
+    .dialog-close {
+      width: 32px; height: 32px; border-radius: 50%; border: 1px solid var(--border);
+      background: transparent; color: var(--txt-2); cursor: pointer; font-size: .95rem;
+      display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+      transition: color .2s, border-color .2s;
+    }
+    .dialog-close:hover { color: var(--txt); border-color: rgba(255,255,255,.25); }
+    .dialog-body { flex: 1 1 auto; overflow-y: auto; padding: 1.75rem; }
+    .dialog-body .lead-form { max-width: none; }
+
+    /* ── VENTURE DETAIL DIALOG ── */
+    .venture-detail-logo {
+      height: 64px; width: auto; max-width: 180px; object-fit: contain;
+      background: #F5F5F7; border-radius: 14px; padding: .6rem 1rem; margin-bottom: 1.25rem;
+    }
+    .venture-detail-desc { color: var(--txt-2); font-size: .95rem; line-height: 1.7; margin-bottom: 1.75rem; }
+
+    /* ── APPROACH (challenge -> response) ── */
+    .approach-grid { display: grid; grid-template-columns: 1fr auto 1fr; gap: 1.5rem; align-items: center; }
+    .approach-arrow { font-size: 1.8rem; color: var(--accent-lt); font-weight: 800; }
+    .approach-panel { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.75rem 2rem; }
+    .approach-panel h3 { font-size: 1rem; font-weight: 800; margin-bottom: 1rem; }
+    .approach-panel ul { list-style: none; display: flex; flex-direction: column; gap: .6rem; }
+    .approach-panel li { font-size: .9rem; color: var(--txt-2); padding-left: 1.2rem; position: relative; }
+    .approach-panel.challenge li::before { content: '✕'; position: absolute; left: 0; color: var(--txt-3); font-weight: 700; }
+    .approach-panel.response li::before { content: '✓'; position: absolute; left: 0; color: var(--accent-lt); font-weight: 700; }
+    @media (max-width: 760px) {
+      .approach-grid { grid-template-columns: 1fr; }
+      .approach-arrow { transform: rotate(90deg); justify-self: center; }
+    }
+
+    /* ── NILAI-NILAI (numbered accordion) ── */
+    .values-grid { display: grid; grid-template-columns: 1fr 1.35fr; gap: 3rem; align-items: start; }
+    .values-list { display: flex; flex-direction: column; }
+    .values-item { border-top: 1px solid var(--border); padding: 1.35rem 0; }
+    .values-item:last-child { border-bottom: 1px solid var(--border); }
+    .values-item summary {
+      list-style: none; cursor: pointer; display: flex; align-items: baseline; gap: 1rem;
+      font-weight: 800; font-size: 1.05rem;
+    }
+    .values-item summary::-webkit-details-marker { display: none; }
+    .values-num { color: var(--accent-lt); font-weight: 800; font-size: .9rem; flex-shrink: 0; }
+    .values-item summary::after {
+      content: '+'; margin-left: auto; color: var(--accent-lt); font-size: 1.3rem; font-weight: 400;
+      transition: transform .2s ease; flex-shrink: 0;
+    }
+    .values-item[open] summary::after { transform: rotate(45deg); }
+    .values-desc { color: var(--txt-2); font-size: .9rem; line-height: 1.7; margin-top: .85rem; padding-left: 2.05rem; }
+    @media (max-width: 760px) {
+      .values-grid { grid-template-columns: 1fr; gap: 1.5rem; }
+    }
+
+    /* ── DAMPAK (outcome stat cards) ── */
+    .outcome-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 1.25rem; }
+    .outcome-card {
+      background: var(--bg-card); border: 1px solid var(--border); border-top: 3px solid var(--o-accent, var(--accent));
+      border-radius: var(--radius); padding: 1.75rem 1.5rem;
+      text-align: left; transition: transform .2s ease, border-color .2s ease, box-shadow .2s ease;
+    }
+    .outcome-card:hover {
+      transform: translateY(-4px); border-color: var(--o-accent, var(--accent));
+      box-shadow: 0 12px 32px color-mix(in srgb, var(--o-accent, var(--accent)) 22%, transparent);
+    }
+    .outcome-icon {
+      width: 40px; height: 40px; border-radius: 10px; margin-bottom: 1.1rem;
+      background: color-mix(in srgb, var(--o-accent, var(--accent)) 16%, transparent);
+      color: var(--o-accent, var(--accent));
+      display: flex; align-items: center; justify-content: center;
+    }
+    .outcome-icon svg { width: 19px; height: 19px; }
+    .outcome-n { font-size: 1.85rem; font-weight: 800; margin-bottom: .3rem; color: var(--txt); letter-spacing: -.01em; }
+    .outcome-l { font-size: .85rem; font-weight: 600; color: var(--txt-2); }
+
+    /* ── PROCESS steps ── */
+    .steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 1.25rem; }
+    .step { position: relative; padding: 1.6rem 1.4rem; border: 1px solid var(--border); border-radius: var(--radius); background: var(--bg-card); }
+    .step-num { display: inline-flex; align-items: center; justify-content: center; width: 34px; height: 34px; border-radius: 10px; background: var(--accent-glow); color: var(--accent-lt); font-weight: 800; font-size: .9rem; margin-bottom: 1rem; }
+    .step-t { font-size: .98rem; font-weight: 800; margin-bottom: .4rem; }
+    .step-d { font-size: .83rem; color: var(--txt-2); line-height: 1.6; }
+
+    /* ── PORTFOLIO / VENTURES ── */
+    .ventures { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 1.25rem; }
+    .venture-card {
+      position: relative;
+      background: var(--bg-card); border: 1px solid var(--border); border-top: 3px solid var(--v-accent, var(--accent));
+      border-radius: var(--radius);
+      padding: 2rem 1.5rem; text-align: center; transition: border-color .2s, transform .2s, box-shadow .2s;
+      font-family: var(--font); cursor: pointer; width: 100%; display: block;
+    }
+    .venture-card:hover {
+      border-color: var(--v-accent, var(--accent));
+      border-top-color: var(--v-accent, var(--accent));
+      transform: translateY(-3px);
+      box-shadow: 0 14px 36px color-mix(in srgb, var(--v-accent, var(--accent)) 16%, transparent);
+    }
+    .venture-card-arrow {
+      position: absolute; top: 1rem; right: 1rem; color: var(--txt-3); opacity: 0; transition: opacity .2s, transform .2s;
+    }
+    .venture-card-arrow svg { width: 15px; height: 15px; }
+    .venture-card:hover .venture-card-arrow { opacity: 1; transform: translate(2px, -2px); color: var(--v-accent, var(--accent)); }
+    .venture-mark {
+      height: 64px; width: auto; min-width: 64px; border-radius: 12px; margin: 0 auto 1.1rem;
+      display: flex; align-items: center; justify-content: center;
+      background: #F5F5F7; padding: .6rem 1rem;
+    }
+    .venture-mark img { max-height: 100%; max-width: 150px; object-fit: contain; }
+    .venture-name { font-size: 1.05rem; font-weight: 800; margin-bottom: .3rem; color: var(--txt); }
+    .venture-tag { font-size: .78rem; color: var(--txt-3); font-weight: 600; letter-spacing: .02em; }
+    .venture-hint { font-size: .82rem; color: var(--txt-3); margin-top: 1rem; text-align: center; }
+
+    .industries { display: flex; flex-wrap: wrap; gap: .6rem; }
+    .industry-chip {
+      font-size: .82rem; font-weight: 600; color: var(--txt-2);
+      border: 1px solid var(--border); border-radius: 100px; padding: .5rem 1.1rem;
+    }
+
+    /* ── CASE STUDIES ── */
+    .case-list { display: flex; flex-direction: column; gap: 1.25rem; }
+    .case-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.9rem 2rem; }
+    .case-head { display: flex; align-items: baseline; justify-content: space-between; gap: 1rem; flex-wrap: wrap; margin-bottom: 1.25rem; }
+    .case-name { font-size: 1.2rem; font-weight: 800; }
+    .case-kind { font-size: .8rem; color: var(--accent-lt); font-weight: 700; }
+    .case-cols { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem; }
+    .case-col h4 { font-size: .75rem; text-transform: uppercase; letter-spacing: .08em; color: var(--txt-3); margin-bottom: .6rem; }
+    .case-col p, .case-col li { font-size: .88rem; color: var(--txt-2); line-height: 1.6; }
+    .case-col ul { list-style: none; display: flex; flex-direction: column; gap: .4rem; }
+    .case-col.impact li { color: var(--txt); font-weight: 700; }
+    .case-col.impact li::before { content: '↑ '; color: var(--accent-lt); }
+
+    /* ── LOGO CLOUD ── */
+    .logo-cloud { display: flex; flex-wrap: wrap; gap: .75rem; align-items: center; }
+    .logo-chip {
+      display: inline-flex; align-items: center; justify-content: center;
+      height: 52px; background: #F5F5F7; border: 1px solid var(--border);
+      border-radius: 10px; padding: .6rem 1.1rem;
+    }
+    .logo-chip img { max-height: 28px; max-width: 130px; object-fit: contain; display: block; }
+
+    /* ── TESTIMONIALS ── */
+    .testimonials { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.25rem; }
+    .testimonial { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.85rem; }
+    .testimonial-mark { font-family: Georgia, 'Times New Roman', serif; font-size: 2.75rem; line-height: 1; color: var(--accent-lt); opacity: .45; margin-bottom: .5rem; }
+    .testimonial-quote { font-size: .95rem; color: var(--txt-2); line-height: 1.8; margin-bottom: 1.5rem; }
+    .testimonial-author { display: flex; align-items: center; gap: .75rem; padding-top: 1.25rem; border-top: 1px solid var(--border); }
+    .avatar { width: 38px; height: 38px; border-radius: 10px; background: var(--accent); color: #fff; font-weight: 700; font-size: .85rem; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+    .author-name { font-size: .875rem; font-weight: 700; }
+    .author-role { font-size: .78rem; color: var(--txt-3); }
+
+    /* ── FAQ ── */
+    .faq-list { display: flex; flex-direction: column; gap: .75rem; max-width: 760px; }
+    .faq-item { border: 1px solid var(--border); border-radius: var(--radius); background: var(--bg-card); overflow: hidden; }
+    .faq-item summary { list-style: none; cursor: pointer; padding: 1.15rem 1.5rem; font-weight: 700; font-size: .95rem; display: flex; align-items: center; justify-content: space-between; gap: 1rem; }
+    .faq-item summary::-webkit-details-marker { display: none; }
+    .faq-item summary::after { content: '+'; font-size: 1.3rem; font-weight: 400; color: var(--accent-lt); transition: transform .2s ease; flex-shrink: 0; }
+    .faq-item[open] summary::after { transform: rotate(45deg); }
+    .faq-answer { padding: 0 1.5rem 1.25rem; color: var(--txt-2); font-size: .9rem; line-height: 1.7; }
+
+    /* CTA Banner */
+    .cta-banner {
+      background: var(--bg-card); border: 1px solid var(--border); border-radius: 20px;
+      padding: 3.5rem 2rem; text-align: center; position: relative; overflow: hidden;
+      max-width: 1080px; margin: 0 auto;
+    }
+    .cta-banner::before {
+      content: ''; position: absolute; inset: 0;
+      background: radial-gradient(ellipse 60% 70% at 50% 0%, var(--accent-glow) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .cta-banner h2 { font-size: clamp(1.5rem, 3vw, 2.4rem); font-weight: 800; letter-spacing: -.02em; margin-bottom: .75rem; position: relative; text-transform: uppercase; }
+    .cta-banner p { color: var(--txt-2); margin-bottom: 1rem; font-size: 1rem; position: relative; }
+    .cta-contact { position: relative; font-size: .85rem; color: var(--txt-3); margin-bottom: 2rem; }
+    .cta-contact strong { color: var(--txt-2); }
+
+    /* ── FOOTER ── */
+    .footer-wrap { border-top: 1px solid var(--border); padding: 2.25rem 2rem; }
+    footer { max-width: 1080px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem; }
+    .footer-logo { height: 22px; width: auto; }
+    .footer-copy { font-size: .8rem; color: var(--txt-3); }
+    .footer-links { display: flex; gap: 1rem 1.5rem; flex-wrap: wrap; }
+    .footer-links a { font-size: .8rem; color: var(--txt-3); text-decoration: none; transition: color .2s; }
+    .footer-links a:hover { color: var(--txt-2); }
+
+    .social-links { display: flex; gap: .6rem; }
+    .social-links a {
+      display: inline-flex; align-items: center; justify-content: center;
+      width: 36px; height: 36px; border-radius: 50%;
+      border: 1px solid var(--border); color: var(--txt-2);
+      transition: color .2s, border-color .2s;
+    }
+    .social-links a:hover { color: var(--txt); border-color: rgba(255,255,255,.25); }
+    .social-links svg { width: 17px; height: 17px; fill: currentColor; }
+
+    /* ── BACK TO TOP ── */
+    .back-to-top {
+      position: fixed; right: 1.5rem; bottom: 1.5rem; width: 44px; height: 44px; border-radius: 50%;
+      background: var(--accent); color: #fff; border: none; cursor: pointer; font-size: 1.1rem;
+      display: flex; align-items: center; justify-content: center;
+      opacity: 0; visibility: hidden; transform: translateY(8px);
+      transition: opacity .25s ease, transform .25s ease, visibility .25s;
+      box-shadow: 0 8px 24px rgba(0,0,0,.3); z-index: 90;
+    }
+    .back-to-top.visible { opacity: 1; visibility: visible; transform: translateY(0); }
+    .back-to-top:hover { background: var(--accent-lt); }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 900px) {
+      .hero-grid { grid-template-columns: 1fr; align-items: start; gap: 2rem; }
+    }
+    @media (max-width: 1050px) {
+      .nav-links { display: none; }
+      nav > .nav-right > .nav-cta { display: none; }
+      .nav-toggle { display: block; }
+    }
+    @media (max-width: 640px) {
+      .hero { padding-top: 7rem; }
+      .stats { gap: 1.5rem; }
+      footer { flex-direction: column; text-align: center; }
+      .footer-links, .social-links { justify-content: center; }
+      .cta-banner { padding: 2.5rem 1.25rem; }
+      .hero-btns { flex-wrap: nowrap; gap: .5rem; }
+      .hero-btns .btn-p, .hero-btns .btn-s {
+        flex: 1 1 0; padding: .7rem .5rem; font-size: .78rem;
+        justify-content: center; text-align: center;
+      }
+    }
+    @media (max-width: 380px) {
+      .hero-btns .btn-p, .hero-btns .btn-s { font-size: .7rem; padding: .65rem .35rem; }
+    }
+
+    /* ── SCROLL REVEAL ── */
+    .reveal { opacity: 0; transform: translateY(24px); transition: opacity .6s ease, transform .6s ease; }
+    .reveal.visible { opacity: 1; transform: none; }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      .reveal { opacity: 1; transform: none; transition: none; }
+      *, *::before, *::after { animation-duration: .001ms !important; transition-duration: .001ms !important; }
+    }
+  </style>
+  <noscript>
+    <style>.reveal { opacity: 1 !important; transform: none !important; }</style>
+  </noscript>
+</head>
+
+<body>
+
+  <a href="#konten" class="skip-link">Langsung ke konten</a>
+
+  <!-- ==================== NAVBAR ==================== -->
+  <nav>
+    <a href="index.html#beranda" aria-label="Thru360 — kembali ke beranda">
+      <img src="logo.svg" alt="Logo Thru360" class="nav-logo" width="104" height="26" />
+    </a>
+
+    <ul class="nav-links">
+      <li><a href="index.html#tentang">Tentang</a></li>
+      <li><a href="index.html#layanan">Layanan</a></li>
+      <li><a href="index.html#proses">Proses</a></li>
+      <li><a href="index.html#portofolio">Portofolio</a></li>
+      <li><a href="index.html#investor">Investor</a></li>
+      <li><a href="index.html#studi-kasus">Studi Kasus</a></li>
+      <li><a href="cari-talent.html" aria-current="page">Cari Talent</a></li>
+      <li><a href="index.html#kontak">Kontak</a></li>
+    </ul>
+
+    <div class="nav-right">
+      <a href="index.html#kontak" class="nav-cta">Hubungi Kami →</a>
+      <button type="button" class="nav-toggle" id="navToggle" aria-label="Buka menu navigasi" aria-expanded="false" aria-controls="mobileMenu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="index.html#tentang">Tentang</a>
+    <a href="index.html#layanan">Layanan</a>
+    <a href="index.html#proses">Proses</a>
+    <a href="index.html#portofolio">Portofolio</a>
+    <a href="index.html#investor">Investor</a>
+    <a href="index.html#studi-kasus">Studi Kasus</a>
+    <a href="cari-talent.html">Cari Talent</a>
+    <a href="index.html#kontak" class="nav-cta">Hubungi Kami →</a>
+  </div>
+
+  <main id="konten">
+
+    <section class="section" id="cv-database" style="padding-top: 7.5rem;">
+      <div class="section-inner">
+        <div class="reveal">
+          <p class="eyebrow">Database Kandidat</p>
+          <h2 class="s-title">Cari Kandidat Siap Kerja</h2>
+          <p class="s-sub">Telusuri profil kandidat magang/entry-level dari jaringan Thru360. Pengalaman, ringkasan, dan jenjang pendidikan bisa dilihat gratis — buka kontak &amp; sosial media kandidat yang cocok dengan kebutuhan Anda.</p>
+        </div>
+
+        <div class="cv-toolbar reveal">
+          <div class="cv-search">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+            <input type="search" id="cvSearchInput" placeholder="Cari skill, universitas, atau posisi..." aria-label="Cari kandidat" />
+          </div>
+          <div class="cv-filters">
+            <select id="cvFilterRole" aria-label="Filter kategori">
+              <option value="">Semua Kategori</option>
+            </select>
+            <select id="cvFilterCity" aria-label="Filter kota">
+              <option value="">Semua Kota</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="cv-meta-row reveal">
+          <p class="cv-count" id="cvCount"></p>
+        </div>
+
+        <p class="cv-loading" id="cvLoadingState">Memuat data kandidat...</p>
+        <p class="cv-empty" id="cvEmptyState" hidden>Tidak ada kandidat yang cocok dengan pencarian/filter Anda.</p>
+        <div class="cv-grid reveal" id="cvGrid"></div>
+      </div>
+    </section>
+
+    <dialog class="form-dialog" id="cvUnlockDialog" aria-labelledby="cvUnlockDialogTitle">
+      <div class="dialog-header">
+        <h3 id="cvUnlockDialogTitle">Buka Kontak Kandidat</h3>
+        <button type="button" class="dialog-close" data-close aria-label="Tutup">✕</button>
+      </div>
+      <div class="dialog-body">
+        <form class="lead-form" id="cvUnlockForm">
+          <p class="s-sub" style="margin-bottom: 0;" id="cvUnlockPriceInfo"></p>
+          <div class="form-row">
+            <label for="cvu-email">Email Anda<span aria-hidden="true">*</span></label>
+            <input type="email" id="cvu-email" name="buyer_email" autocomplete="email" required />
+          </div>
+          <div class="form-row">
+            <label for="cvu-wa">Nomor WhatsApp (opsional)</label>
+            <input type="tel" id="cvu-wa" name="buyer_whatsapp" autocomplete="tel" />
+          </div>
+          <button type="submit" class="btn-p">Lanjut ke Pembayaran →</button>
+          <p class="form-status" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+    </dialog>
+
+  </main>
+
+  <!-- ==================== FOOTER ==================== -->
+  <div class="footer-wrap">
+    <footer>
+      <img src="logo.svg" alt="Logo Thru360" class="footer-logo" width="88" height="22" />
+      <p class="footer-copy">© <span id="year"></span> Thru360. All rights reserved.</p>
+      <div class="social-links">
+        <a href="https://www.instagram.com/thru.360/" target="_blank" rel="noopener noreferrer" aria-label="Instagram Thru360">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2c3.2 0 3.6 0 4.9.07 1.2.06 2.2.27 3 .58a6 6 0 0 1 2.2 1.4 6 6 0 0 1 1.4 2.2c.3.8.5 1.8.6 3 .1 1.3.1 1.7.1 4.9s0 3.6-.1 4.9c-.1 1.2-.3 2.2-.6 3a6 6 0 0 1-1.4 2.2 6 6 0 0 1-2.2 1.4c-.8.3-1.8.5-3 .6-1.3.1-1.7.1-4.9.1s-3.6 0-4.9-.1c-1.2-.1-2.2-.3-3-.6a6 6 0 0 1-2.2-1.4 6 6 0 0 1-1.4-2.2c-.3-.8-.5-1.8-.6-3-.1-1.3-.1-1.7-.1-4.9s0-3.6.1-4.9c.1-1.2.3-2.2.6-3a6 6 0 0 1 1.4-2.2A6 6 0 0 1 4.1 2.85c.8-.3 1.8-.5 3-.6 1.3-.1 1.7-.1 4.9-.1zM12 0C8.7 0 8.3 0 7 .1c-1.3.1-2.6.3-3.7.7A8.2 8.2 0 0 0 .8 3.3 8.2 8.2 0 0 0 .1 7C0 8.3 0 8.7 0 12s0 3.7.1 5c.1 1.3.3 2.6.7 3.7a8.2 8.2 0 0 0 2.5 2.5c1.1.4 2.4.6 3.7.7 1.3.1 1.7.1 5 .1s3.7 0 5-.1c1.3-.1 2.6-.3 3.7-.7a8.2 8.2 0 0 0 2.5-2.5c.4-1.1.6-2.4.7-3.7.1-1.3.1-1.7.1-5s0-3.7-.1-5c-.1-1.3-.3-2.6-.7-3.7A8.2 8.2 0 0 0 20.7.8c-1.1-.4-2.4-.6-3.7-.7C15.7 0 15.3 0 12 0z"/><path d="M12 5.8A6.2 6.2 0 1 0 18.2 12 6.2 6.2 0 0 0 12 5.8zm0 10.2A4 4 0 1 1 16 12a4 4 0 0 1-4 4zM19.9 5.6a1.44 1.44 0 1 1-1.44-1.44 1.44 1.44 0 0 1 1.44 1.44z"/></svg>
+        </a>
+        <a href="https://www.linkedin.com/company/thruid/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn Thru360">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.02-3.04-1.85-3.04-1.86 0-2.15 1.45-2.15 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45z"/></svg>
+        </a>
+      </div>
+      <div class="footer-links">
+        <a href="index.html#business-checkup">Business Check-Up</a>
+        <a href="index.html#freelancer">Penghasilan Tambahan</a>
+        <a href="index.html#investor">Investor</a>
+        <a href="index.html#ajukan-pendanaan">Ajukan Pendanaan</a>
+        <a href="cari-talent.html">Database Kandidat</a>
+        <a href="privacy.html">Kebijakan Privasi</a>
+        <a href="terms.html">Syarat &amp; Ketentuan</a>
+        <a href="mailto:partnership@thrucorp.com">Kontak</a>
+      </div>
+    </footer>
+  </div>
+
+  <button type="button" class="back-to-top" id="backToTop" aria-label="Kembali ke atas">↑</button>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    try {
+      const io = new IntersectionObserver((entries) => {
+        entries.forEach(e => {
+          if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); }
+        });
+      }, { threshold: 0.15 });
+      document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+    } catch (err) {
+      document.querySelectorAll('.reveal').forEach(el => el.classList.add('visible'));
+    }
+    window.addEventListener('error', () => {
+      document.querySelectorAll('.reveal:not(.visible)').forEach(el => el.classList.add('visible'));
+    });
+
+    const navToggle = document.getElementById('navToggle');
+    const mobileMenu = document.getElementById('mobileMenu');
+    function closeMobileMenu() {
+      mobileMenu.classList.remove('open');
+      navToggle.classList.remove('active');
+      navToggle.setAttribute('aria-expanded', 'false');
+    }
+    navToggle.addEventListener('click', () => {
+      const isOpen = mobileMenu.classList.toggle('open');
+      navToggle.classList.toggle('active', isOpen);
+      navToggle.setAttribute('aria-expanded', String(isOpen));
+    });
+    mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMobileMenu));
+    document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeMobileMenu(); });
+
+    let lastY = 0;
+    const nav = document.querySelector('nav');
+    const backToTop = document.getElementById('backToTop');
+    window.addEventListener('scroll', () => {
+      const y = window.scrollY;
+      nav.style.transform = (y > lastY && y > 80 && !mobileMenu.classList.contains('open')) ? 'translateY(-100%)' : 'translateY(0)';
+      nav.style.transition = 'transform .3s ease';
+      lastY = y;
+      backToTop.classList.toggle('visible', y > 500);
+    }, { passive: true });
+
+    backToTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+
+    function wireDialog(dialogId) {
+      const dialog = document.getElementById(dialogId);
+      document.querySelectorAll(`[data-open="${dialogId}"]`).forEach(btn => {
+        btn.addEventListener('click', () => dialog.showModal());
+      });
+      dialog.querySelectorAll('[data-close]').forEach(btn => {
+        btn.addEventListener('click', () => dialog.close());
+      });
+      dialog.addEventListener('click', (e) => {
+        const r = dialog.getBoundingClientRect();
+        const inside = e.clientY >= r.top && e.clientY <= r.bottom && e.clientX >= r.left && e.clientX <= r.right;
+        if (!inside) dialog.close();
+      });
+    }
+    wireDialog('cvUnlockDialog');
+
+    const SUPABASE_URL = 'https://gbmglrpryusfwduzzhih.supabase.co';
+    const SUPABASE_PUBLISHABLE_KEY = 'sb_publishable_d_HTle6uNlFEura0yl_iRA_NORUFB7w';
+
+    /* ==================== CV DATABASE (search, filter, pay-to-unlock) ==================== */
+    (function () {
+      const EDGE_FUNCTIONS_URL = `${SUPABASE_URL}/functions/v1`;
+      const cvGrid = document.getElementById('cvGrid');
+      const cvLoadingState = document.getElementById('cvLoadingState');
+      const cvEmptyState = document.getElementById('cvEmptyState');
+      const cvCount = document.getElementById('cvCount');
+      const cvSearchInput = document.getElementById('cvSearchInput');
+      const cvFilterRole = document.getElementById('cvFilterRole');
+      const cvFilterCity = document.getElementById('cvFilterCity');
+      const cvUnlockDialog = document.getElementById('cvUnlockDialog');
+      const cvUnlockForm = document.getElementById('cvUnlockForm');
+      const cvUnlockPriceInfo = document.getElementById('cvUnlockPriceInfo');
+      if (!cvGrid) return;
+
+      let allCandidates = [];
+      let activeUnlockCvId = null;
+      const UNLOCKED_STORE_KEY = 'thru_cv_unlocked_v1';
+
+      function getUnlockedStore() {
+        try { return JSON.parse(localStorage.getItem(UNLOCKED_STORE_KEY) || '{}'); }
+        catch (err) { return {}; }
+      }
+      function setUnlocked(cvId, data) {
+        const store = getUnlockedStore();
+        store[cvId] = data;
+        localStorage.setItem(UNLOCKED_STORE_KEY, JSON.stringify(store));
+      }
+      function escapeHtml(str) {
+        const div = document.createElement('div');
+        div.textContent = str == null ? '' : String(str);
+        return div.innerHTML;
+      }
+      function formatIDR(n) { return 'Rp ' + Number(n).toLocaleString('id-ID'); }
+
+      function renderExperience(workExperience) {
+        if (!Array.isArray(workExperience) || workExperience.length === 0) return '';
+        const items = workExperience.slice(0, 3).map(exp => `
+          <li><strong>${escapeHtml(exp.title || '')}</strong> @ ${escapeHtml(exp.company || '')}${exp.period ? ` (${escapeHtml(exp.period)})` : ''}${exp.description ? ` — ${escapeHtml(exp.description)}` : ''}</li>
+        `).join('');
+        return `<div class="cv-exp"><h4>Pengalaman</h4><ul>${items}</ul></div>`;
+      }
+      function renderSkills(skills) {
+        if (!Array.isArray(skills) || skills.length === 0) return '';
+        return `<div class="cv-skills">${skills.map(s => `<span class="skill-chip">${escapeHtml(s)}</span>`).join('')}</div>`;
+      }
+      function renderLockedPanel(cv) {
+        return `
+          <div class="cv-locked">
+            <div class="cv-locked-label">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="10" width="16" height="10" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg>
+              Kontak &amp; sosial media terkunci
+            </div>
+            <button type="button" class="btn-p cv-unlock-btn" data-unlock-cv="${cv.id}" data-price="${cv.price_idr}" data-name="${escapeHtml(cv.display_name)}">Buka Kontak — ${formatIDR(cv.price_idr)}</button>
+          </div>
+        `;
+      }
+      function renderUnlockedPanel(data) {
+        const links = [];
+        if (data.phone) links.push(`<span>Telepon: ${escapeHtml(data.phone)}</span>`);
+        if (data.email) links.push(`<span>Email: ${escapeHtml(data.email)}</span>`);
+        if (data.linkedin_url) links.push(`<a href="${escapeHtml(data.linkedin_url)}" target="_blank" rel="noopener noreferrer">LinkedIn →</a>`);
+        if (data.portfolio_url) links.push(`<a href="${escapeHtml(data.portfolio_url)}" target="_blank" rel="noopener noreferrer">Portfolio →</a>`);
+        if (data.other_social) links.push(`<span>${escapeHtml(data.other_social)}</span>`);
+        return `
+          <div class="cv-unlocked-panel">
+            <p class="cv-unlocked-label">✓ Kontak Terbuka — ${escapeHtml(data.full_name || '')}</p>
+            ${links.join('')}
+          </div>
+        `;
+      }
+      function cardHTML(cv) {
+        const unlocked = getUnlockedStore()[cv.id];
+        return `
+          <div class="cv-card" data-cv-card="${cv.id}">
+            <div class="cv-card-head">
+              <span class="cv-role-badge">${escapeHtml(cv.role_category || 'Umum')}</span>
+              <span class="cv-price">${formatIDR(cv.price_idr)}</span>
+            </div>
+            <h3 class="cv-name">${escapeHtml(cv.display_name)}</h3>
+            ${cv.headline ? `<p class="cv-headline">${escapeHtml(cv.headline)}</p>` : ''}
+            <div class="cv-edu">
+              <strong>${escapeHtml(cv.education_institution || '')}</strong>
+              ${escapeHtml(cv.education_degree || '')}${cv.education_period ? ` (${escapeHtml(cv.education_period)})` : ''}
+            </div>
+            ${renderExperience(cv.work_experience)}
+            ${renderSkills(cv.skills)}
+            ${unlocked ? renderUnlockedPanel(unlocked) : renderLockedPanel(cv)}
+          </div>
+        `;
+      }
+      function populateFilterOptions() {
+        const roles = Array.from(new Set(allCandidates.map(c => c.role_category).filter(Boolean))).sort();
+        const cities = Array.from(new Set(allCandidates.map(c => c.location_city).filter(Boolean))).sort();
+        roles.forEach(r => {
+          const opt = document.createElement('option');
+          opt.value = r; opt.textContent = r;
+          cvFilterRole.appendChild(opt);
+        });
+        cities.forEach(c => {
+          const opt = document.createElement('option');
+          opt.value = c; opt.textContent = c;
+          cvFilterCity.appendChild(opt);
+        });
+      }
+      function matchesSearch(cv, query) {
+        if (!query) return true;
+        const haystack = [
+          cv.display_name, cv.headline, cv.summary, cv.education_institution, cv.education_degree,
+          cv.role_category, cv.location_city, ...(Array.isArray(cv.skills) ? cv.skills : []),
+          ...(Array.isArray(cv.work_experience) ? cv.work_experience.map(e => `${e.company} ${e.title} ${e.description}`) : [])
+        ].filter(Boolean).join(' ').toLowerCase();
+        return haystack.includes(query.toLowerCase());
+      }
+      function renderGrid() {
+        const query = cvSearchInput.value.trim();
+        const role = cvFilterRole.value;
+        const city = cvFilterCity.value;
+        const filtered = allCandidates.filter(cv =>
+          matchesSearch(cv, query) &&
+          (!role || cv.role_category === role) &&
+          (!city || cv.location_city === city)
+        );
+        cvCount.textContent = `${filtered.length} kandidat ditemukan`;
+        if (filtered.length === 0) {
+          cvGrid.innerHTML = '';
+          cvEmptyState.hidden = false;
+        } else {
+          cvEmptyState.hidden = true;
+          cvGrid.innerHTML = filtered.map(cardHTML).join('');
+        }
+      }
+
+      async function handleReturnFromPayment() {
+        const params = new URLSearchParams(window.location.search);
+        const token = params.get('cv_unlock');
+        const failed = params.get('cv_unlock_failed');
+        if (token || failed) {
+          const cleanUrl = new URL(window.location.href);
+          cleanUrl.searchParams.delete('cv_unlock');
+          cleanUrl.searchParams.delete('cv_unlock_failed');
+          window.history.replaceState({}, document.title, cleanUrl.toString());
+        }
+        if (failed) {
+          alert('Pembayaran gagal atau dibatalkan. Silakan coba lagi.');
+          return;
+        }
+        if (!token) return;
+
+        let attempts = 0;
+        const maxAttempts = 6;
+        const poll = async () => {
+          attempts++;
+          try {
+            const res = await fetch(`${EDGE_FUNCTIONS_URL}/reveal-cv?token=${encodeURIComponent(token)}`);
+            const data = await res.json();
+            if (data.status === 'paid') {
+              setUnlocked(data.cv_id, data);
+              renderGrid();
+              const card = cvGrid.querySelector(`[data-cv-card="${data.cv_id}"]`);
+              if (card) card.scrollIntoView({ behavior: 'smooth', block: 'center' });
+              return;
+            }
+          } catch (err) { /* retry below */ }
+          if (attempts < maxAttempts) setTimeout(poll, 2000);
+        };
+        poll();
+      }
+
+      async function loadCandidates() {
+        try {
+          const res = await fetch(`${SUPABASE_URL}/rest/v1/cv_candidates_public?select=*&order=created_at.desc`, {
+            headers: { apikey: SUPABASE_PUBLISHABLE_KEY, Authorization: `Bearer ${SUPABASE_PUBLISHABLE_KEY}` }
+          });
+          if (!res.ok) throw new Error('failed to load');
+          allCandidates = await res.json();
+          cvLoadingState.hidden = true;
+          populateFilterOptions();
+          renderGrid();
+          handleReturnFromPayment();
+        } catch (err) {
+          cvLoadingState.textContent = 'Gagal memuat data kandidat. Coba refresh halaman.';
+        }
+      }
+
+      cvSearchInput.addEventListener('input', renderGrid);
+      cvFilterRole.addEventListener('change', renderGrid);
+      cvFilterCity.addEventListener('change', renderGrid);
+
+      cvGrid.addEventListener('click', (e) => {
+        const btn = e.target.closest('[data-unlock-cv]');
+        if (!btn) return;
+        activeUnlockCvId = btn.dataset.unlockCv;
+        cvUnlockPriceInfo.textContent = `Buka kontak & sosial media "${btn.dataset.name}" seharga ${formatIDR(btn.dataset.price)}. Anda akan diarahkan ke halaman pembayaran Xendit.`;
+        cvUnlockForm.reset();
+        cvUnlockForm.querySelector('.form-status').textContent = '';
+        cvUnlockDialog.showModal();
+      });
+
+      cvUnlockForm.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        const statusEl = cvUnlockForm.querySelector('.form-status');
+        const submitBtn = cvUnlockForm.querySelector('button[type="submit"]');
+        const originalLabel = submitBtn.textContent;
+        statusEl.textContent = '';
+        statusEl.className = 'form-status';
+        submitBtn.disabled = true;
+        submitBtn.textContent = 'Memproses...';
+        try {
+          const payload = Object.fromEntries(new FormData(cvUnlockForm).entries());
+          const res = await fetch(`${EDGE_FUNCTIONS_URL}/create-cv-invoice`, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ cv_id: activeUnlockCvId, buyer_email: payload.buyer_email, buyer_whatsapp: payload.buyer_whatsapp || null })
+          });
+          const data = await res.json();
+          if (!res.ok || !data.invoice_url) throw new Error(data.error || 'Gagal membuat invoice');
+          window.location.href = data.invoice_url;
+        } catch (err) {
+          statusEl.textContent = 'Gagal memproses pembayaran. Coba lagi atau hubungi kami langsung.';
+          statusEl.className = 'form-status error';
+          submitBtn.disabled = false;
+          submitBtn.textContent = originalLabel;
+        }
+      });
+
+      loadCandidates();
+    })();
+  </script>
+
+</body>
+</html>
