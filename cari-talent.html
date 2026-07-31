@@ -1031,10 +1031,10 @@
             body: JSON.stringify({ cv_id: activeUnlockCvId, buyer_email: payload.buyer_email, buyer_whatsapp: payload.buyer_whatsapp || null })
           });
           const data = await res.json();
-          if (!res.ok || !data.invoice_url) throw new Error(data.error || 'Gagal membuat invoice');
+          if (!res.ok || !data.invoice_url) throw new Error(data.error || `HTTP ${res.status}`);
           window.location.href = data.invoice_url;
         } catch (err) {
-          statusEl.textContent = 'Gagal memproses pembayaran. Coba lagi atau hubungi kami langsung.';
+          statusEl.textContent = `Gagal memproses pembayaran (${err.message || err}). Coba lagi atau hubungi kami langsung.`;
           statusEl.className = 'form-status error';
           submitBtn.disabled = false;
           submitBtn.textContent = originalLabel;
