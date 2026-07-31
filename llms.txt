@@ -24,6 +24,9 @@ Company profile & ringkasan investor (PDF): https://thrucorp.com/assets/Thru360-
 ## Untuk Founder & Startup
 Thru360 juga membuka pengajuan pendanaan untuk startup potensial di luar portofolio ventures-nya sendiri. Founder yang sudah punya pitch deck bisa mengajukan lewat: https://thrucorp.com/#ajukan-pendanaan
 
+## Database Kandidat
+Thru360 menyediakan database CV kandidat magang/entry-level yang bisa dicari & difilter berdasarkan kategori dan kota. Nama kandidat disensor, tapi ringkasan pengalaman dan pendidikan bisa dilihat gratis. Kontak dan sosial media kandidat terkunci sampai membayar biaya buka kontak per CV lewat Xendit. Akses: https://thrucorp.com/#cv-database
+
 ## Studi Kasus
 - Skinmade (performance marketing & commerce): 20x ROAS, 1000% reach growth
 - Resoult.co (brand growth & ecommerce scaling): 10x ROI growth, 5 juta+ monthly impressions
@@ -42,3 +45,4 @@ Thru360 juga membuka pengajuan pendanaan untuk startup potensial di luar portofo
 - Daftar Mitra Freelancer / THRUpers: https://thrucorp.com/#freelancer
 - Minat Investasi: https://thrucorp.com/#investor
 - Ajukan Pendanaan (founder/startup): https://thrucorp.com/#ajukan-pendanaan
+- Database CV Kandidat: https://thrucorp.com/#cv-database
