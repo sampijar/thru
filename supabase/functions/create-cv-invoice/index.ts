@@ -74,8 +74,8 @@ Deno.serve(async (req: Request) => {
         currency: "IDR",
         payer_email: buyer_email,
         description: `Buka kontak CV kandidat: ${cv.display_name}`,
-        success_redirect_url: `${SITE_URL}/index.html?cv_unlock=${unlockToken}#cv-database`,
-        failure_redirect_url: `${SITE_URL}/index.html?cv_unlock_failed=1#cv-database`,
+        success_redirect_url: `${SITE_URL}/cari-talent.html?cv_unlock=${unlockToken}#cv-database`,
+        failure_redirect_url: `${SITE_URL}/cari-talent.html?cv_unlock_failed=1#cv-database`,
       }),
     });
 
