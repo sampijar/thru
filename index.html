@@ -371,6 +371,61 @@
     .investor-process-num { color: var(--accent-lt); font-weight: 800; flex-shrink: 0; }
     .investor-disclaimer { font-size: .78rem; color: var(--txt-3); margin-top: 1.5rem; max-width: 640px; line-height: 1.6; }
 
+    /* ── CV DATABASE ── */
+    .cv-toolbar { display: flex; gap: .9rem; flex-wrap: wrap; margin-bottom: 2rem; }
+    .cv-search { position: relative; flex: 1 1 260px; }
+    .cv-search svg {
+      position: absolute; left: .9rem; top: 50%; transform: translateY(-50%);
+      width: 17px; height: 17px; color: var(--txt-3); pointer-events: none;
+    }
+    .cv-search input {
+      width: 100%; background: var(--bg-surface); border: 1px solid var(--border); border-radius: 10px;
+      padding: .75rem .9rem .75rem 2.5rem; font-family: var(--font); font-size: .9rem; color: var(--txt);
+    }
+    .cv-search input:focus { border-color: var(--accent); }
+    .cv-filters { display: flex; gap: .6rem; flex-wrap: wrap; }
+    .cv-filters select {
+      background: var(--bg-surface); border: 1px solid var(--border); border-radius: 10px;
+      padding: .75rem .9rem; font-family: var(--font); font-size: .85rem; color: var(--txt);
+      cursor: pointer; appearance: none;
+    }
+    .cv-meta-row { display: flex; align-items: center; justify-content: space-between; margin-bottom: 1.25rem; }
+    .cv-count { font-size: .85rem; color: var(--txt-3); }
+    .cv-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1.25rem; }
+    .cv-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.6rem; display: flex; flex-direction: column; }
+    .cv-card-head { display: flex; align-items: center; justify-content: space-between; gap: .75rem; margin-bottom: .9rem; }
+    .cv-role-badge {
+      font-size: .72rem; font-weight: 700; color: var(--accent-lt); background: var(--accent-glow);
+      padding: .3rem .7rem; border-radius: 100px; text-transform: uppercase; letter-spacing: .03em;
+    }
+    .cv-price { font-size: .82rem; font-weight: 800; color: var(--txt); }
+    .cv-name { font-size: 1.1rem; font-weight: 800; margin-bottom: .35rem; }
+    .cv-headline { font-size: .85rem; color: var(--txt-2); line-height: 1.5; margin-bottom: 1rem; }
+    .cv-edu { font-size: .82rem; color: var(--txt-2); margin-bottom: 1rem; line-height: 1.5; }
+    .cv-edu strong { color: var(--txt); display: block; margin-bottom: .15rem; }
+    .cv-exp h4, .cv-skills h4 { font-size: .72rem; text-transform: uppercase; letter-spacing: .06em; color: var(--txt-3); margin-bottom: .5rem; }
+    .cv-exp ul { list-style: none; display: flex; flex-direction: column; gap: .5rem; margin-bottom: 1rem; }
+    .cv-exp li { font-size: .82rem; color: var(--txt-2); line-height: 1.55; padding-left: 1rem; position: relative; }
+    .cv-exp li::before { content: '—'; position: absolute; left: 0; color: var(--accent-lt); }
+    .cv-exp li strong { color: var(--txt); }
+    .cv-skills { display: flex; flex-wrap: wrap; gap: .4rem; margin-bottom: 1.25rem; }
+    .skill-chip { font-size: .72rem; font-weight: 600; color: var(--txt-2); border: 1px solid var(--border); border-radius: 100px; padding: .3rem .7rem; }
+    .cv-locked {
+      margin-top: auto; padding-top: 1.1rem; border-top: 1px solid var(--border);
+      display: flex; flex-direction: column; align-items: flex-start; gap: .75rem;
+    }
+    .cv-locked-label { display: flex; align-items: center; gap: .4rem; font-size: .8rem; color: var(--txt-3); font-weight: 600; }
+    .cv-locked-label svg { width: 14px; height: 14px; }
+    .cv-unlock-btn { width: 100%; justify-content: center; cursor: pointer; border: none; }
+    .cv-unlocked-panel {
+      margin-top: auto; padding-top: 1.1rem; border-top: 1px solid var(--border);
+      display: flex; flex-direction: column; gap: .5rem;
+    }
+    .cv-unlocked-label { font-size: .72rem; text-transform: uppercase; letter-spacing: .06em; color: #22C55E; font-weight: 700; }
+    .cv-unlocked-panel a, .cv-unlocked-panel span { font-size: .85rem; color: var(--txt); }
+    .cv-empty, .cv-loading { color: var(--txt-3); font-size: .9rem; text-align: center; padding: 3rem 0; }
+    [hidden] { display: none !important; }
+
     /* ── LEAD FORM ── */
     .lead-form { display: flex; flex-direction: column; gap: 1.15rem; max-width: 640px; }
     .form-row { display: flex; flex-direction: column; gap: .4rem; }
@@ -1468,6 +1523,62 @@
       </div>
     </dialog>
 
+    <!-- ==================== DATABASE CV KANDIDAT ==================== -->
+    <section class="section" id="cv-database" style="padding-top: 0;">
+      <div class="section-inner">
+        <div class="reveal">
+          <p class="eyebrow">Database Kandidat</p>
+          <h2 class="s-title">Cari Kandidat Siap Kerja</h2>
+          <p class="s-sub">Telusuri profil kandidat magang/entry-level dari jaringan Thru360. Pengalaman, ringkasan, dan jenjang pendidikan bisa dilihat gratis — buka kontak &amp; sosial media kandidat yang cocok dengan kebutuhan Anda.</p>
+        </div>
+
+        <div class="cv-toolbar reveal">
+          <div class="cv-search">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+            <input type="search" id="cvSearchInput" placeholder="Cari skill, universitas, atau posisi..." aria-label="Cari kandidat" />
+          </div>
+          <div class="cv-filters">
+            <select id="cvFilterRole" aria-label="Filter kategori">
+              <option value="">Semua Kategori</option>
+            </select>
+            <select id="cvFilterCity" aria-label="Filter kota">
+              <option value="">Semua Kota</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="cv-meta-row reveal">
+          <p class="cv-count" id="cvCount"></p>
+        </div>
+
+        <p class="cv-loading" id="cvLoadingState">Memuat data kandidat...</p>
+        <p class="cv-empty" id="cvEmptyState" hidden>Tidak ada kandidat yang cocok dengan pencarian/filter Anda.</p>
+        <div class="cv-grid reveal" id="cvGrid"></div>
+      </div>
+    </section>
+
+    <dialog class="form-dialog" id="cvUnlockDialog" aria-labelledby="cvUnlockDialogTitle">
+      <div class="dialog-header">
+        <h3 id="cvUnlockDialogTitle">Buka Kontak Kandidat</h3>
+        <button type="button" class="dialog-close" data-close aria-label="Tutup">✕</button>
+      </div>
+      <div class="dialog-body">
+        <form class="lead-form" id="cvUnlockForm">
+          <p class="s-sub" style="margin-bottom: 0;" id="cvUnlockPriceInfo"></p>
+          <div class="form-row">
+            <label for="cvu-email">Email Anda<span aria-hidden="true">*</span></label>
+            <input type="email" id="cvu-email" name="buyer_email" autocomplete="email" required />
+          </div>
+          <div class="form-row">
+            <label for="cvu-wa">Nomor WhatsApp (opsional)</label>
+            <input type="tel" id="cvu-wa" name="buyer_whatsapp" autocomplete="tel" />
+          </div>
+          <button type="submit" class="btn-p">Lanjut ke Pembayaran →</button>
+          <p class="form-status" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+    </dialog>
+
     <!-- ==================== TESTIMONIALS ==================== -->
     <section class="section" style="padding-top: 0;">
       <div class="section-inner">
@@ -1574,6 +1685,7 @@
         <a href="#freelancer">Penghasilan Tambahan</a>
         <a href="#investor">Investor</a>
         <a href="#ajukan-pendanaan">Ajukan Pendanaan</a>
+        <a href="#cv-database">Database Kandidat</a>
         <a href="privacy.html">Kebijakan Privasi</a>
         <a href="terms.html">Syarat &amp; Ketentuan</a>
         <a href="mailto:partnership@thrucorp.com">Kontak</a>
@@ -1650,6 +1762,7 @@
     wireDialog('investorDialog');
     wireDialog('fundingDialog');
     wireDialog('ventureDialog');
+    wireDialog('cvUnlockDialog');
 
     /* Detail venture (klik card -> populate & buka dialog) */
     const VENTURE_INFO = {
@@ -1778,6 +1891,235 @@
       const payload = Object.fromEntries(new FormData(fundingForm).entries());
       submitToSupabase('funding_applications', payload, fundingForm);
     });
+
+    /* ==================== CV DATABASE (search, filter, pay-to-unlock) ==================== */
+    (function () {
+      const EDGE_FUNCTIONS_URL = `${SUPABASE_URL}/functions/v1`;
+      const cvGrid = document.getElementById('cvGrid');
+      const cvLoadingState = document.getElementById('cvLoadingState');
+      const cvEmptyState = document.getElementById('cvEmptyState');
+      const cvCount = document.getElementById('cvCount');
+      const cvSearchInput = document.getElementById('cvSearchInput');
+      const cvFilterRole = document.getElementById('cvFilterRole');
+      const cvFilterCity = document.getElementById('cvFilterCity');
+      const cvUnlockDialog = document.getElementById('cvUnlockDialog');
+      const cvUnlockForm = document.getElementById('cvUnlockForm');
+      const cvUnlockPriceInfo = document.getElementById('cvUnlockPriceInfo');
+      if (!cvGrid) return;
+
+      let allCandidates = [];
+      let activeUnlockCvId = null;
+      const UNLOCKED_STORE_KEY = 'thru_cv_unlocked_v1';
+
+      function getUnlockedStore() {
+        try { return JSON.parse(localStorage.getItem(UNLOCKED_STORE_KEY) || '{}'); }
+        catch (err) { return {}; }
+      }
+      function setUnlocked(cvId, data) {
+        const store = getUnlockedStore();
+        store[cvId] = data;
+        localStorage.setItem(UNLOCKED_STORE_KEY, JSON.stringify(store));
+      }
+      function escapeHtml(str) {
+        const div = document.createElement('div');
+        div.textContent = str == null ? '' : String(str);
+        return div.innerHTML;
+      }
+      function formatIDR(n) { return 'Rp ' + Number(n).toLocaleString('id-ID'); }
+
+      function renderExperience(workExperience) {
+        if (!Array.isArray(workExperience) || workExperience.length === 0) return '';
+        const items = workExperience.slice(0, 3).map(exp => `
+          <li><strong>${escapeHtml(exp.title || '')}</strong> @ ${escapeHtml(exp.company || '')}${exp.period ? ` (${escapeHtml(exp.period)})` : ''}${exp.description ? ` — ${escapeHtml(exp.description)}` : ''}</li>
+        `).join('');
+        return `<div class="cv-exp"><h4>Pengalaman</h4><ul>${items}</ul></div>`;
+      }
+      function renderSkills(skills) {
+        if (!Array.isArray(skills) || skills.length === 0) return '';
+        return `<div class="cv-skills">${skills.map(s => `<span class="skill-chip">${escapeHtml(s)}</span>`).join('')}</div>`;
+      }
+      function renderLockedPanel(cv) {
+        return `
+          <div class="cv-locked">
+            <div class="cv-locked-label">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="10" width="16" height="10" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg>
+              Kontak &amp; sosial media terkunci
+            </div>
+            <button type="button" class="btn-p cv-unlock-btn" data-unlock-cv="${cv.id}" data-price="${cv.price_idr}" data-name="${escapeHtml(cv.display_name)}">Buka Kontak — ${formatIDR(cv.price_idr)}</button>
+          </div>
+        `;
+      }
+      function renderUnlockedPanel(data) {
+        const links = [];
+        if (data.phone) links.push(`<span>Telepon: ${escapeHtml(data.phone)}</span>`);
+        if (data.email) links.push(`<span>Email: ${escapeHtml(data.email)}</span>`);
+        if (data.linkedin_url) links.push(`<a href="${escapeHtml(data.linkedin_url)}" target="_blank" rel="noopener noreferrer">LinkedIn →</a>`);
+        if (data.portfolio_url) links.push(`<a href="${escapeHtml(data.portfolio_url)}" target="_blank" rel="noopener noreferrer">Portfolio →</a>`);
+        if (data.other_social) links.push(`<span>${escapeHtml(data.other_social)}</span>`);
+        return `
+          <div class="cv-unlocked-panel">
+            <p class="cv-unlocked-label">✓ Kontak Terbuka — ${escapeHtml(data.full_name || '')}</p>
+            ${links.join('')}
+          </div>
+        `;
+      }
+      function cardHTML(cv) {
+        const unlocked = getUnlockedStore()[cv.id];
+        return `
+          <div class="cv-card" data-cv-card="${cv.id}">
+            <div class="cv-card-head">
+              <span class="cv-role-badge">${escapeHtml(cv.role_category || 'Umum')}</span>
+              <span class="cv-price">${formatIDR(cv.price_idr)}</span>
+            </div>
+            <h3 class="cv-name">${escapeHtml(cv.display_name)}</h3>
+            ${cv.headline ? `<p class="cv-headline">${escapeHtml(cv.headline)}</p>` : ''}
+            <div class="cv-edu">
+              <strong>${escapeHtml(cv.education_institution || '')}</strong>
+              ${escapeHtml(cv.education_degree || '')}${cv.education_period ? ` (${escapeHtml(cv.education_period)})` : ''}
+            </div>
+            ${renderExperience(cv.work_experience)}
+            ${renderSkills(cv.skills)}
+            ${unlocked ? renderUnlockedPanel(unlocked) : renderLockedPanel(cv)}
+          </div>
+        `;
+      }
+      function populateFilterOptions() {
+        const roles = Array.from(new Set(allCandidates.map(c => c.role_category).filter(Boolean))).sort();
+        const cities = Array.from(new Set(allCandidates.map(c => c.location_city).filter(Boolean))).sort();
+        roles.forEach(r => {
+          const opt = document.createElement('option');
+          opt.value = r; opt.textContent = r;
+          cvFilterRole.appendChild(opt);
+        });
+        cities.forEach(c => {
+          const opt = document.createElement('option');
+          opt.value = c; opt.textContent = c;
+          cvFilterCity.appendChild(opt);
+        });
+      }
+      function matchesSearch(cv, query) {
+        if (!query) return true;
+        const haystack = [
+          cv.display_name, cv.headline, cv.summary, cv.education_institution, cv.education_degree,
+          cv.role_category, cv.location_city, ...(Array.isArray(cv.skills) ? cv.skills : []),
+          ...(Array.isArray(cv.work_experience) ? cv.work_experience.map(e => `${e.company} ${e.title} ${e.description}`) : [])
+        ].filter(Boolean).join(' ').toLowerCase();
+        return haystack.includes(query.toLowerCase());
+      }
+      function renderGrid() {
+        const query = cvSearchInput.value.trim();
+        const role = cvFilterRole.value;
+        const city = cvFilterCity.value;
+        const filtered = allCandidates.filter(cv =>
+          matchesSearch(cv, query) &&
+          (!role || cv.role_category === role) &&
+          (!city || cv.location_city === city)
+        );
+        cvCount.textContent = `${filtered.length} kandidat ditemukan`;
+        if (filtered.length === 0) {
+          cvGrid.innerHTML = '';
+          cvEmptyState.hidden = false;
+        } else {
+          cvEmptyState.hidden = true;
+          cvGrid.innerHTML = filtered.map(cardHTML).join('');
+        }
+      }
+
+      async function handleReturnFromPayment() {
+        const params = new URLSearchParams(window.location.search);
+        const token = params.get('cv_unlock');
+        const failed = params.get('cv_unlock_failed');
+        if (token || failed) {
+          const cleanUrl = new URL(window.location.href);
+          cleanUrl.searchParams.delete('cv_unlock');
+          cleanUrl.searchParams.delete('cv_unlock_failed');
+          window.history.replaceState({}, document.title, cleanUrl.toString());
+        }
+        if (failed) {
+          alert('Pembayaran gagal atau dibatalkan. Silakan coba lagi.');
+          return;
+        }
+        if (!token) return;
+
+        let attempts = 0;
+        const maxAttempts = 6;
+        const poll = async () => {
+          attempts++;
+          try {
+            const res = await fetch(`${EDGE_FUNCTIONS_URL}/reveal-cv?token=${encodeURIComponent(token)}`);
+            const data = await res.json();
+            if (data.status === 'paid') {
+              setUnlocked(data.cv_id, data);
+              renderGrid();
+              const card = cvGrid.querySelector(`[data-cv-card="${data.cv_id}"]`);
+              if (card) card.scrollIntoView({ behavior: 'smooth', block: 'center' });
+              return;
+            }
+          } catch (err) { /* retry below */ }
+          if (attempts < maxAttempts) setTimeout(poll, 2000);
+        };
+        poll();
+      }
+
+      async function loadCandidates() {
+        try {
+          const res = await fetch(`${SUPABASE_URL}/rest/v1/cv_candidates_public?select=*&order=created_at.desc`, {
+            headers: { apikey: SUPABASE_PUBLISHABLE_KEY, Authorization: `Bearer ${SUPABASE_PUBLISHABLE_KEY}` }
+          });
+          if (!res.ok) throw new Error('failed to load');
+          allCandidates = await res.json();
+          cvLoadingState.hidden = true;
+          populateFilterOptions();
+          renderGrid();
+          handleReturnFromPayment();
+        } catch (err) {
+          cvLoadingState.textContent = 'Gagal memuat data kandidat. Coba refresh halaman.';
+        }
+      }
+
+      cvSearchInput.addEventListener('input', renderGrid);
+      cvFilterRole.addEventListener('change', renderGrid);
+      cvFilterCity.addEventListener('change', renderGrid);
+
+      cvGrid.addEventListener('click', (e) => {
+        const btn = e.target.closest('[data-unlock-cv]');
+        if (!btn) return;
+        activeUnlockCvId = btn.dataset.unlockCv;
+        cvUnlockPriceInfo.textContent = `Buka kontak & sosial media "${btn.dataset.name}" seharga ${formatIDR(btn.dataset.price)}. Anda akan diarahkan ke halaman pembayaran Xendit.`;
+        cvUnlockForm.reset();
+        cvUnlockForm.querySelector('.form-status').textContent = '';
+        cvUnlockDialog.showModal();
+      });
+
+      cvUnlockForm.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        const statusEl = cvUnlockForm.querySelector('.form-status');
+        const submitBtn = cvUnlockForm.querySelector('button[type="submit"]');
+        const originalLabel = submitBtn.textContent;
+        statusEl.textContent = '';
+        statusEl.className = 'form-status';
+        submitBtn.disabled = true;
+        submitBtn.textContent = 'Memproses...';
+        try {
+          const payload = Object.fromEntries(new FormData(cvUnlockForm).entries());
+          const res = await fetch(`${EDGE_FUNCTIONS_URL}/create-cv-invoice`, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ cv_id: activeUnlockCvId, buyer_email: payload.buyer_email, buyer_whatsapp: payload.buyer_whatsapp || null })
+          });
+          const data = await res.json();
+          if (!res.ok || !data.invoice_url) throw new Error(data.error || 'Gagal membuat invoice');
+          window.location.href = data.invoice_url;
+        } catch (err) {
+          statusEl.textContent = 'Gagal memproses pembayaran. Coba lagi atau hubungi kami langsung.';
+          statusEl.className = 'form-status error';
+          submitBtn.disabled = false;
+          submitBtn.textContent = originalLabel;
+        }
+      });
+
+      loadCandidates();
+    })();
   </script>
 
 </body>
