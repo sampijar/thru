@@ -7,6 +7,7 @@
 - Finance & Advisory: financial reporting bulanan & tahunan, tax services, business advisory
 - Digital Solutions: website development, business systems & process automation, reporting dashboard, AI enablement
 - Legal & Compliance: legal entity registration (CV & PT), legal contract drafting, ESG & compliance services, carbon planning & forest seedling services
+- HR & Recruitment: rekrutmen & talent acquisition, database kandidat siap kerja, screening & interview kandidat, HR advisory & onboarding
 
 ## Cara Kerja
 Discover -> Strategize -> Execute -> Optimize -> Scale
