@@ -868,7 +868,7 @@
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="10" width="16" height="10" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg>
               Kontak &amp; sosial media terkunci
             </div>
-            <button type="button" class="btn-p cv-unlock-btn" data-unlock-cv="${cv.id}" data-price="${cv.price_idr}" data-name="${escapeHtml(cv.display_name)}">Buka Kontak — ${formatIDR(cv.price_idr)}</button>
+            <button type="button" class="btn-p cv-unlock-btn" data-unlock-cv="${cv.id}" data-price="${cv.price_idr}" data-name="${escapeHtml(cv.display_name)}">Buka Kontak</button>
           </div>
         `;
       }
@@ -892,7 +892,6 @@
           <div class="cv-card" data-cv-card="${cv.id}">
             <div class="cv-card-head">
               <span class="cv-role-badge">${escapeHtml(cv.role_category || 'Umum')}</span>
-              <span class="cv-price">${formatIDR(cv.price_idr)}</span>
             </div>
             <h3 class="cv-name">${escapeHtml(cv.display_name)}</h3>
             ${cv.headline ? `<p class="cv-headline">${escapeHtml(cv.headline)}</p>` : ''}
