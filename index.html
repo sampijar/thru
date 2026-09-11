@@ -496,7 +496,9 @@
     .step-d { font-size: .83rem; color: var(--txt-2); line-height: 1.6; }
 
     /* ── PORTFOLIO / VENTURES ── */
-    .ventures { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 1.25rem; }
+    .ventures { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1.25rem; }
+    @media (max-width: 900px) { .ventures { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+    @media (max-width: 560px) { .ventures { grid-template-columns: 1fr; } }
     .venture-card {
       position: relative;
       background: var(--bg-card); border: 1px solid var(--border); border-top: 3px solid var(--v-accent, var(--accent));
@@ -1056,6 +1058,12 @@
             <div class="venture-name">FundHub</div>
             <div class="venture-tag">Konsultasi Keuangan &amp; Funding</div>
           </button>
+          <button type="button" class="venture-card" data-venture="juraganayam" style="--v-accent: #DC2626;">
+            <span class="venture-card-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg></span>
+            <div class="venture-mark"><img src="assets/logos/juragan_ayam.png" alt="Logo Juragan Ayam" loading="lazy" /></div>
+            <div class="venture-name">Juragan Ayam</div>
+            <div class="venture-tag">Jualan Ayam Pilihan</div>
+          </button>
         </div>
         <p class="venture-hint reveal">Klik salah satu venture untuk lihat detail →</p>
 
@@ -1097,11 +1105,11 @@
             <p class="eyebrow">Untuk Calon Investor</p>
             <h2 class="s-title">Bertumbuh Bersama Thru360</h2>
             <p class="s-sub" style="margin-bottom: 0;">
-              Thru360 tidak hanya melayani klien — kami juga membangun venture sendiri (Citrust, Briga, Tilde, FundHub) sebagai portofolio jangka panjang, dengan rekam jejak eksekusi yang terukur di setiap kolaborasi.
+              Thru360 tidak hanya melayani klien — kami juga membangun venture sendiri (Citrust, Briga, Tilde, FundHub, Juragan Ayam) sebagai portofolio jangka panjang, dengan rekam jejak eksekusi yang terukur di setiap kolaborasi.
             </p>
 
             <ul class="check-list">
-              <li><strong>Model venture builder aktif</strong> — bukan sekadar konsultan, kami ikut membangun dan menjalankan 4 venture secara langsung.</li>
+              <li><strong>Model venture builder aktif</strong> — bukan sekadar konsultan, kami ikut membangun dan menjalankan 5 venture secara langsung.</li>
               <li><strong>Rekam jejak terukur</strong> — 20x ROAS growth, 10x ROI improvement, 5M+ monthly impressions dari kolaborasi brand yang sudah berjalan (lihat Studi Kasus).</li>
               <li><strong>Eksekusi end-to-end</strong> — satu tim yang mengeksekusi dari strategi, marketing, digital, hingga legal &amp; finance, bukan menyerahkan begitu saja ke pihak lain.</li>
               <li><strong>Proses yang disiplin</strong> — setiap kolaborasi mengikuti alur Discover → Strategize → Execute → Optimize → Scale yang sama.</li>
@@ -1710,6 +1718,13 @@
         tag: 'Konsultasi Keuangan & Funding',
         logo: 'assets/logos/fundhub.png',
         desc: 'FundHub adalah venture Thru360 yang membantu bisnis dengan konsultasi keuangan dan pendampingan pencarian pendanaan (funding).'
+      },
+      juraganayam: {
+        name: 'Juragan Ayam',
+        tag: 'Jualan Ayam Pilihan',
+        logo: 'assets/logos/juragan_ayam.png',
+        desc: 'Juragan Ayam adalah venture Thru360 di bidang F&B — menjual ayam pilihan berkualitas untuk kebutuhan rumah tangga maupun bisnis kuliner.',
+        instagram: 'https://www.instagram.com/juraganayambogor.id'
       }
     };
 
